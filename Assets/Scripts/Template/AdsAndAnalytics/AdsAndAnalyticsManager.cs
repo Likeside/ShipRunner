@@ -1,0 +1,140 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Advertisements;
+using UnityEngine.Analytics;
+
+namespace Utilities {
+    public class AdsAndAnalyticsManager: GlobalSingleton<AdsAndAnalyticsManager>, IUnityAdsListener {
+
+        [SerializeField] AdsAndAnalyticsConfigSO _config;
+
+        public event Action OnRewardedShown;
+        public event Action OnInterstitialShown;
+        public bool RewardedReady => Advertisement.IsReady(_rewarded);
+
+        public int InterstitialFrequency => _config.interstitialFrequency;
+        
+        const string k_isFirstEnter = "isFirstEnter";
+        string _rewarded;
+        string _interstitial;
+        string _banner;
+
+        public void Initialize() {
+#if UNITY_ANDROID
+            Advertisement.Initialize(_config.androidID);
+            SetAdsPlatform(_config.androidRewarded, _config.androidInterstitial, _config.androidBanner);
+#endif
+
+#if UNITY_IOS
+            Advertisement.Initialize(_iosID);
+            SetAdsPlatform(_config.iosRewarded, _config.iosInterstitial, _config.iosBanner);
+#endif
+            Advertisement.AddListener(this);
+        }
+        
+        //analytics
+        public void LogFirstGameEnter() {
+            bool isFirstEnter = PlayerPrefsHelper.GetBool(k_isFirstEnter, true);
+            if (isFirstEnter) {
+                PlayerPrefsHelper.SetBool(k_isFirstEnter, false);
+                Analytics.CustomEvent("FIRST_LAUNCH");
+            }
+        }
+        public void LogLevelStart(int level) {
+            Analytics.CustomEvent("LEVEL_START", new Dictionary<string, object>() { {"N", level}});
+        }
+        public void LogPlayerDeath(int level) {
+            Analytics.CustomEvent("PLAYER_DEATH", new Dictionary<string, object>() { {"N", level}});
+        }
+        public void LogLevelComplete(int level) {
+            Analytics.CustomEvent("LEVEL_COMPLETE", new Dictionary<string, object>() { {"N", level}});
+        }
+        public void LogLevelSkip(int level) {
+            Analytics.CustomEvent("LEVEL_SKIP", new Dictionary<string, object>() { {"N", level}});
+        }
+        
+        //ads
+        public void PlayInterstitial(Action completionCallBack) {
+            OnInterstitialShown = completionCallBack;
+            if (Advertisement.IsReady(_interstitial)) {
+                Advertisement.Show(_interstitial);
+            }
+            else {
+                OnInterstitialShown?.Invoke();
+            }
+        }
+
+        public void PlayRewarded(Action completionCallBack) {
+            if (Advertisement.IsReady(_rewarded)) {
+                OnRewardedShown = completionCallBack;
+                Advertisement.Show(_rewarded);
+            }   
+        }
+
+        public void ToggleBanner(bool on) {
+            if (!on) {
+                Advertisement.Banner.Hide();
+                return;
+            }
+            if (Advertisement.IsReady(_banner)) {
+                Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
+                Advertisement.Banner.Show(_banner);
+            }
+            else {
+                StartCoroutine(TryShowBannerAgain());
+            }
+        }
+
+        IEnumerator TryShowBannerAgain() {
+            yield return new WaitForSeconds(0.5f);
+            if (Advertisement.IsReady(_banner)) {
+                Advertisement.Banner.Show(_banner);
+            }
+        }
+
+        void SetAdsPlatform(string rewarded, string interstitial, string banner) {
+            _rewarded = rewarded;
+            _interstitial = interstitial;
+            _banner = banner;
+        }
+
+        public void OnUnityAdsReady(string placementId) {
+            Debug.Log("Ad is ready: " + placementId);
+        }
+
+        public void OnUnityAdsDidError(string message) {
+            Debug.Log("Something is wrong with the ad: " + message);
+        }
+
+        public void OnUnityAdsDidStart(string placementId) {
+            Debug.Log("Ad started: " + placementId);
+        }
+
+        public void OnUnityAdsDidFinish(string placementId, ShowResult showResult) {
+            Debug.Log("Ad did finish");
+            if (placementId == _rewarded && showResult == ShowResult.Finished) { 
+                Debug.Log("Rewarded shown");
+                OnRewardedShown?.Invoke();
+                OnRewardedShown = null;
+            }
+
+            if (placementId == _interstitial) {
+                Debug.Log("Interstitial shown");
+                OnInterstitialShown?.Invoke();
+                OnInterstitialShown = null;
+            }
+        }
+
+        public void OpenTermsLink() {
+            Debug.Log("Opening terms link");
+            Application.OpenURL(_config.termsLink);
+        }
+
+        public void OpenPolicyLink() {
+            Debug.Log("Opening policy link");
+            Application.OpenURL(_config.policyLink);
+        }
+    }
+}
