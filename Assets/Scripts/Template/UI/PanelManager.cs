@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities.OdinEditor;
 
 namespace Utilities {
     public class PanelManager: LocalSingleton<PanelManager> {
 
+        [SerializeField] UiElementsActivenessSO _elementsActiveness;
+        
         [SerializeField] PanelEffectsConfigSO _panelEffectsConfigSo;
         [Header("Panels")]
         [SerializeField] GameObject _pausePanel;

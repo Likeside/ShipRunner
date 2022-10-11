@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using PlasticGui;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
@@ -8,7 +9,7 @@ using Sirenix.OdinInspector;
 namespace Utilities.OdinEditor {
     
     [ExecuteInEditMode]
-    public class MenuUiSettings: MonoBehaviour {
+    public class RectSettings: MonoBehaviour {
 
 
         [SerializeField] List<RectTransformSingleSettings> _singleRects;
@@ -48,16 +49,20 @@ namespace Utilities.OdinEditor {
         public abstract class RectTransformSettings {
             
             string _header;
-            [Title("$_header")] 
+            [Title("$_header", Bold = true)] 
 
             [Vector2Slider(100, 2566)]
             public Vector2 _rectSize;
             public Color _color;
             
             [HorizontalGroup("Fields", 100)]
-            [PreviewField]
+            [PreviewField(80, ObjectFieldAlignment.Left)]
             [HideLabel]
             public Sprite _texture;
+            
+            [VerticalGroup("Fields/Group")] 
+            [LabelWidth(80)]
+            public Image.Type imageType;
 
             protected RectTransformSettings(string header) {
                 _header = header;
@@ -86,6 +91,7 @@ namespace Utilities.OdinEditor {
                 }
 
                 foreach (var image in images) {
+                    image.type = imageType;
                     image.sprite = _texture;
                     image.color = _color;
                 }
@@ -107,18 +113,19 @@ namespace Utilities.OdinEditor {
         [Serializable]
         public class RectTransformSingleSettings: RectTransformSettings{
             [VerticalGroup("Fields/Group")]
-            [LabelWidth(60)]
+            [LabelWidth(80)]
             public RectTransform rect; 
             [VerticalGroup("Fields/Group")]
-            [LabelWidth(60)]
+            [LabelWidth(80)]
             public Image image;
             
             public RectTransformSingleSettings(string header) : base(header) {
             }
             public override void SetSettings() {
-                rect.sizeDelta = _rectSize;
+                image.type = imageType;
                 image.color = _color;
                 image.sprite = _texture;
+                rect.sizeDelta = _rectSize;
             }
 
             [Button]
