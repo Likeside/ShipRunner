@@ -12,11 +12,13 @@ namespace Utilities {
         Test
     }
     public class TextLoader : GlobalSingleton<TextLoader> {
-        
-        
-      public Dictionary<string, string> Texts { get; private set; }
-      public Font Font { get; private set; }
-      public  TMP_FontAsset TMPFont { get; private set; }
+
+        [SerializeField] Font _font;
+        [SerializeField] TMP_FontAsset _tmpFont;
+
+        public Dictionary<string, string> Texts { get; private set; }
+        public Font Font => _font;
+        public TMP_FontAsset TMPFont => _tmpFont;
       
       public Localization CurrentLocalization { get; private set; }
 
@@ -51,8 +53,8 @@ namespace Utilities {
                 }
             }
 
-            LoadFontAsset("Localization/Fonts/16232");
-            LoadTMPFontAsset("Fonts/BSTMP");
+            //LoadFontAsset("Localization/Fonts/16232");
+          //  LoadTMPFontAsset("Fonts/BSTMP");
         }
 
 
@@ -67,12 +69,12 @@ namespace Utilities {
         }
 
         void LoadFontAsset(string path) { 
-            Font = Resources.Load<Font>(path);
+         //   Font = Resources.Load<Font>(path);
         // Font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
         }
 
         void LoadTMPFontAsset(string path) {
-            TMPFont = Resources.Load<TMP_FontAsset>(path);
+          //  TMPFont = Resources.Load<TMP_FontAsset>(path);
         }
 
 

@@ -1,0 +1,23 @@
+{
+  "": "",
+  "Start": "START",
+  "Quit": "QUIT",
+  "Paused": "Game paused",
+  "Yes": "Yes",
+  "No": "No",
+  "Continue": "Continue",
+  "Menu": "Menu",
+  "GameComplete": "Game complete!",
+  "Settings": "SET",
+  "Info": "INFO",
+  "AcceptOutPolicies" : "To start playing please accept our Terms of Service and read our Privacy Policy, in which we describe what personal data is collected and processed in the game. Thank you!",
+  "Accept": "Accept",
+  "TermsLink": "Terms of Service",
+  "PolicyLink": "Privacy Policy",
+  "EnterAge": "Enter your age:",
+  "EN": "EN",
+  "RU": "RU",
+  "X": "X",
+  "Version": "Version: ",
+  "GotIt": "Got it!"
+}

@@ -23,11 +23,12 @@ namespace Utilities {
         
         public PanelEffectsConfigSO PanelEffectsConfigSo => _panelEffectsConfigSo;
 
-        protected override void OnSingletonAwake() {
+        void Start() {
             
             if (_policyPanel != null) {
                 if (AppPolicyManager.Instance.AppPolicyAccepted) {
                     _policyPanel.SetActive(false);
+                    if(AdsAndAnalyticsManager.Instance == null) Debug.Log("Instance null");
                     AdsAndAnalyticsManager.Instance.Initialize();
                 }
                 else {
