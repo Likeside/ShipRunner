@@ -17,13 +17,9 @@ namespace Template.UI {
         [SerializeField] Button _backButton;
         [SerializeField] Button _tipButton;
         [SerializeField] Button _skipLevelButton;
-
         public event Action OnTipButtonPressed;
         public bool TipButtonActive => _elementsActiveness.tipButtonActive;
-
-
         void Start() {
-            
             SetButton(_settingsButton, _elementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
             SetButton(_infoButton, _elementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
             SetButton(_backButton, _elementsActiveness.backButtonActive, SceneLoader.Instance.LoadMainMenu);
@@ -31,25 +27,7 @@ namespace Template.UI {
             SetButton(_skipLevelButton, _elementsActiveness.skipLevelButtonActive, SceneLoader.Instance.SkipLevel);
             SetButton(_startBtn, true, SceneLoader.Instance.LoadNextLevel);
             SetButton(_quitButton, true, SceneLoader.Instance.Quit);
-
-            if (_infoButton != null) {
-                _infoButton.enabled = _elementsActiveness.infoPanelActive;
-            }
-
-            if (_backButton != null) {
-                _backButton.enabled = _elementsActiveness.backButtonActive;
-            }
-
-            if (_tipButton != null) {
-                _tipButton.enabled = _elementsActiveness.tipButtonActive;
-            }
-
-            if (_skipLevelButton != null) {
-                _skipLevelButton.enabled = _elementsActiveness.skipLevelButtonActive;
-            }
         }
-
-
         void SetButton(Button button, bool active, UnityAction listener) {
             if (button != null) {
                 button.enabled = active;
@@ -59,7 +37,6 @@ namespace Template.UI {
                 }
             }
         }
-
         void TipButtonPressed() {
             OnTipButtonPressed?.Invoke();
         }
