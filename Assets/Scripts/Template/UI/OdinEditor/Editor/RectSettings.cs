@@ -49,18 +49,12 @@ namespace Utilities.OdinEditor {
 
         [Serializable]
         public abstract class RectTransformSettings {
-            
             string _header;
             [Title("$_header", Bold = true)] 
 
-            [Vector2Slider(100, 2566)]
+            [Vector2Slider(0, 2566)]
             public Vector2 _rectSize;
             public Color _color;
-            
-            [HorizontalGroup("Fields", 100)]
-            [PreviewField(80, ObjectFieldAlignment.Left)]
-            [HideLabel]
-            public Sprite _texture;
             
             [VerticalGroup("Fields/Group")] 
             [LabelWidth(80)]
@@ -82,7 +76,10 @@ namespace Utilities.OdinEditor {
         [Serializable]
         public class RectTransformGroupSettings: RectTransformSettings {
             
+            [HorizontalGroup("RectsAndTextures")]
             public List<RectTransform> rects;
+            [HorizontalGroup("RectsAndTextures")]
+            public List<Sprite> textures;
             List<Image> images;
             public RectTransformGroupSettings(string header) : base(header) {
             }
@@ -92,11 +89,18 @@ namespace Utilities.OdinEditor {
                     rect.sizeDelta = _rectSize;
                 }
                 if (images != null && images.Count > 0) {
+                    for (int i = 0; i < images.Count; i++) {
+                        images[i].type = imageType;
+                        images[i].sprite = textures[i];
+                        images[i].color = _color;
+                    }
+                    /*
                     foreach (var image in images) {
                         image.type = imageType;
                         image.sprite = _texture;
                         image.color = _color;
                     }
+                    */
                 }
             }
             
@@ -121,6 +125,10 @@ namespace Utilities.OdinEditor {
             [VerticalGroup("Fields/Group")]
             [LabelWidth(80)]
             public Image image;
+            [HorizontalGroup("Fields", 100)]
+            [PreviewField(80, ObjectFieldAlignment.Left)]
+            [HideLabel]
+            public Sprite _texture;
             
             public RectTransformSingleSettings(string header) : base(header) {
             }
