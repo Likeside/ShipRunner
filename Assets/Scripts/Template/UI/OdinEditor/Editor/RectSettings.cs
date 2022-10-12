@@ -49,13 +49,15 @@ namespace Utilities.OdinEditor {
 
         [Serializable]
         public abstract class RectTransformSettings {
-            string _header;
+            [HideInInspector]
+            [SerializeField] string _header;
             [Title("$_header", Bold = true)] 
 
             [Vector2Slider(0, 2566)]
             public Vector2 _rectSize;
             public Color _color;
             
+            [HorizontalGroup("Fields")]
             [VerticalGroup("Fields/Group")] 
             [LabelWidth(80)]
             public Image.Type imageType;
@@ -91,16 +93,14 @@ namespace Utilities.OdinEditor {
                 if (images != null && images.Count > 0) {
                     for (int i = 0; i < images.Count; i++) {
                         images[i].type = imageType;
-                        images[i].sprite = textures[i];
+                        if (textures.Count > 0) {
+                            images[i].sprite = textures[0];
+                        }
+                        if (i < textures.Count) {
+                            images[i].sprite = textures[i];
+                        }
                         images[i].color = _color;
                     }
-                    /*
-                    foreach (var image in images) {
-                        image.type = imageType;
-                        image.sprite = _texture;
-                        image.color = _color;
-                    }
-                    */
                 }
             }
             

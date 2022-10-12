@@ -8,7 +8,7 @@ public class GameController : LocalSingleton<GameController> {
 
 
         void Start() { 
-                SceneLoader.Instance.BsFadeIn();
+               // SceneLoader.Instance.BsFadeIn();
                 if (_buttonManager.TipButtonActive) _buttonManager.OnTipButtonPressed += ShowTip;
         }
 
