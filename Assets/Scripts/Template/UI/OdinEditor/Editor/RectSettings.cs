@@ -91,7 +91,7 @@ namespace Utilities.OdinEditor {
                 }
 
                 foreach (var image in images) {
-                    image.type = imageType;
+                    image.type = imageType; 
                     image.sprite = _texture;
                     image.color = _color;
                 }

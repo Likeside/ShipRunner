@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Utilities {
     public class SceneLoader: GlobalSingleton<SceneLoader> {
 
-        /*
+        
         [SerializeField] Image _blackScreen;
 
         void Start() {
@@ -36,7 +36,7 @@ namespace Utilities {
         public void LoadNextLevel()
         {
             LevelTracker.AdCounter++;
-            LevelTracker.LevelToLoad = SaveSystem.SaveSystem.LoadGame().currentLevelNumber;
+          //  LevelTracker.LevelToLoad = SaveSystem.SaveSystem.LoadGame().currentLevelNumber;
             if (LevelTracker.LevelToLoad > LevelTracker.MaxLevels) {
                 //PanelManager.Instance.ToggleGameCompletePanel();
                 LevelTracker.LevelToLoad = 1;
@@ -54,6 +54,10 @@ namespace Utilities {
             }
         }
 
+        public void SkipLevel() {
+            
+        }
+
         public void LoadMainMenu() {
             Debug.Log("LoadingMenu");
             AdsAndAnalyticsManager.Instance.ToggleBanner(false);
@@ -62,12 +66,12 @@ namespace Utilities {
         
         
         public void BsFadeIn() {
-            _blackScreen.material.DOColor(Color.clear, GameConfig.Instance.config.blackScreenFadeDelay).SetUpdate(true);
+           // _blackScreen.material.DOColor(Color.clear, GameConfig.Instance.config.blackScreenFadeDelay).SetUpdate(true);
             Time.timeScale = 1f;
         }
 
         public void BsFadeOut() {
-          _blackScreen.material.DOColor(GameConfig.Instance.config.transitionColor, GameConfig.Instance.config.blackScreenFadeDelay).SetUpdate(true);
+        //  _blackScreen.material.DOColor(GameConfig.Instance.config.transitionColor, GameConfig.Instance.config.blackScreenFadeDelay).SetUpdate(true);
         }
 
 
@@ -77,12 +81,13 @@ namespace Utilities {
 
 
         void LoadScene(string sceneName) {
+            /*
             var tween = _blackScreen.material.DOColor(GameConfig.Instance.config.transitionColor,
                 GameConfig.Instance.config.blackScreenFadeDelay).SetUpdate(true);
             tween.onComplete = () => SceneManager.LoadScene(sceneName);
+            */
             
         }
-       */ 
     }
     
 }
