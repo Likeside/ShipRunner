@@ -16,9 +16,10 @@ MonoBehaviour:
   infoPanelActive: 1
   adminInterfaceActive: 0
   topPanelActive: 1
+  quitButtonActive: 0
   tipButtonActive: 0
-  pauseButtonActive: 1
+  pauseButtonActive: 0
   backButtonActive: 1
   skipLevelButtonActive: 1
   blackScreenFadeDelay: 0.5
-  transitionColor: {r: 0, g: 0, b: 0, a: 1}
+  transitionColor: {r: 0.1792453, g: 0.17163582, b: 0.17163582, a: 1}
