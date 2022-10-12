@@ -5,7 +5,7 @@ using Utilities.OdinEditor;
 namespace Utilities {
     public class PanelManager: LocalSingleton<PanelManager> {
 
-        [SerializeField] UiElementsActivenessSO _elementsActiveness;
+        [SerializeField] UiElementsConfigSO _elementsActiveness;
         
         [SerializeField] PanelEffectsConfigSO _panelEffectsConfigSo;
         [Header("Panels")]

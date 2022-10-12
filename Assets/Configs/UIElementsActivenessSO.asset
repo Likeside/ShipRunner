@@ -20,3 +20,5 @@ MonoBehaviour:
   pauseButtonActive: 1
   backButtonActive: 1
   skipLevelButtonActive: 1
+  blackScreenFadeDelay: 0.5
+  transitionColor: {r: 0, g: 0, b: 0, a: 1}

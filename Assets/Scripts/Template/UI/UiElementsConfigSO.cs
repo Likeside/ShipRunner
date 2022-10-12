@@ -2,8 +2,9 @@ using UnityEngine;
 
 namespace Utilities.OdinEditor {
     
-    [CreateAssetMenu(fileName = "UIElementsActivenessSO", menuName = "Configs/UIElementsActivenessSO", order = 5)]
-    public class UiElementsActivenessSO: ScriptableObject {
+    [CreateAssetMenu(fileName = "UIElementsConfigSO", menuName = "Configs/UIElementsConfigSO", order = 5)]
+    public class UiElementsConfigSO: ScriptableObject {
+        [Header("Activeness")]
         public bool settingsPanelActive = true;
         public bool infoPanelActive = true;
         public bool adminInterfaceActive;
@@ -12,5 +13,9 @@ namespace Utilities.OdinEditor {
         public bool pauseButtonActive = true;
         public bool backButtonActive = true;
         public bool skipLevelButtonActive = true;
+        [Header("Parameters")]
+        public float blackScreenFadeDelay;
+        public Color transitionColor;
+
     }
 }

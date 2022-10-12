@@ -8,7 +8,7 @@ using Utilities.OdinEditor;
 namespace Template.UI {
     public class ButtonManager: MonoBehaviour {
 
-        [SerializeField] UiElementsActivenessSO _elementsActiveness;
+        [SerializeField] UiElementsConfigSO _elementsActiveness;
         
         [SerializeField] Button _startBtn;
         [SerializeField] Button _quitButton;
@@ -20,6 +20,7 @@ namespace Template.UI {
         public event Action OnTipButtonPressed;
         public bool TipButtonActive => _elementsActiveness.tipButtonActive;
         void Start() {
+            Debug.Log("Button manager start");
             SetButton(_settingsButton, _elementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
             SetButton(_infoButton, _elementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
             SetButton(_backButton, _elementsActiveness.backButtonActive, SceneLoader.Instance.LoadMainMenu);

@@ -22,6 +22,7 @@ namespace Utilities {
         string _banner;
 
         public void Initialize() {
+            if(!_config.isActive) return;
 #if UNITY_ANDROID
             Advertisement.Initialize(_config.androidID);
             SetAdsPlatform(_config.androidRewarded, _config.androidInterstitial, _config.androidBanner);
@@ -36,6 +37,7 @@ namespace Utilities {
         
         //analytics
         public void LogFirstGameEnter() {
+            if(!_config.isActive) return;
             bool isFirstEnter = PlayerPrefsHelper.GetBool(k_isFirstEnter, true);
             if (isFirstEnter) {
                 PlayerPrefsHelper.SetBool(k_isFirstEnter, false);
@@ -43,20 +45,25 @@ namespace Utilities {
             }
         }
         public void LogLevelStart(int level) {
+            if(!_config.isActive) return;
             Analytics.CustomEvent("LEVEL_START", new Dictionary<string, object>() { {"N", level}});
         }
         public void LogPlayerDeath(int level) {
+            if(!_config.isActive) return;
             Analytics.CustomEvent("PLAYER_DEATH", new Dictionary<string, object>() { {"N", level}});
         }
         public void LogLevelComplete(int level) {
+            if(!_config.isActive) return;
             Analytics.CustomEvent("LEVEL_COMPLETE", new Dictionary<string, object>() { {"N", level}});
         }
         public void LogLevelSkip(int level) {
+            if(!_config.isActive) return;
             Analytics.CustomEvent("LEVEL_SKIP", new Dictionary<string, object>() { {"N", level}});
         }
         
         //ads
         public void PlayInterstitial(Action completionCallBack) {
+            if(!_config.isActive) return;
             OnInterstitialShown = completionCallBack;
             if (Advertisement.IsReady(_interstitial)) {
                 Advertisement.Show(_interstitial);
@@ -67,6 +74,7 @@ namespace Utilities {
         }
 
         public void PlayRewarded(Action completionCallBack) {
+            if(!_config.isActive) return;
             if (Advertisement.IsReady(_rewarded)) {
                 OnRewardedShown = completionCallBack;
                 Advertisement.Show(_rewarded);
@@ -74,6 +82,7 @@ namespace Utilities {
         }
 
         public void ToggleBanner(bool on) {
+            if(!_config.isActive) return;
             if (!on) {
                 Advertisement.Banner.Hide();
                 return;
@@ -88,6 +97,7 @@ namespace Utilities {
         }
 
         IEnumerator TryShowBannerAgain() {
+            if (!_config.isActive) yield break;
             yield return new WaitForSeconds(0.5f);
             if (Advertisement.IsReady(_banner)) {
                 Advertisement.Banner.Show(_banner);
@@ -95,6 +105,7 @@ namespace Utilities {
         }
 
         void SetAdsPlatform(string rewarded, string interstitial, string banner) {
+            if(!_config.isActive) return;
             _rewarded = rewarded;
             _interstitial = interstitial;
             _banner = banner;
@@ -113,6 +124,7 @@ namespace Utilities {
         }
 
         public void OnUnityAdsDidFinish(string placementId, ShowResult showResult) {
+            if(!_config.isActive) return;
             Debug.Log("Ad did finish");
             if (placementId == _rewarded && showResult == ShowResult.Finished) { 
                 Debug.Log("Rewarded shown");

@@ -3,6 +3,9 @@ using UnityEngine;
 namespace Utilities {
     [CreateAssetMenu(fileName = "AndsAndAnalyticsConfigSO", menuName = "Configs/AdsAndAnalyticsConfigSO", order = 5)]
     public class AdsAndAnalyticsConfigSO: ScriptableObject {
+
+        public bool isActive;
+        
         [Header("Android")]
         public string androidID;
         public string androidRewarded;
