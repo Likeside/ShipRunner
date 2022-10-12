@@ -35,9 +35,7 @@ namespace Utilities.OdinEditor {
             _groupRects.Add(new RectTransformGroupSettings(rectGroupName));
             rectGroupName = String.Empty;
         }
-
-     
-
+        
         void Update() {
             if(EditorApplication.isPlaying ) return;
             foreach (var setting in _singleRects) {
@@ -47,21 +45,17 @@ namespace Utilities.OdinEditor {
                 setting.SetSettings();
             }
         }
-
-
-
+        
         #region RectTransformsSettings
         
         [Serializable]
         public abstract class RectTransformSettings {
             [HideInInspector]
             [SerializeField] string _header;
-            [Title("$_header", Bold = true)] 
-
+            [Title("$_header", Bold = true)]
             [Vector2Slider(0, 2566)]
             public Vector2 _rectSize;
             public Color _color;
-            
             [HorizontalGroup("Fields")]
             [VerticalGroup("Fields/Group")] 
             [LabelWidth(80)]
@@ -72,14 +66,11 @@ namespace Utilities.OdinEditor {
             [VerticalGroup("Fields/Group")] 
             [LabelWidth(80)]
             public PivotPresets pivot;
-
             protected RectTransformSettings(string header) {
                 _header = header;
                 _color = Color.white;
             }
-            
             public abstract void SetSettings();
-            
             [VerticalGroup("Fields/Group")]
             [Button]
             public abstract void GetImageComponent();
@@ -88,7 +79,6 @@ namespace Utilities.OdinEditor {
         
         [Serializable]
         public class RectTransformGroupSettings: RectTransformSettings {
-            
             [HorizontalGroup("RectsAndTextures")]
             public List<RectTransform> rects;
             [HorizontalGroup("RectsAndTextures")]
@@ -96,7 +86,6 @@ namespace Utilities.OdinEditor {
             List<Image> images;
             public RectTransformGroupSettings(string header) : base(header) {
             }
-
             public override void SetSettings() {
                 foreach (var rect in rects) {
                     rect.sizeDelta = _rectSize;
@@ -116,7 +105,6 @@ namespace Utilities.OdinEditor {
                     }
                 }
             }
-            
             public override void GetImageComponent() {
                 if (!rects.Any()) {
                     Debug.Log("No rects added to the list");
@@ -128,7 +116,6 @@ namespace Utilities.OdinEditor {
                 }
             }
         }
-        
         
         [Serializable]
         public class RectTransformSingleSettings: RectTransformSettings{
@@ -142,7 +129,6 @@ namespace Utilities.OdinEditor {
             [PreviewField(80, ObjectFieldAlignment.Left)]
             [HideLabel]
             public Sprite _texture;
-            
             public RectTransformSingleSettings(string header) : base(header) {
             }
             public override void SetSettings() {
@@ -155,7 +141,6 @@ namespace Utilities.OdinEditor {
                 if(anchor != AnchorPresets.Ignore) rect.SetAnchor(anchor);
                 if(pivot != PivotPresets.Ignore) rect.SetPivot(pivot);
             }
-
             [Button]
             public override void GetImageComponent() {
                 if (rect == null) {
@@ -164,11 +149,7 @@ namespace Utilities.OdinEditor {
                 }
                 image = rect.GetComponent<Image>();
             }
-
-            
         }
-        
         #endregion
-
     }
 }
