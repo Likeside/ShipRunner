@@ -24,7 +24,7 @@ namespace Utilities {
                 _instance = this as T;
             }
             return _instance;
-#endif
+        #endif
                 return null;
         }
         

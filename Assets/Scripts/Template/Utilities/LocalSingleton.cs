@@ -16,6 +16,17 @@ namespace Utilities {
                 Destroy(gameObject);
             }
         }
+        
+        
+        public T InstanceForEditorScripts() {
+        #if UNITY_EDITOR
+            if (_instance == null) {
+                _instance = this as T;
+            }
+            return _instance;
+        #endif
+            return null;
+        }
 
         /// <summary>
         /// A substitute for the Awake() method. Will be called after all of the singleton stuff is done

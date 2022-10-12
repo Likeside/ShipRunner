@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ae98a04ee4c42b1997a21b3a9d5d53, type: 3}
   m_Name: PanelEffectsConfigSO
   m_EditorClassIdentifier: 
-  panelSlideTime: 0.8
-  panelScaleTime: 0.8
+  panelSlideTime: 0.5
+  panelScaleTime: 0.5
