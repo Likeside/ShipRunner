@@ -23,6 +23,11 @@ namespace Utilities {
       public Localization CurrentLocalization { get; private set; }
 
         protected override void OnSingletonAwake() {
+           Set();
+        }
+
+
+       public void Set() {
             if (PlayerPrefs.GetString("lang") == String.Empty) {
 
                 if (Application.systemLanguage == SystemLanguage.English) {
@@ -52,32 +57,22 @@ namespace Utilities {
                     CurrentLocalization = Localization.EN;
                 }
             }
-
-            //LoadFontAsset("Localization/Fonts/16232");
-          //  LoadTMPFontAsset("Fonts/BSTMP");
         }
-
-
-
+       
         void LoadTextAsset(string path) {
-            
             var jsonText = Resources.Load<TextAsset>(path);
             if (jsonText == null) {
             }
             Texts = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonText.text);
-            
         }
-
         void LoadFontAsset(string path) { 
          //   Font = Resources.Load<Font>(path);
         // Font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
         }
-
         void LoadTMPFontAsset(string path) {
           //  TMPFont = Resources.Load<TMP_FontAsset>(path);
         }
-
-
+        
       public void SwitchLocalization(Localization localization) {
             if (localization == Localization.RU) {
                 CurrentLocalization = Localization.RU;
@@ -113,5 +108,5 @@ namespace Utilities {
                 underline.Set();
             }
       }
-     }
+    }
 }

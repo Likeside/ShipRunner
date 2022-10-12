@@ -10,11 +10,7 @@ namespace Utilities {
         string _defaultTextKey;
         List<string> _appends;
         void Start() {
-            _text = GetComponent<Text>();
-            _text.font = TextLoader.Instance.Font;
-            if (_textKey != null || _textKey != String.Empty) {
-                _text.text = TextLoader.Instance.Texts[_textKey ?? string.Empty];
-            }
+            Set();
         }
 
         public void Init() {
@@ -62,6 +58,22 @@ namespace Utilities {
             _text.text = text;
         }
 
+        public void Set(bool isEditor = false, TextLoader textLoader = null) {
+            if (isEditor) {
+                _text = GetComponent<Text>();
+                _text.font = textLoader.InstanceForEditorScripts().Font;
+                if (_textKey != null || _textKey != String.Empty) {
+                    _text.text = textLoader.InstanceForEditorScripts().Texts[_textKey ?? string.Empty];
+                }   
+            }
+            else {
+                _text = GetComponent<Text>();
+                _text.font = TextLoader.Instance.Font;
+                if (_textKey != null || _textKey != String.Empty) {
+                    _text.text = TextLoader.Instance.Texts[_textKey ?? string.Empty];
+                }   
+            }
+        }
 
         public void Refresh() {
             if (_text != null) {

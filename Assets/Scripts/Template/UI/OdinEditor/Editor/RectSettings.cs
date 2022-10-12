@@ -35,6 +35,22 @@ namespace Utilities.OdinEditor {
             rectGroupName = String.Empty;
         }
 
+        [Button]
+        public void SetTextFontFromTextLoader() {
+            var texts = FindObjectsOfType<TextSetter>();
+            var textsMeshes = FindObjectsOfType<TextSetterMesh>();
+            var textLoader = FindObjectOfType<TextLoader>();
+            textLoader.Set();
+
+            foreach (var text in texts) {
+                text.Set(true, textLoader);
+            }
+
+            foreach (var text in textsMeshes) {
+                text.Set(true, textLoader);
+            }
+        }
+
         void Update() {
             if(EditorApplication.isPlaying ) return;
             foreach (var setting in _singleRects) {

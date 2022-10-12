@@ -154,7 +154,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1671369208}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1139,7 +1139,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 169914205}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1345,6 +1345,7 @@ GameObject:
   - component: {fileID: 169914208}
   - component: {fileID: 169914207}
   - component: {fileID: 169914206}
+  - component: {fileID: 169914209}
   m_Layer: 5
   m_Name: BtnStart
   m_TagString: Untagged
@@ -1430,15 +1431,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1455,6 +1456,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169914204}
   m_CullTransparentMesh: 1
+--- !u!114 &169914209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169914204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 8
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 41.475964
+  offsetDistance: 7
+  offset: {x: 5.2446356, y: -4.6361403}
+  color: {r: 0, g: 0, b: 0, a: 0.3137255}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  colorBleedMode: 2
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!114 &186275607 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2838956312966599671, guid: 7d6d1260b04ca61f6b3080002c56d65b, type: 3}
@@ -2030,7 +2061,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1429944317}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2228,8 +2259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9011514531ec224c391a5acc27a7bb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  _tmpFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  _font: {fileID: 12800000, guid: db5de90d7a317c1d6aec184ce31b6549, type: 3}
+  _tmpFont: {fileID: 11400000, guid: def6d243864cefc14b6324bb067b6476, type: 2}
 --- !u!4 &822748893
 Transform:
   m_ObjectHideFlags: 0
@@ -2402,6 +2433,7 @@ GameObject:
   - component: {fileID: 1429944320}
   - component: {fileID: 1429944319}
   - component: {fileID: 1429944318}
+  - component: {fileID: 1429944321}
   m_Layer: 5
   m_Name: BtnSettings
   m_TagString: Untagged
@@ -2487,15 +2519,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2512,6 +2544,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429944316}
   m_CullTransparentMesh: 1
+--- !u!114 &1429944321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429944316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 8
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 41.475964
+  offsetDistance: 7
+  offset: {x: 5.2446356, y: -4.6361403}
+  color: {r: 0, g: 0, b: 0, a: 0.3137255}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  colorBleedMode: 2
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &1453379414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2838956313456714302, guid: 7d6d1260b04ca61f6b3080002c56d65b, type: 3}
@@ -2555,6 +2617,7 @@ GameObject:
   - component: {fileID: 1671369211}
   - component: {fileID: 1671369210}
   - component: {fileID: 1671369209}
+  - component: {fileID: 1671369212}
   m_Layer: 5
   m_Name: BtnInfo
   m_TagString: Untagged
@@ -2640,15 +2703,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2665,6 +2728,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671369207}
   m_CullTransparentMesh: 1
+--- !u!114 &1671369212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671369207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 8
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 41.475964
+  offsetDistance: 7
+  offset: {x: 5.2446356, y: -4.6361403}
+  color: {r: 0, g: 0, b: 0, a: 0.3137255}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  colorBleedMode: 2
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &1744648202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,6 +2807,7 @@ GameObject:
   - component: {fileID: 1750926353}
   - component: {fileID: 1750926352}
   - component: {fileID: 1750926351}
+  - component: {fileID: 1750926354}
   m_Layer: 5
   m_Name: BtnQuit
   m_TagString: Untagged
@@ -2799,15 +2893,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2824,6 +2918,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750926349}
   m_CullTransparentMesh: 1
+--- !u!114 &1750926354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750926349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 8
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 41.475964
+  offsetDistance: 7
+  offset: {x: 5.2446356, y: -4.6361403}
+  color: {r: 0, g: 0, b: 0, a: 0.3137255}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  colorBleedMode: 2
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &1807810978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2838956313453055551, guid: 7d6d1260b04ca61f6b3080002c56d65b, type: 3}
@@ -2933,15 +3057,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9575472, b: 0.9575472, a: 1}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3006,14 +3130,29 @@ MonoBehaviour:
     rect: {fileID: 768174423}
     image: {fileID: 0}
     _texture: {fileID: 0}
+  - _header: Menu Background
+    _rectSize: {x: 0, y: 0}
+    _color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    imageType: 0
+    rect: {fileID: 2030839798}
+    image: {fileID: 2030839799}
+    _texture: {fileID: 0}
   _groupRects:
   - _header: Start and Quit buttons
     _rectSize: {x: 900, y: 200}
-    _color: {r: 1, g: 1, b: 1, a: 1}
-    imageType: 0
+    _color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+    imageType: 1
     rects:
     - {fileID: 169914205}
     - {fileID: 1750926350}
+    textures: []
+  - _header: Info and Settings buttons
+    _rectSize: {x: 0, y: 200}
+    _color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+    imageType: 1
+    rects:
+    - {fileID: 1429944317}
+    - {fileID: 1671369208}
     textures: []
   singleRectName: 
   rectGroupName: 
@@ -3191,7 +3330,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1750926350}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
