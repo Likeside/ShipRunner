@@ -5,6 +5,7 @@ using PlasticGui;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+using UnityEditor;
 
 namespace Utilities.OdinEditor {
     
@@ -35,6 +36,7 @@ namespace Utilities.OdinEditor {
         }
 
         void Update() {
+            if(EditorApplication.isPlaying ) return;
             foreach (var setting in _singleRects) {
                 setting.SetSettings();
             } 
@@ -89,11 +91,12 @@ namespace Utilities.OdinEditor {
                 foreach (var rect in rects) {
                     rect.sizeDelta = _rectSize;
                 }
-
-                foreach (var image in images) {
-                    image.type = imageType; 
-                    image.sprite = _texture;
-                    image.color = _color;
+                if (images != null && images.Count > 0) {
+                    foreach (var image in images) {
+                        image.type = imageType;
+                        image.sprite = _texture;
+                        image.color = _color;
+                    }
                 }
             }
             
@@ -122,9 +125,11 @@ namespace Utilities.OdinEditor {
             public RectTransformSingleSettings(string header) : base(header) {
             }
             public override void SetSettings() {
-                image.type = imageType;
-                image.color = _color;
-                image.sprite = _texture;
+                if (image != null) {
+                    image.type = imageType;
+                    image.color = _color;
+                    image.sprite = _texture;
+                }
                 rect.sizeDelta = _rectSize;
             }
 
