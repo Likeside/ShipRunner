@@ -5,6 +5,7 @@ using PlasticGui;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+using Template.UI;
 using UnityEditor;
 
 namespace Utilities.OdinEditor {
@@ -35,21 +36,7 @@ namespace Utilities.OdinEditor {
             rectGroupName = String.Empty;
         }
 
-        [Button]
-        public void SetTextFontFromTextLoader() {
-            var texts = FindObjectsOfType<TextSetter>();
-            var textsMeshes = FindObjectsOfType<TextSetterMesh>();
-            var textLoader = FindObjectOfType<TextLoader>();
-            textLoader.Set();
-
-            foreach (var text in texts) {
-                text.Set(true, textLoader);
-            }
-
-            foreach (var text in textsMeshes) {
-                text.Set(true, textLoader);
-            }
-        }
+     
 
         void Update() {
             if(EditorApplication.isPlaying ) return;
@@ -63,6 +50,8 @@ namespace Utilities.OdinEditor {
 
 
 
+        #region RectTransformsSettings
+        
         [Serializable]
         public abstract class RectTransformSettings {
             [HideInInspector]
@@ -77,6 +66,12 @@ namespace Utilities.OdinEditor {
             [VerticalGroup("Fields/Group")] 
             [LabelWidth(80)]
             public Image.Type imageType;
+            [VerticalGroup("Fields/Group")] 
+            [LabelWidth(80)]
+            public AnchorPresets anchor;
+            [VerticalGroup("Fields/Group")] 
+            [LabelWidth(80)]
+            public PivotPresets pivot;
 
             protected RectTransformSettings(string header) {
                 _header = header;
@@ -105,6 +100,8 @@ namespace Utilities.OdinEditor {
             public override void SetSettings() {
                 foreach (var rect in rects) {
                     rect.sizeDelta = _rectSize;
+                    if(anchor != AnchorPresets.Ignore) rect.SetAnchor(anchor);
+                    if(pivot != PivotPresets.Ignore) rect.SetPivot(pivot);
                 }
                 if (images != null && images.Count > 0) {
                     for (int i = 0; i < images.Count; i++) {
@@ -155,6 +152,8 @@ namespace Utilities.OdinEditor {
                     image.sprite = _texture;
                 }
                 rect.sizeDelta = _rectSize;
+                if(anchor != AnchorPresets.Ignore) rect.SetAnchor(anchor);
+                if(pivot != PivotPresets.Ignore) rect.SetPivot(pivot);
             }
 
             [Button]
@@ -168,5 +167,8 @@ namespace Utilities.OdinEditor {
 
             
         }
+        
+        #endregion
+
     }
 }

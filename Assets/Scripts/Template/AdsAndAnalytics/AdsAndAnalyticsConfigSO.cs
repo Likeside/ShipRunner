@@ -20,6 +20,7 @@ namespace Utilities {
 
         [Header("Settings")]
         public int interstitialFrequency;
+        public int interstitialFirstLevel;
 
         [Header("Links")] 
         public string termsLink;

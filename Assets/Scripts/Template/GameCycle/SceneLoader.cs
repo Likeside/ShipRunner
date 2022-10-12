@@ -10,6 +10,7 @@ namespace Utilities {
         
         [SerializeField] Image _blackScreen;
         [SerializeField] UiElementsConfigSO _elementsConfigSo;
+        [SerializeField] AdsAndAnalyticsConfigSO _adsConfig;
 
         void Start() {
             Debug.Log("Starting scene loader");
@@ -25,7 +26,8 @@ namespace Utilities {
             else {
                 LevelTracker.LevelToLoad = level;
                 AdsAndAnalyticsManager.Instance.LogLevelStart(LevelTracker.LevelToLoad);
-                if (LevelTracker.AdCounter % AdsAndAnalyticsManager.Instance.InterstitialFrequency == 0 && LevelTracker.AdCounter > 0 && LevelTracker.LevelToLoad > 2) {
+                if (LevelTracker.AdCounter % AdsAndAnalyticsManager.Instance.InterstitialFrequency == 0 && 
+                    LevelTracker.AdCounter > 0 && LevelTracker.LevelToLoad > _adsConfig.interstitialFirstLevel) {
                     AdsAndAnalyticsManager.Instance.PlayInterstitial((() => LoadScene("Game")));   
                 }
                 else {
@@ -50,7 +52,8 @@ namespace Utilities {
             else {
                 Debug.Log("2");
                 AdsAndAnalyticsManager.Instance.LogLevelStart(LevelTracker.LevelToLoad);
-                if (LevelTracker.AdCounter % AdsAndAnalyticsManager.Instance.InterstitialFrequency == 0 && LevelTracker.AdCounter > 0 && LevelTracker.LevelToLoad > 2) {
+                if (LevelTracker.AdCounter % AdsAndAnalyticsManager.Instance.InterstitialFrequency == 0 && LevelTracker.AdCounter > 0
+                    && LevelTracker.LevelToLoad > _adsConfig.interstitialFirstLevel) {
                     Debug.Log("3");
                     AdsAndAnalyticsManager.Instance.PlayInterstitial((() => LoadScene("Game")));   
                 }
@@ -62,7 +65,7 @@ namespace Utilities {
         }
 
         public void SkipLevel() {
-            
+            //TODO: IMPLEMENT SKIP FUNCTIONALITY
         }
 
         public void LoadMainMenu() {
