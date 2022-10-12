@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Template.UI;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Utilities.OdinEditor {
     
@@ -15,7 +18,7 @@ namespace Utilities.OdinEditor {
         
         [HorizontalGroup("plain")]
         public string plainText;
-        [HorizontalGroup("single")]
+        [HorizontalGroup("plain")]
         [Button]
         public void AddPlainText() {
             _plainTexts.Add(new TextSettingsPlain(plainText));
@@ -74,28 +77,50 @@ namespace Utilities.OdinEditor {
             [HideInInspector]
             [SerializeField] string _header;
             
-            public TextSettings(string header) {
+            [Vector2Slider(0, 2566)]
+            public Vector2 rectSize;
+            [HorizontalGroup("Settings")]
+            public Color color;
+            [HorizontalGroup("Settings")]
+            public bool autoSize;
+            [HorizontalGroup("Settings")]
+            public AnchorPresets anchor;
+            [HorizontalGroup("Settings")]
+            public PivotPresets pivot;
+
+            protected TextSettings(string header) {
                 _header = header;
             }
-
             public abstract void SetSettings();
         }
         [Serializable]
         public class TextSettingsPlain: TextSettings {
+            public List<Text> texts;
             public TextSettingsPlain(string header) : base(header) {
             }
-
             public override void SetSettings() {
-                throw new NotImplementedException();
+                foreach (var text in texts) {
+                    text.resizeTextForBestFit = autoSize;
+                    var rt = text.GetComponent<RectTransform>();
+                    if(anchor != AnchorPresets.Ignore) rt.SetAnchor(anchor);
+                    if(pivot != PivotPresets.Ignore) rt.SetPivot(pivot);
+                    rt.sizeDelta = rectSize;
+                }
             }
         }
         [Serializable]
         public class TextSettingsMesh: TextSettings {
+            public List<TextMeshProUGUI> texts;
             public TextSettingsMesh(string header) : base(header) {
             }
-
             public override void SetSettings() {
-                throw new NotImplementedException();
+                foreach (var text in texts) {
+                    text.enableAutoSizing = autoSize;
+                    var rt = text.GetComponent<RectTransform>();
+                   if(anchor != AnchorPresets.Ignore) rt.SetAnchor(anchor);
+                   if(pivot != PivotPresets.Ignore) rt.SetPivot(pivot);
+                   rt.sizeDelta = rectSize;
+                }
             }
         }
         #endregion

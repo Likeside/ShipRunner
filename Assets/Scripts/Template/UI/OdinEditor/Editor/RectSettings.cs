@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using PlasticGui;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
@@ -54,7 +53,7 @@ namespace Utilities.OdinEditor {
             [SerializeField] string _header;
             [Title("$_header", Bold = true)]
             [Vector2Slider(0, 2566)]
-            public Vector2 _rectSize;
+            public Vector2 rectSize;
             public Color _color;
             [HorizontalGroup("Fields")]
             [VerticalGroup("Fields/Group")] 
@@ -88,7 +87,7 @@ namespace Utilities.OdinEditor {
             }
             public override void SetSettings() {
                 foreach (var rect in rects) {
-                    rect.sizeDelta = _rectSize;
+                    rect.sizeDelta = rectSize;
                     if(anchor != AnchorPresets.Ignore) rect.SetAnchor(anchor);
                     if(pivot != PivotPresets.Ignore) rect.SetPivot(pivot);
                 }
@@ -137,7 +136,7 @@ namespace Utilities.OdinEditor {
                     image.color = _color;
                     image.sprite = _texture;
                 }
-                rect.sizeDelta = _rectSize;
+                rect.sizeDelta = rectSize;
                 if(anchor != AnchorPresets.Ignore) rect.SetAnchor(anchor);
                 if(pivot != PivotPresets.Ignore) rect.SetPivot(pivot);
             }
