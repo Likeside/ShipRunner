@@ -9,6 +9,7 @@ namespace Utilities.OdinEditor {
         public bool infoPanelActive = true;
         public bool adminInterfaceActive;
         public bool topPanelActive = true;
+        public bool quitButtonActive = true;
         public bool tipButtonActive;
         public bool pauseButtonActive = true;
         public bool backButtonActive = true;

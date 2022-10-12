@@ -3129,6 +3129,8 @@ MonoBehaviour:
     _rectSize: {x: 900, y: 200}
     _color: {r: 1, g: 1, b: 1, a: 1}
     imageType: 0
+    anchor: 0
+    pivot: 0
     rect: {fileID: 768174423}
     image: {fileID: 0}
     _texture: {fileID: 0}
@@ -3136,6 +3138,8 @@ MonoBehaviour:
     _rectSize: {x: 0, y: 0}
     _color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     imageType: 0
+    anchor: 0
+    pivot: 0
     rect: {fileID: 2030839798}
     image: {fileID: 2030839799}
     _texture: {fileID: 0}
@@ -3144,6 +3148,8 @@ MonoBehaviour:
     _rectSize: {x: 900, y: 200}
     _color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
     imageType: 1
+    anchor: 0
+    pivot: 0
     rects:
     - {fileID: 169914205}
     - {fileID: 1750926350}
@@ -3153,6 +3159,8 @@ MonoBehaviour:
     _rectSize: {x: 0, y: 200}
     _color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     imageType: 1
+    anchor: 0
+    pivot: 0
     rects:
     - {fileID: 1429944317}
     - {fileID: 1671369208}

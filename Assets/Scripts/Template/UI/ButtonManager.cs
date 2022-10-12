@@ -17,21 +17,25 @@ namespace Template.UI {
         [SerializeField] Button _backButton;
         [SerializeField] Button _tipButton;
         [SerializeField] Button _skipLevelButton;
+        [SerializeField] Button _pauseButton;
         public event Action OnTipButtonPressed;
+        public event Action OnPauseButtonPressed;
         public bool TipButtonActive => _elementsActiveness.tipButtonActive;
+        public bool PauseButtonActive => _elementsActiveness.pauseButtonActive;
         void Start() {
             Debug.Log("Button manager start");
             SetButton(_settingsButton, _elementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
             SetButton(_infoButton, _elementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
             SetButton(_backButton, _elementsActiveness.backButtonActive, SceneLoader.Instance.LoadMainMenu);
-            SetButton(_tipButton, _elementsActiveness.tipButtonActive, TipButtonPressed);
+            SetButton(_tipButton, _elementsActiveness.tipButtonActive, (() => OnTipButtonPressed?.Invoke()));
             SetButton(_skipLevelButton, _elementsActiveness.skipLevelButtonActive, SceneLoader.Instance.SkipLevel);
             SetButton(_startBtn, true, SceneLoader.Instance.LoadNextLevel);
-            SetButton(_quitButton, true, SceneLoader.Instance.Quit);
+            SetButton(_quitButton, _elementsActiveness.quitButtonActive, SceneLoader.Instance.Quit);
+            SetButton(_pauseButton, _elementsActiveness.pauseButtonActive, (() => OnPauseButtonPressed?.Invoke()) );
         }
         void SetButton(Button button, bool active, UnityAction listener) {
             if (button != null) {
-                button.enabled = active;
+                button.gameObject.SetActive(active);
                 if (active) {
                     button.onClick.RemoveAllListeners();
                     button.onClick.AddListener(listener);

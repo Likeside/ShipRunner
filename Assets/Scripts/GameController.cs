@@ -8,11 +8,16 @@ public class GameController : LocalSingleton<GameController> {
 
 
         void Start() { 
-               // SceneLoader.Instance.BsFadeIn();
-                if (_buttonManager.TipButtonActive) _buttonManager.OnTipButtonPressed += ShowTip;
+                if (_buttonManager.TipButtonActive) _buttonManager.OnTipButtonPressed += TipButtonPressed;
+                if (_buttonManager.PauseButtonActive) _buttonManager.OnTipButtonPressed += PauseButtonPressed;
         }
 
-        void ShowTip() {
-                Debug.Log("Tip should be shown");
+        void PauseButtonPressed() {
+                Debug.Log("Pause button pressed");
         }
+
+        void TipButtonPressed() {
+                Debug.Log("Tip button pressed");
+        }
+        
 }

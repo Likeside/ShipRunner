@@ -35,8 +35,7 @@ namespace Utilities {
                 }
             }
         }
-
-
+        
         public void LoadNextLevel()
         {
             Debug.Log("Trying to load next level");
