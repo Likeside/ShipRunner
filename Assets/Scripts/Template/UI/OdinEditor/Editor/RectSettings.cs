@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using LeTai.TrueShadow;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
@@ -73,6 +74,16 @@ namespace Utilities.OdinEditor {
             [VerticalGroup("Fields/Group")]
             [Button]
             public abstract void GetImageComponent();
+
+            [VerticalGroup("Fields/Group")]
+            [HorizontalGroup("Fields/Group/Shadow")]
+            [Button]
+            public abstract void AddShadow();
+
+            [VerticalGroup("Fields/Group")]
+            [HorizontalGroup("Fields/Group/Shadow")]
+            [Button]
+            public abstract void RemoveShadow();
         }
 
         
@@ -114,6 +125,24 @@ namespace Utilities.OdinEditor {
                    images.Add(rect.GetComponent<Image>()); 
                 }
             }
+
+            public override void AddShadow() {
+                foreach (var rect in rects) {
+                   var shadow = rect.gameObject.GetComponent<TrueShadow>();
+                   if (shadow == null) {
+                       rect.gameObject.AddComponent<TrueShadow>();
+                   }
+                }
+            }
+
+            public override void RemoveShadow() {
+                foreach (var rect in rects) {
+                    var shadow = rect.gameObject.GetComponent<TrueShadow>();
+                    if (shadow != null) {
+                        DestroyImmediate(shadow);
+                    }
+                }
+            }
         }
         
         [Serializable]
@@ -147,6 +176,14 @@ namespace Utilities.OdinEditor {
                     return;
                 }
                 image = rect.GetComponent<Image>();
+            }
+
+            public override void AddShadow() {
+                
+            }
+
+            public override void RemoveShadow() {
+                
             }
         }
         #endregion
