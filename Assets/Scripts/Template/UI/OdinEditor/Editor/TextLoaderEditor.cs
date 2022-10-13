@@ -80,13 +80,24 @@ namespace Utilities.OdinEditor {
             [Vector2Slider(0, 2566)]
             public Vector2 rectSize;
             [HorizontalGroup("Settings")]
+            [HideLabel]
+            [LabelWidth(30)]
             public Color color;
             [HorizontalGroup("Settings")]
+            [LabelWidth(80)]
             public bool autoSize;
             [HorizontalGroup("Settings")]
+            [LabelWidth(50)]
             public AnchorPresets anchor;
             [HorizontalGroup("Settings")]
+            [LabelWidth(50)]
             public PivotPresets pivot;
+            [HorizontalGroup("Settings")]
+            [LabelWidth(50)]
+            public int minSize;
+            [HorizontalGroup("Settings")]
+            [LabelWidth(50)]
+            public int maxSize;
 
             protected TextSettings(string header) {
                 _header = header;
@@ -105,6 +116,9 @@ namespace Utilities.OdinEditor {
                     if(anchor != AnchorPresets.Ignore) rt.SetAnchor(anchor);
                     if(pivot != PivotPresets.Ignore) rt.SetPivot(pivot);
                     rt.sizeDelta = rectSize;
+                    text.resizeTextMinSize = minSize;
+                    text.resizeTextMaxSize = maxSize;
+                    text.color = color;
                 }
             }
         }
@@ -120,6 +134,9 @@ namespace Utilities.OdinEditor {
                    if(anchor != AnchorPresets.Ignore) rt.SetAnchor(anchor);
                    if(pivot != PivotPresets.Ignore) rt.SetPivot(pivot);
                    rt.sizeDelta = rectSize;
+                   text.fontSizeMin = minSize;
+                   text.fontSizeMax = maxSize;
+                   text.color = color;
                 }
             }
         }
