@@ -16,7 +16,7 @@ MonoBehaviour:
   infoPanelActive: 1
   adminInterfaceActive: 0
   topPanelActive: 1
-  quitButtonActive: 0
+  quitButtonActive: 1
   tipButtonActive: 0
   pauseButtonActive: 0
   backButtonActive: 1
