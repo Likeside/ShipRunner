@@ -22,6 +22,7 @@ namespace Utilities {
         [SerializeField] TextSetter _tutorialText;
         
         public PanelEffectsConfigSO PanelEffectsConfigSo => _panelEffectsConfigSo;
+        public UiElementsConfigSO ElementsActiveness => _elementsActiveness;
 
         void Start() {
             

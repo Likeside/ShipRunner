@@ -7,8 +7,6 @@ using Utilities.OdinEditor;
 
 namespace Template.UI {
     public class ButtonManager: MonoBehaviour {
-
-        [SerializeField] UiElementsConfigSO _elementsActiveness;
         
         [SerializeField] Button _startBtn;
         [SerializeField] Button _quitButton;
@@ -22,24 +20,28 @@ namespace Template.UI {
         [SerializeField] Button _settingsPanelCloseButton;
         [SerializeField] Button _enButton;
         [SerializeField] Button _ruButton;
+        [SerializeField] Button _musicButton;
+        [SerializeField] Button _soundButton;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
-        public bool TipButtonActive => _elementsActiveness.tipButtonActive;
-        public bool PauseButtonActive => _elementsActiveness.pauseButtonActive;
+        public bool TipButtonActive => PanelManager.Instance.ElementsActiveness.tipButtonActive;
+        public bool PauseButtonActive => PanelManager.Instance.ElementsActiveness.pauseButtonActive;
         void Start() {
             Debug.Log("Button manager start");
-            SetButton(_settingsButton, _elementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
-            SetButton(_infoButton, _elementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
-            SetButton(_backButton, _elementsActiveness.backButtonActive, SceneLoader.Instance.LoadMainMenu);
-            SetButton(_tipButton, _elementsActiveness.tipButtonActive, (() => OnTipButtonPressed?.Invoke()));
-            SetButton(_skipLevelButton, _elementsActiveness.skipLevelButtonActive, SceneLoader.Instance.SkipLevel);
+            SetButton(_settingsButton, PanelManager.Instance.ElementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
+            SetButton(_infoButton, PanelManager.Instance.ElementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
+            SetButton(_backButton, PanelManager.Instance.ElementsActiveness.backButtonActive, SceneLoader.Instance.LoadMainMenu);
+            SetButton(_tipButton, PanelManager.Instance.ElementsActiveness.tipButtonActive, (() => OnTipButtonPressed?.Invoke()));
+            SetButton(_skipLevelButton, PanelManager.Instance.ElementsActiveness.skipLevelButtonActive, SceneLoader.Instance.SkipLevel);
             SetButton(_startBtn, true, SceneLoader.Instance.LoadNextLevel);
-            SetButton(_quitButton, _elementsActiveness.quitButtonActive, SceneLoader.Instance.Quit);
-            SetButton(_pauseButton, _elementsActiveness.pauseButtonActive, (() => OnPauseButtonPressed?.Invoke()) );
-            SetButton(_infoPanelCloseButton, _elementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
-            SetButton(_settingsPanelCloseButton, _elementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
-            SetButton(_enButton, _elementsActiveness.enButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.EN)));
-            SetButton(_ruButton, _elementsActiveness.ruButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.RU)));
+            SetButton(_quitButton, PanelManager.Instance.ElementsActiveness.quitButtonActive, SceneLoader.Instance.Quit);
+            SetButton(_pauseButton, PanelManager.Instance.ElementsActiveness.pauseButtonActive, (() => OnPauseButtonPressed?.Invoke()) );
+            SetButton(_infoPanelCloseButton, PanelManager.Instance.ElementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
+            SetButton(_settingsPanelCloseButton, PanelManager.Instance.ElementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
+            SetButton(_enButton, PanelManager.Instance.ElementsActiveness.enButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.EN)));
+            SetButton(_ruButton, PanelManager.Instance.ElementsActiveness.ruButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.RU)));
+            SetButton(_musicButton, PanelManager.Instance.ElementsActiveness.musicButtonActive, AudioManager.Instance.ToggleMusicButton);
+            SetButton(_soundButton, PanelManager.Instance.ElementsActiveness.soundButtonActive, AudioManager.Instance.ToggleSoundButton);
         }
         void SetButton(Button button, bool active, UnityAction listener) {
             if (button != null) {

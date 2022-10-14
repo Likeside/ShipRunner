@@ -1179,6 +1179,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volumeSlider: {fileID: 2083615449}
+  _soundBtnSprites:
+  - {fileID: 21300000, guid: 60daaf070c654d5ccadf013f83b433c8, type: 3}
+  - {fileID: 21300000, guid: c75b9920a0cbfbe6bb8fd8e5e36f8ebb, type: 3}
+  _musicBtnSprites:
+  - {fileID: 21300000, guid: 3ce9a830001f09868b3b4e84f6709850, type: 3}
+  - {fileID: 21300000, guid: 9f3ae18f424989eb88c31f19f18b0ef2, type: 3}
+  _soundBtnImage: {fileID: 256234214}
+  _musicBtnImage: {fileID: 1910889903}
 --- !u!4 &266865069
 Transform:
   m_ObjectHideFlags: 0
@@ -2721,7 +2729,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blackScreen: {fileID: 168161562}
-  _elementsConfigSo: {fileID: 11400000, guid: 41d0729b10d21162ebda0b724e69656c, type: 2}
   _adsConfig: {fileID: 11400000, guid: 6c25a3d0c01fa01b3b5c948e9ec5a10a, type: 2}
 --- !u!4 &964604154
 Transform:
@@ -4705,7 +4712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670d7e128b51414f963ccae7c3f76a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _elementsActiveness: {fileID: 11400000, guid: 41d0729b10d21162ebda0b724e69656c, type: 2}
   _startBtn: {fileID: 169914206}
   _quitButton: {fileID: 1750926351}
   _settingsButton: {fileID: 1429944318}
@@ -4718,6 +4724,8 @@ MonoBehaviour:
   _settingsPanelCloseButton: {fileID: 1062228472}
   _enButton: {fileID: 134627224}
   _ruButton: {fileID: 1974879556}
+  _musicButton: {fileID: 0}
+  _soundButton: {fileID: 0}
 --- !u!4 &2007873230
 Transform:
   m_ObjectHideFlags: 0

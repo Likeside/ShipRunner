@@ -9,7 +9,6 @@ namespace Utilities {
 
         
         [SerializeField] Image _blackScreen;
-        [SerializeField] UiElementsConfigSO _elementsConfigSo;
         [SerializeField] AdsAndAnalyticsConfigSO _adsConfig;
 
         void Start() {
@@ -75,12 +74,12 @@ namespace Utilities {
         
         
         public void BsFadeIn() {
-            _blackScreen.material.DOColor(Color.clear, _elementsConfigSo.blackScreenFadeDelay).SetUpdate(true);
+            _blackScreen.material.DOColor(Color.clear, PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
             Time.timeScale = 1f;
         }
 
         public void BsFadeOut() {
-          _blackScreen.material.DOColor(_elementsConfigSo.transitionColor, _elementsConfigSo.blackScreenFadeDelay).SetUpdate(true);
+          _blackScreen.material.DOColor(PanelManager.Instance.ElementsActiveness.transitionColor, PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
         }
 
 
@@ -91,8 +90,8 @@ namespace Utilities {
 
         void LoadScene(string sceneName) {
             
-            var tween = _blackScreen.material.DOColor(_elementsConfigSo.transitionColor,
-                _elementsConfigSo.blackScreenFadeDelay).SetUpdate(true);
+            var tween = _blackScreen.material.DOColor(PanelManager.Instance.ElementsActiveness.transitionColor,
+                PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
             tween.onComplete = () => SceneManager.LoadScene(sceneName);
 
         }

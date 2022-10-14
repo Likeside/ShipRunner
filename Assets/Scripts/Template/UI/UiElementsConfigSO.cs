@@ -16,6 +16,9 @@ namespace Utilities.OdinEditor {
         public bool skipLevelButtonActive = true;
         public bool ruButtonActive = true;
         public bool enButtonActive = true;
+        public bool volumeSliderActive = true;
+        public bool musicButtonActive = true;
+        public bool soundButtonActive = true;
         [Header("Parameters")]
         public float blackScreenFadeDelay;
         public Color transitionColor;
