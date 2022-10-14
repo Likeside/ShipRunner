@@ -47,7 +47,6 @@ namespace Utilities {
         }
 
         public void ToggleGameCompletePanel() {
-           // if(GameController.Instance != null) GameController.Instance.SwitchPause(PauseReason.GameComplete);
           AdsAndAnalyticsManager.Instance.ToggleBanner(_gameCompletePanel.GetComponent<PanelEffect>().Hidden);
           TogglePanel(_gameCompletePanel);
         }
@@ -63,7 +62,6 @@ namespace Utilities {
         }
 
         public void ToggleTutorialPanel() {
-           // GameController.Instance.SwitchPause(PauseReason.GameComplete);
             TogglePanel(_tutPanel);
         }
 

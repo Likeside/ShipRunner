@@ -18,6 +18,8 @@ namespace Template.UI {
         [SerializeField] Button _tipButton;
         [SerializeField] Button _skipLevelButton;
         [SerializeField] Button _pauseButton;
+        [SerializeField] Button _infoPanelCloseButton;
+        [SerializeField] Button _settingsPanelCloseButton;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
         public bool TipButtonActive => _elementsActiveness.tipButtonActive;
@@ -32,6 +34,8 @@ namespace Template.UI {
             SetButton(_startBtn, true, SceneLoader.Instance.LoadNextLevel);
             SetButton(_quitButton, _elementsActiveness.quitButtonActive, SceneLoader.Instance.Quit);
             SetButton(_pauseButton, _elementsActiveness.pauseButtonActive, (() => OnPauseButtonPressed?.Invoke()) );
+            SetButton(_infoPanelCloseButton, _elementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
+            SetButton(_settingsPanelCloseButton, _elementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
         }
         void SetButton(Button button, bool active, UnityAction listener) {
             if (button != null) {
