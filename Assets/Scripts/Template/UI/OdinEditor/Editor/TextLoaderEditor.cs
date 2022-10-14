@@ -76,7 +76,8 @@ namespace Utilities.OdinEditor {
         public abstract class TextSettings {
             [HideInInspector]
             [SerializeField] string _header;
-            
+            [Title("$_header", Bold = true)]
+
             [Vector2Slider(0, 2566)]
             public Vector2 rectSize;
             [HorizontalGroup("Settings")]
