@@ -14,6 +14,8 @@ namespace Utilities.OdinEditor {
         public bool pauseButtonActive = true;
         public bool backButtonActive = true;
         public bool skipLevelButtonActive = true;
+        public bool ruButtonActive = true;
+        public bool enButtonActive = true;
         [Header("Parameters")]
         public float blackScreenFadeDelay;
         public Color transitionColor;

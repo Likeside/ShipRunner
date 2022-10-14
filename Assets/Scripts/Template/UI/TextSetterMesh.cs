@@ -61,6 +61,10 @@ namespace Utilities {
                 if (_textKey != null || _textKey != String.Empty) {
                     _text.text = TextLoader.Instance.Texts[_textKey ?? string.Empty];
                 }
+            }if (_textGUI != null) {
+                if (_textKey != null || _textKey != String.Empty) {
+                    _textGUI.text = TextLoader.Instance.Texts[_textKey ?? string.Empty];
+                }
             }
         }
     }

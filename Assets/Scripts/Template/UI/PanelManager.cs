@@ -53,12 +53,12 @@ namespace Utilities {
         
         public void ToggleSettingsPanel() {
             TogglePanel(_settingsPanel);
-            TogglePanel(_infoPanel, false);
+            if(_elementsActiveness.infoPanelActive) TogglePanel(_infoPanel, false);
         }
         
         public void ToggleInfoPanel() {
             TogglePanel(_infoPanel);
-            TogglePanel(_settingsPanel, false);
+           if(_elementsActiveness.settingsPanelActive) TogglePanel(_settingsPanel, false);
         }
 
         public void ToggleTutorialPanel() {

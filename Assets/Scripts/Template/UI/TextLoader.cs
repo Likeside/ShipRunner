@@ -74,6 +74,7 @@ namespace Utilities {
         }
         
       public void SwitchLocalization(Localization localization) {
+          Debug.Log("Switchting");
             if (localization == Localization.RU) {
                 CurrentLocalization = Localization.RU;
                 PlayerPrefs.SetString("lang", "Ru");

@@ -20,6 +20,8 @@ namespace Template.UI {
         [SerializeField] Button _pauseButton;
         [SerializeField] Button _infoPanelCloseButton;
         [SerializeField] Button _settingsPanelCloseButton;
+        [SerializeField] Button _enButton;
+        [SerializeField] Button _ruButton;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
         public bool TipButtonActive => _elementsActiveness.tipButtonActive;
@@ -36,6 +38,8 @@ namespace Template.UI {
             SetButton(_pauseButton, _elementsActiveness.pauseButtonActive, (() => OnPauseButtonPressed?.Invoke()) );
             SetButton(_infoPanelCloseButton, _elementsActiveness.infoPanelActive, PanelManager.Instance.ToggleInfoPanel);
             SetButton(_settingsPanelCloseButton, _elementsActiveness.settingsPanelActive, PanelManager.Instance.ToggleSettingsPanel);
+            SetButton(_enButton, _elementsActiveness.enButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.EN)));
+            SetButton(_ruButton, _elementsActiveness.ruButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.RU)));
         }
         void SetButton(Button button, bool active, UnityAction listener) {
             if (button != null) {
