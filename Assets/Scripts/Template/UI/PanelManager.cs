@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities.OdinEditor;
@@ -20,12 +21,12 @@ namespace Utilities {
         [SerializeField] GameObject _tutPanel;
         [SerializeField] Image _tutorialImage;
         [SerializeField] TextSetter _tutorialText;
+        [SerializeField] TextSetterMesh _versionText;
         
         public PanelEffectsConfigSO PanelEffectsConfigSo => _panelEffectsConfigSo;
         public UiElementsConfigSO ElementsActiveness => _elementsActiveness;
 
         void Start() {
-            
             SceneLoader.Instance.BsFadeIn();
             if (_policyPanel != null) {
                 if (AppPolicyManager.Instance.AppPolicyAccepted) {
@@ -40,13 +41,14 @@ namespace Utilities {
             if (_agePanel != null) {
                 _agePanel.SetActive(!AppPolicyManager.Instance.UserHasProvidedAge());
             }
+            if(_versionText != null) _versionText.Append(LevelTracker.Version + " (C) 2022 - " + DateTime.Now.Year);
         }
         
         public void TogglePausePanel() {
           AdsAndAnalyticsManager.Instance.ToggleBanner(_pausePanel.GetComponent<PanelEffect>().Hidden);
           TogglePanel(_pausePanel);
         }
-
+        
         public void ToggleGameCompletePanel() {
           AdsAndAnalyticsManager.Instance.ToggleBanner(_gameCompletePanel.GetComponent<PanelEffect>().Hidden);
           TogglePanel(_gameCompletePanel);
@@ -61,29 +63,28 @@ namespace Utilities {
             TogglePanel(_infoPanel);
            if(_elementsActiveness.settingsPanelActive) TogglePanel(_settingsPanel, false);
         }
-
         public void ToggleTutorialPanel() {
             TogglePanel(_tutPanel);
         }
-
+        
         public void ToggleTutorialPanel(Sprite image, string tutTextKey) {
             _tutorialImage.sprite = image;
             _tutorialText.SetText(tutTextKey);
             ToggleTutorialPanel();
         }
-
+        
         public void ClosePolicyPanel() {
             _policyPanel.SetActive(false);
             AppPolicyManager.Instance.AcceptAppPolicy();
             AdsAndAnalyticsManager.Instance.LogFirstGameEnter();
             AdsAndAnalyticsManager.Instance.Initialize();
         }
-
+        
         public void CloseAgePanel() {
             _agePanel.SetActive(false);
         }
-
-       void TogglePanel(GameObject panel) {
+        
+        void TogglePanel(GameObject panel) {
            var panelEffect = panel.GetComponent<PanelEffect>();
            if (panelEffect.Hidden) {
                panelEffect.Show();
@@ -91,16 +92,16 @@ namespace Utilities {
            else {
                panelEffect.Hide();
            }
-       }
-
-       void TogglePanel(GameObject panel, bool on) {
-           var panelEffect = panel.GetComponent<PanelEffect>();
-           if (on) {
-               panelEffect.ShowFromCurrentPos();
-           }
-           else {
-               panelEffect.HideFromCurrentPos();
-           }   
-       }
+        }
+        
+        void TogglePanel(GameObject panel, bool on) {
+            var panelEffect = panel.GetComponent<PanelEffect>();
+            if (on) {
+                panelEffect.ShowFromCurrentPos();
+            }
+            else {
+                panelEffect.HideFromCurrentPos();
+            }   
+        }
     }
 }
