@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ namespace Template.UI {
         [SerializeField] Button _ruButton;
         [SerializeField] Button _musicButton;
         [SerializeField] Button _soundButton;
+        [SerializeField] Button[] _rewardedFailedPanelCloseButtons;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
         public bool TipButtonActive => PanelManager.Instance.ElementsActiveness.tipButtonActive;
@@ -42,6 +44,10 @@ namespace Template.UI {
             SetButton(_ruButton, PanelManager.Instance.ElementsActiveness.ruButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.RU)));
             SetButton(_musicButton, PanelManager.Instance.ElementsActiveness.musicButtonActive, AudioManager.Instance.ToggleMusicButton);
             SetButton(_soundButton, PanelManager.Instance.ElementsActiveness.soundButtonActive, AudioManager.Instance.ToggleSoundButton);
+
+            foreach (var button in _rewardedFailedPanelCloseButtons) {
+                SetButton(button, PanelManager.Instance.ElementsActiveness.rewardedFailedPanelActive, PanelManager.Instance.ToggleRewardedFailedPanel);
+            }
         }
         void SetButton(Button button, bool active, UnityAction listener) {
             if (button != null) {

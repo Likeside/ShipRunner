@@ -39,7 +39,6 @@ namespace Utilities {
         Vector2 _targetPos;
         
         IEnumerator Start() {
-            yield return new WaitForFixedUpdate();
             _rt = GetComponent<RectTransform>();
             var sizeDelta = new Vector2(Screen.width*2, Screen.height*2);
             var anchoredPos = _rt.anchoredPosition;
@@ -52,6 +51,8 @@ namespace Utilities {
                 HideImmediately();
                 Hidden = true;
             }
+            yield return new WaitForFixedUpdate();
+
         }
 
         public void Show() {

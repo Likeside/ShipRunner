@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using Template.GameCycle;
 using UnityEngine;
@@ -7,7 +8,6 @@ using Utilities.OdinEditor;
 
 namespace Utilities {
     public class SceneLoader: GlobalSingleton<SceneLoader> {
-
         
         [SerializeField] Image _blackScreen;
         [SerializeField] AdsAndAnalyticsConfigSO _adsConfig;
@@ -33,6 +33,7 @@ namespace Utilities {
             Debug.Log("Starting scene loader");
             _blackScreen.material.color = Color.clear;
             LevelTracker.LevelToLoad = SaveSystem.LoadGame().LevelToLoad;
+            Debug.Log("Loaded: " + LevelTracker.LevelToLoad);
         }
 
         public void LoadLevel(int level) {
@@ -53,12 +54,19 @@ namespace Utilities {
                 }
             }
         }
+
+        void LoadLevelAfterSkipping() {
+            LevelTracker.LevelToLoad++;
+            Debug.Log("Loading: " + LevelTracker.LevelToLoad);
+            AdsAndAnalyticsManager.Instance.LogLevelStart(LevelTracker.LevelToLoad);
+            LoadScene("Game");
+        }
         
         public void LoadNextLevel()
         {
             Debug.Log("Trying to load next level");
             LevelTracker.AdCounter++;
-          //  LevelTracker.LevelToLoad = SaveSystem.SaveSystem.LoadGame().currentLevelNumber;
+             LevelTracker.LevelToLoad = SaveSystem.LoadGame().LevelToLoad;
             if (LevelTracker.LevelToLoad > LevelTracker.MaxLevels) {
                 //PanelManager.Instance.ToggleGameCompletePanel();
                 Debug.Log("1");
@@ -82,7 +90,7 @@ namespace Utilities {
         }
 
         public void SkipLevel() {
-            //TODO: IMPLEMENT SKIP FUNCTIONALITY
+            AdsAndAnalyticsManager.Instance.PlayRewarded(LoadLevelAfterSkipping);
         }
 
         public void LoadMainMenu() {
@@ -90,8 +98,7 @@ namespace Utilities {
             AdsAndAnalyticsManager.Instance.ToggleBanner(false);
             LoadScene("Menu");
         }
-        
-        
+
         public void BsFadeIn() {
             _blackScreen.material.DOColor(Color.clear, PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
             Time.timeScale = 1f;
@@ -100,15 +107,19 @@ namespace Utilities {
         public void BsFadeOut() {
           _blackScreen.material.DOColor(PanelManager.Instance.ElementsActiveness.transitionColor, PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
         }
-
-
+        
         public void Quit() {
+            SaveSystem.SaveGame();
             Application.Quit();
+        }
+
+        void OnApplicationFocus(bool hasFocus) {
+            if(!hasFocus) SaveSystem.SaveGame();
         }
 
 
         void LoadScene(string sceneName) {
-            
+            SaveSystem.SaveGame();
             var tween = _blackScreen.material.DOColor(PanelManager.Instance.ElementsActiveness.transitionColor,
                 PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
             tween.onComplete = () => SceneManager.LoadScene(sceneName);

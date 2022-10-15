@@ -5,7 +5,7 @@ namespace Utilities
     [RequireComponent(typeof(RectTransform))]
     public class SafeAreaFitter: MonoBehaviour
     {
-        private void Awake() {
+         void Awake() {
             var rectTransform = GetComponent<RectTransform>();
             var safeArea = Screen.safeArea;
             var anchorMin = safeArea.position;

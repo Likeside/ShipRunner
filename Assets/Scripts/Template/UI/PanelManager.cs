@@ -48,6 +48,10 @@ namespace Utilities {
                 _versionText.Append(LevelTracker.Version + " (C) 2022 - " + DateTime.Now.Year);
             }
             SetPanelsActiveness();
+
+            if (_elementsActiveness.rewardedFailedPanelActive) {
+                AdsAndAnalyticsManager.Instance.OnAdCanNotBeShown += ToggleRewardedFailedPanel;
+            }
         }
         
         public void TogglePausePanel() { 
@@ -134,6 +138,12 @@ namespace Utilities {
 
         void SetPanelActiveness(GameObject panel, bool active) {
           if(panel != null) panel.SetActive(active);
+        }
+
+        void OnDestroy() {
+            if (_elementsActiveness.rewardedFailedPanelActive) {
+                AdsAndAnalyticsManager.Instance.OnAdCanNotBeShown -= ToggleRewardedFailedPanel;
+            }
         }
     }
 }

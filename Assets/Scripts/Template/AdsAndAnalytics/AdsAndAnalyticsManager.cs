@@ -65,7 +65,11 @@ namespace Utilities {
         
         //ads
         public void PlayInterstitial(Action completionCallBack) {
-            if(!_config.isActive) return;
+            if (!_config.isActive) {
+                Debug.Log("Ad config is disabled, dummy interstitial action called");
+                completionCallBack?.Invoke();
+                return;
+            }
             OnInterstitialShown = completionCallBack;
             if (Advertisement.IsReady(_interstitial)) {
                 Advertisement.Show(_interstitial);
@@ -76,7 +80,12 @@ namespace Utilities {
         }
 
         public void PlayRewarded(Action completionCallBack) {
-            if(!_config.isActive) return;
+            if (!_config.isActive) {
+                Debug.Log("Ad config is disabled, dummy rewarded action called");
+                completionCallBack?.Invoke();
+              // OnAdCanNotBeShown?.Invoke();
+                return;
+            }
             if (Advertisement.IsReady(_rewarded)) {
                 OnRewardedShown = completionCallBack;
                 Advertisement.Show(_rewarded);

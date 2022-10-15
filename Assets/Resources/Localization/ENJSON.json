@@ -21,5 +21,7 @@
   "X": "X",
   "Version": "Version: ",
   "GotIt": "Got it!",
-  "AdjustVolume": "Set Volume:"
+  "AdjustVolume": "Set Volume:",
+  "NoRewarded": "Unable to skip level currently. This can be due to internet connection.",
+  "OK": "OK"
 }

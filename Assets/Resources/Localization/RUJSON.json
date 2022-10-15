@@ -21,6 +21,8 @@
   "X": "X", 
   "Version": "Версия: ",
   "GotIt": "Понятно!",
-  "AdjustVolume": "Set Volume:"
+  "AdjustVolume": "Set Volume:",
+  "NoRewarded": "Невозможно пропустить уровень в данный момент. Это может быть из-за интернет-соединения.",
+  "OK": "OK"
 
 }
