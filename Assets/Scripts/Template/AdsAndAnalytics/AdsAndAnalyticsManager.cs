@@ -12,6 +12,8 @@ namespace Utilities {
 
         public event Action OnRewardedShown;
         public event Action OnInterstitialShown;
+
+        public event Action OnAdCanNotBeShown;
         public bool RewardedReady => Advertisement.IsReady(_rewarded);
 
         public int InterstitialFrequency => _config.interstitialFrequency;
@@ -78,7 +80,10 @@ namespace Utilities {
             if (Advertisement.IsReady(_rewarded)) {
                 OnRewardedShown = completionCallBack;
                 Advertisement.Show(_rewarded);
-            }   
+            }
+            else {
+               OnAdCanNotBeShown?.Invoke(); 
+            }
         }
 
         public void ToggleBanner(bool on) {

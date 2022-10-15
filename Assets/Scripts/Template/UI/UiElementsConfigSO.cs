@@ -10,6 +10,8 @@ namespace Utilities.OdinEditor {
         public bool infoPanelActive = true;
         public bool tutorialPanelActive;
         public bool pausePanelActive = true;
+        public bool rewardedFailedPanelActive = true;
+        public bool gameCompletePanelActive = true;
         public bool adminInterfaceActive;
         public bool topPanelActive = true;
         public bool quitButtonActive = true;

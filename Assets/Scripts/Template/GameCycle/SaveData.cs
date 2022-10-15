@@ -1,6 +1,9 @@
+using System;
 using Utilities;
 
 namespace Template.GameCycle {
+    
+    [Serializable]
     public class SaveData {
 
         public int LevelToLoad { get; private set; }

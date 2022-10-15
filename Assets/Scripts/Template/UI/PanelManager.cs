@@ -17,6 +17,7 @@ namespace Utilities {
         [SerializeField] GameObject _policyPanel;
         [SerializeField] GameObject _agePanel;
         [SerializeField] GameObject _topPanel;
+        [SerializeField] GameObject _rewardedFailedPanel;
         
         [Header("TutorialPanel")]
         [SerializeField] GameObject _tutPanel;
@@ -49,30 +50,41 @@ namespace Utilities {
             SetPanelsActiveness();
         }
         
-        public void TogglePausePanel() {
+        public void TogglePausePanel() { 
+            if(!_elementsActiveness.pausePanelActive) return;
           AdsAndAnalyticsManager.Instance.ToggleBanner(_pausePanel.GetComponent<PanelEffect>().Hidden);
           TogglePanel(_pausePanel);
         }
         
         public void ToggleGameCompletePanel() {
-          AdsAndAnalyticsManager.Instance.ToggleBanner(_gameCompletePanel.GetComponent<PanelEffect>().Hidden);
+            if(!_elementsActiveness.gameCompletePanelActive) return;
+            AdsAndAnalyticsManager.Instance.ToggleBanner(_gameCompletePanel.GetComponent<PanelEffect>().Hidden);
           TogglePanel(_gameCompletePanel);
         }
         
         public void ToggleSettingsPanel() {
+            if(!_elementsActiveness.settingsPanelActive) return;
             TogglePanel(_settingsPanel);
             if(_elementsActiveness.infoPanelActive && _infoPanel != null) TogglePanel(_infoPanel, false);
         }
         
         public void ToggleInfoPanel() {
+            if(!_elementsActiveness.infoPanelActive) return;
             TogglePanel(_infoPanel);
            if(_elementsActiveness.settingsPanelActive && _settingsPanel != null) TogglePanel(_settingsPanel, false);
         }
         public void ToggleTutorialPanel() {
+            if(!_elementsActiveness.tutorialPanelActive) return;
             TogglePanel(_tutPanel);
+        }
+
+        public void ToggleRewardedFailedPanel() {
+            if(!_elementsActiveness.rewardedFailedPanelActive) return;
+            TogglePanel(_rewardedFailedPanel);
         }
         
         public void ToggleTutorialPanel(Sprite image, string tutTextKey) {
+            if(!_elementsActiveness.tutorialPanelActive) return;
             _tutorialImage.sprite = image;
             _tutorialText.SetText(tutTextKey);
             ToggleTutorialPanel();
@@ -116,6 +128,8 @@ namespace Utilities {
            SetPanelActiveness(_tutPanel, _elementsActiveness.tutorialPanelActive);
            SetPanelActiveness(_pausePanel, _elementsActiveness.pausePanelActive);
            SetPanelActiveness(_topPanel, _elementsActiveness.topPanelActive);
+           SetPanelActiveness(_rewardedFailedPanel, _elementsActiveness.rewardedFailedPanelActive);
+           SetPanelActiveness(_gameCompletePanel, _elementsActiveness.gameCompletePanelActive);
         }
 
         void SetPanelActiveness(GameObject panel, bool active) {
