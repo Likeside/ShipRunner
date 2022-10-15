@@ -14,12 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsPanelActive: 1
   infoPanelActive: 1
+  tutorialPanelActive: 0
+  pausePanelActive: 1
   adminInterfaceActive: 0
   topPanelActive: 1
   quitButtonActive: 1
-  tipButtonActive: 0
-  pauseButtonActive: 0
+  tipButtonActive: 1
+  pauseButtonActive: 1
   backButtonActive: 1
   skipLevelButtonActive: 1
+  ruButtonActive: 1
+  enButtonActive: 1
+  volumeSliderActive: 1
+  musicButtonActive: 1
+  soundButtonActive: 1
   blackScreenFadeDelay: 0.5
   transitionColor: {r: 0.1792453, g: 0.17163582, b: 0.17163582, a: 1}

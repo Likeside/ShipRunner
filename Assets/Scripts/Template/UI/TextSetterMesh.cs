@@ -57,6 +57,7 @@ namespace Utilities {
                     } 
                 }
             }
+            Refresh();
         }
         
         
@@ -92,7 +93,8 @@ namespace Utilities {
                         _text.text += append;
                     }
                 }
-            }if (_textGUI != null) {
+            }
+            if (_textGUI != null) {
                 if (_textKey != null || _textKey != String.Empty) {
                     _textGUI.text = TextLoader.Instance.Texts[_textKey ?? string.Empty];
                 }

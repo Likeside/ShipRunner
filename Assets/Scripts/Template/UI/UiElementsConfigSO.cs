@@ -7,6 +7,8 @@ namespace Utilities.OdinEditor {
         [Header("Activeness")]
         public bool settingsPanelActive = true;
         public bool infoPanelActive = true;
+        public bool tutorialPanelActive;
+        public bool pausePanelActive = true;
         public bool adminInterfaceActive;
         public bool topPanelActive = true;
         public bool quitButtonActive = true;

@@ -16,6 +16,7 @@ namespace Utilities {
         [SerializeField] GameObject _infoPanel;
         [SerializeField] GameObject _policyPanel;
         [SerializeField] GameObject _agePanel;
+        [SerializeField] GameObject _topPanel;
         
         [Header("TutorialPanel")]
         [SerializeField] GameObject _tutPanel;
@@ -41,7 +42,11 @@ namespace Utilities {
             if (_agePanel != null) {
                 _agePanel.SetActive(!AppPolicyManager.Instance.UserHasProvidedAge());
             }
-            if(_versionText != null) _versionText.Append(LevelTracker.Version + " (C) 2022 - " + DateTime.Now.Year);
+
+            if (_versionText != null) {
+                _versionText.Append(LevelTracker.Version + " (C) 2022 - " + DateTime.Now.Year);
+            }
+            SetPanelsActiveness();
         }
         
         public void TogglePausePanel() {
@@ -102,6 +107,19 @@ namespace Utilities {
             else {
                 panelEffect.HideFromCurrentPos();
             }   
+        }
+
+
+        void SetPanelsActiveness() {
+           SetPanelActiveness(_infoPanel, _elementsActiveness.infoPanelActive);
+           SetPanelActiveness(_settingsPanel, _elementsActiveness.settingsPanelActive);
+           SetPanelActiveness(_tutPanel, _elementsActiveness.tutorialPanelActive);
+           SetPanelActiveness(_pausePanel, _elementsActiveness.pausePanelActive);
+           SetPanelActiveness(_topPanel, _elementsActiveness.topPanelActive);
+        }
+
+        void SetPanelActiveness(GameObject panel, bool active) {
+          if(panel != null) panel.SetActive(active);
         }
     }
 }
