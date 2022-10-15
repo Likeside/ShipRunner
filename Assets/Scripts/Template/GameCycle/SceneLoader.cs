@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Template.GameCycle;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,9 +12,27 @@ namespace Utilities {
         [SerializeField] Image _blackScreen;
         [SerializeField] AdsAndAnalyticsConfigSO _adsConfig;
 
+        public ISaveSystem SaveSystem { get; private set; }
+
+        protected override void OnSingletonAwake() {
+            base.OnSingletonAwake();
+            switch (PanelManager.Instance.ElementsActiveness.saveSystemType) {
+                case SaveSystemType.Binary:
+                    SaveSystem = new SaveSystemBinary();
+                    break;
+                case SaveSystemType.Json:
+                    SaveSystem = new SaveSystemJson();
+                    break;
+                default:
+                    SaveSystem = new SaveSystemJson();
+                    break;
+            }
+        }
+
         void Start() {
             Debug.Log("Starting scene loader");
             _blackScreen.material.color = Color.clear;
+            LevelTracker.LevelToLoad = SaveSystem.LoadGame().LevelToLoad;
         }
 
         public void LoadLevel(int level) {

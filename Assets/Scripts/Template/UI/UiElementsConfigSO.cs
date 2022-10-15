@@ -1,3 +1,4 @@
+using Template.GameCycle;
 using UnityEngine;
 
 namespace Utilities.OdinEditor {
@@ -24,6 +25,7 @@ namespace Utilities.OdinEditor {
         [Header("Parameters")]
         public float blackScreenFadeDelay;
         public Color transitionColor;
+        public SaveSystemType saveSystemType;
 
     }
 }
