@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf97b4d67d9e0e6cbb0be1a366e5f90, type: 3}
   m_Name: AndsAndAnalyticsConfigSO
   m_EditorClassIdentifier: 
-  isActive: 0
-  androidID: 1
+  isActive: 1
+  androidID: 4975078
   androidRewarded: 
   androidInterstitial: 
   androidBanner: 
@@ -22,5 +22,6 @@ MonoBehaviour:
   iosInterstitial: 
   iosBanner: 
   interstitialFrequency: 3
+  interstitialFirstLevel: 0
   termsLink: 
   policyLink: 
