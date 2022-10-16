@@ -40,7 +40,7 @@ namespace Template.UI {
             _group.childForceExpandHeight = _controlChildForceExpandHeight;
        }
 
-       public void CopyData() {
+       public void CopyData(bool isLandscape) {
            _group = GetComponent<HorizontalOrVerticalLayoutGroup>();
            _paddingLeft = _group.padding.left;
            _paddingRight = _group.padding.right;
@@ -55,6 +55,7 @@ namespace Template.UI {
            _useChildScaleHeight = _group.childScaleHeight;
            _controlChildForceExpandWidth = _group.childForceExpandWidth;
            _controlChildForceExpandHeight = _group.childForceExpandHeight;
+           _isLandscape = isLandscape;
        }
     }
 }
