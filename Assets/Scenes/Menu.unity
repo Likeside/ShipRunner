@@ -2002,6 +2002,7 @@ Transform:
   - {fileID: 2052799137}
   - {fileID: 799527930}
   - {fileID: 1267100935}
+  - {fileID: 1469516064}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2112,6 +2113,7 @@ GameObject:
   - component: {fileID: 462100892}
   - component: {fileID: 462100893}
   - component: {fileID: 462100894}
+  - component: {fileID: 462100895}
   m_Layer: 5
   m_Name: HorizontalLayoutGroup (1)
   m_TagString: Untagged
@@ -2193,6 +2195,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -100
+--- !u!114 &462100895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462100891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 120
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -100
 --- !u!114 &487673005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2526,6 +2558,7 @@ GameObject:
   - component: {fileID: 768174423}
   - component: {fileID: 768174424}
   - component: {fileID: 768174425}
+  - component: {fileID: 768174426}
   m_Layer: 5
   m_Name: InfoAndSettings
   m_TagString: Untagged
@@ -2607,6 +2640,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 750
+  _posY: -660
+--- !u!114 &768174426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768174422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 100
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 1
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 750
+  _posY: -660
 --- !u!1 &776661649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2831,7 @@ GameObject:
   - component: {fileID: 795860875}
   - component: {fileID: 795860876}
   - component: {fileID: 795860877}
+  - component: {fileID: 795860878}
   m_Layer: 5
   m_Name: VerticalLayoutGroup
   m_TagString: Untagged
@@ -2850,6 +2914,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: 200
+--- !u!114 &795860878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795860874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 80
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: 200
 --- !u!1 &799527928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3007,6 +3101,7 @@ GameObject:
   - component: {fileID: 818191223}
   - component: {fileID: 818191224}
   - component: {fileID: 818191225}
+  - component: {fileID: 818191226}
   m_Layer: 2
   m_Name: Vertical layout group
   m_TagString: Untagged
@@ -3089,6 +3184,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: -200
+--- !u!114 &818191226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818191222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 40
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: -30
 --- !u!1 &822748891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3271,7 @@ GameObject:
   - component: {fileID: 851792865}
   - component: {fileID: 851792866}
   - component: {fileID: 851792867}
+  - component: {fileID: 851792868}
   m_Layer: 5
   m_Name: VerticalLayoutGroup
   m_TagString: Untagged
@@ -3228,6 +3354,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: -350
+--- !u!114 &851792868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851792864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 80
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 1
+  _controlChildHeight: 1
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: -250
 --- !u!1 &964604152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3442,7 @@ GameObject:
   - component: {fileID: 1060772615}
   - component: {fileID: 1060772616}
   - component: {fileID: 1060772617}
+  - component: {fileID: 1060772618}
   m_Layer: 5
   m_Name: HorizontalLayoutGroup
   m_TagString: Untagged
@@ -3367,6 +3524,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -440
+--- !u!114 &1060772618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060772614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 120
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -380
 --- !u!1 &1062228470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3693,7 +3880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472e5ca229c24114a992923dcb2467c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isLandscape: 1
+  _isLandscape: 0
 --- !u!114 &1334102109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3925,6 +4112,223 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1469516063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469516064}
+  - component: {fileID: 1469516065}
+  m_Layer: 0
+  m_Name: MenuUiSettingsLandscape
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1469516064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469516063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 378840617}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469516065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469516063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4071c55bd844d0db933ce7f9aaeb6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _singleRects:
+  - _header: Info and Settings layout group
+    rectSize: {x: 900, y: 200}
+    _color: {r: 1, g: 1, b: 1, a: 1}
+    imageType: 0
+    anchor: 0
+    pivot: 0
+    rect: {fileID: 768174423}
+    image: {fileID: 0}
+    _texture: {fileID: 0}
+  - _header: Menu Background
+    rectSize: {x: 0, y: 0}
+    _color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    imageType: 0
+    anchor: 17
+    pivot: 0
+    rect: {fileID: 2030839798}
+    image: {fileID: 2030839799}
+    _texture: {fileID: 0}
+  - _header: Our Policies Text
+    rectSize: {x: 700, y: 840}
+    _color: {r: 1, g: 1, b: 1, a: 1}
+    imageType: 0
+    anchor: 0
+    pivot: 0
+    rect: {fileID: 2948635705215914098}
+    image: {fileID: 0}
+    _texture: {fileID: 0}
+  - _header: Backspace button
+    rectSize: {x: 380, y: 170}
+    _color: {r: 1, g: 1, b: 1, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rect: {fileID: 2838956314238540316}
+    image: {fileID: 2838956314238540306}
+    _texture: {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  - _header: Continue button
+    rectSize: {x: 600, y: 180}
+    _color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rect: {fileID: 2838956313853291819}
+    image: {fileID: 2838956313853291817}
+    _texture: {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  - _header: Age text underline
+    rectSize: {x: 540, y: 5}
+    _color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rect: {fileID: 2838956313351808996}
+    image: {fileID: 2838956313351808997}
+    _texture: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  _groupRects:
+  - _header: Start and Quit buttons
+    rectSize: {x: 900, y: 200}
+    _color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rects:
+    - {fileID: 169914205}
+    - {fileID: 1750926350}
+    textures:
+    - {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  - _header: Info and Settings buttons
+    rectSize: {x: 0, y: 200}
+    _color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rects:
+    - {fileID: 1429944317}
+    - {fileID: 1671369208}
+    textures:
+    - {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  - _header: Settings and Info panels
+    rectSize: {x: 1200, y: 1000}
+    _color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+    imageType: 1
+    anchor: 5
+    pivot: 5
+    rects:
+    - {fileID: 426338209}
+    - {fileID: 658364436}
+    textures:
+    - {fileID: 21300000, guid: 9f13796741faf6dfeb042f8f39c2d3ba, type: 3}
+  - _header: Age and Policy panels
+    rectSize: {x: 0, y: 0}
+    _color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+    imageType: 0
+    anchor: 17
+    pivot: 5
+    rects:
+    - {fileID: 2838956313408663980}
+    - {fileID: 2948635705810725159}
+    textures:
+    - {fileID: 0}
+  - _header: Terms and Policy Buttons
+    rectSize: {x: 640, y: 180}
+    _color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rects:
+    - {fileID: 2948635704603885752}
+    - {fileID: 2948635705073161254}
+    - {fileID: 2948635704667698363}
+    - {fileID: 187138062}
+    - {fileID: 1178116254}
+    textures:
+    - {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  - _header: Age buttons
+    rectSize: {x: 170, y: 170}
+    _color: {r: 1, g: 1, b: 1, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rects:
+    - {fileID: 2838956313939249818}
+    - {fileID: 2838956312888454248}
+    - {fileID: 2838956314424205201}
+    - {fileID: 2838956312721711538}
+    - {fileID: 2838956312614768282}
+    - {fileID: 2838956312717311020}
+    - {fileID: 2838956314150299201}
+    - {fileID: 2838956312968250577}
+    - {fileID: 2838956313381640755}
+    - {fileID: 2838956314204191123}
+    textures:
+    - {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  - _header: Localization buttons
+    rectSize: {x: 200, y: 200}
+    _color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
+    imageType: 1
+    anchor: 0
+    pivot: 0
+    rects:
+    - {fileID: 134627223}
+    - {fileID: 1974879555}
+    - {fileID: 289141423}
+    - {fileID: 1939852717}
+    textures:
+    - {fileID: 21300000, guid: 4f8dae4627ccd74e3b592ee884969fcc, type: 3}
+  - _header: Info and Settings icons
+    rectSize: {x: 100, y: 200}
+    _color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
+    imageType: 0
+    anchor: 0
+    pivot: 0
+    rects:
+    - {fileID: 1897203072}
+    - {fileID: 1644127626}
+    textures:
+    - {fileID: 21300000, guid: bed5fb0867021ca218ae7d049a44bbf4, type: 3}
+    - {fileID: 21300000, guid: 99d90bcff59c06276accada38debd4b6, type: 3}
+  - _header: Sound and Music images
+    rectSize: {x: 125, y: 100}
+    _color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+    imageType: 0
+    anchor: 0
+    pivot: 0
+    rects:
+    - {fileID: 256234213}
+    - {fileID: 1910889902}
+    textures:
+    - {fileID: 21300000, guid: 60daaf070c654d5ccadf013f83b433c8, type: 3}
+    - {fileID: 21300000, guid: 3ce9a830001f09868b3b4e84f6709850, type: 3}
+  singleRectName: 
+  rectGroupName: 
 --- !u!1 &1535142796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,7 +4752,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1612496092}
   - component: {fileID: 1612496093}
-  - component: {fileID: 1612496094}
+  - component: {fileID: 1612496095}
+  - component: {fileID: 1612496096}
   m_Layer: 2
   m_Name: VerticalLayoutGroup
   m_TagString: Untagged
@@ -4406,7 +4811,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1612496094
+--- !u!114 &1612496095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4432,6 +4837,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: -200
+--- !u!114 &1612496096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612496091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 5
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: -50
 --- !u!1 &1644127625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5742,7 +6177,7 @@ GameObject:
   - component: {fileID: 2052799137}
   - component: {fileID: 2052799136}
   m_Layer: 0
-  m_Name: MenuUiSettings
+  m_Name: MenuUiSettingsPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5760,6 +6195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4071c55bd844d0db933ce7f9aaeb6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isLandscape: 0
   _singleRects:
   - _header: Info and Settings layout group
     rectSize: {x: 900, y: 200}
@@ -5958,6 +6394,7 @@ GameObject:
   - component: {fileID: 2075307045}
   - component: {fileID: 2075307046}
   - component: {fileID: 2075307047}
+  - component: {fileID: 2075307048}
   m_Layer: 5
   m_Name: VolumeSliderAndText
   m_TagString: Untagged
@@ -6039,6 +6476,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -735
+--- !u!114 &2075307048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075307044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 30
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -615
 --- !u!1 &2083615447
 GameObject:
   m_ObjectHideFlags: 0
@@ -6193,6 +6660,7 @@ GameObject:
   - component: {fileID: 2102100249}
   - component: {fileID: 2102100250}
   - component: {fileID: 2102100251}
+  - component: {fileID: 2102100252}
   m_Layer: 5
   m_Name: MenuButtons
   m_TagString: Untagged
@@ -6275,6 +6743,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: 360
+--- !u!114 &2102100252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102100248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 80
+  _childAlignment: 1
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 0
+  _posY: 360
 --- !u!1 &2126588851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7081,6 +7579,7 @@ GameObject:
   - component: {fileID: 2838956312791503202}
   - component: {fileID: 487673005}
   - component: {fileID: 2838956312791503203}
+  - component: {fileID: 2838956312791503204}
   m_Layer: 2
   m_Name: BtnRow
   m_TagString: Untagged
@@ -7137,6 +7636,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -100
+--- !u!114 &2838956312791503204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838956312791503201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 20
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -100
 --- !u!1 &2838956312846010787
 GameObject:
   m_ObjectHideFlags: 0
@@ -7512,6 +8041,7 @@ GameObject:
   - component: {fileID: 2838956312954067546}
   - component: {fileID: 1377413194}
   - component: {fileID: 2838956312954067547}
+  - component: {fileID: 2838956312954067548}
   m_Layer: 2
   m_Name: BtnRow (1)
   m_TagString: Untagged
@@ -7568,6 +8098,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -320
+--- !u!114 &2838956312954067548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838956312954067545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 20
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -305
 --- !u!1 &2838956312968250576
 GameObject:
   m_ObjectHideFlags: 0
@@ -8153,6 +8713,7 @@ GameObject:
   - component: {fileID: 2838956313413361059}
   - component: {fileID: 1453379416}
   - component: {fileID: 2838956313413361060}
+  - component: {fileID: 2838956313413361061}
   m_Layer: 2
   m_Name: BtnRow (2)
   m_TagString: Untagged
@@ -8209,6 +8770,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -540
+--- !u!114 &2838956313413361061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838956313413361058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 20
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -510
 --- !u!1 &2838956313473998785
 GameObject:
   m_ObjectHideFlags: 0
@@ -8944,6 +9535,7 @@ GameObject:
   - component: {fileID: 2838956314145615782}
   - component: {fileID: 1156190949}
   - component: {fileID: 2838956314145615783}
+  - component: {fileID: 2838956314145615784}
   m_Layer: 2
   m_Name: BtnRows
   m_TagString: Untagged
@@ -9002,6 +9594,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -830
+--- !u!114 &2838956314145615784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838956314145615781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 5
+  _childAlignment: 1
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -530
 --- !u!1 &2838956314150299200
 GameObject:
   m_ObjectHideFlags: 0
@@ -9257,6 +9879,7 @@ GameObject:
   - component: {fileID: 2838956314204915982}
   - component: {fileID: 1334102109}
   - component: {fileID: 2838956314204915983}
+  - component: {fileID: 2838956314204915984}
   m_Layer: 2
   m_Name: BtnRow (3)
   m_TagString: Untagged
@@ -9312,6 +9935,36 @@ MonoBehaviour:
   _useChildScaleHeight: 0
   _controlChildForceExpandWidth: 1
   _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -760
+--- !u!114 &2838956314204915984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838956314204915981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c46e5a9309e43b68cf277ab75354ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLandscape: 1
+  _paddingLeft: 0
+  _paddingRight: 0
+  _paddingTop: 0
+  _paddingBottom: 0
+  _spacing: 20
+  _childAlignment: 4
+  _reverseArrangement: 0
+  _controlChildWidth: 0
+  _controlChildHeight: 0
+  _useChildScaleWidth: 0
+  _useChildScaleHeight: 0
+  _controlChildForceExpandWidth: 1
+  _controlChildForceExpandHeight: 1
+  _posX: 50
+  _posY: -715
 --- !u!1 &2838956314223423562
 GameObject:
   m_ObjectHideFlags: 0
@@ -9652,9 +10305,9 @@ RectTransform:
   m_Father: {fileID: 1612496092}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -1280}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2948635704603885753
@@ -9899,9 +10552,9 @@ RectTransform:
   m_Father: {fileID: 1612496092}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -1760}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2948635704906167333
@@ -10015,9 +10668,9 @@ RectTransform:
   m_Father: {fileID: 1612496092}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -1520}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2948635705073161255
@@ -10236,7 +10889,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 840}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10377,7 +11030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2948635705810725159
 RectTransform:
   m_ObjectHideFlags: 0
