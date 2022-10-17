@@ -16,6 +16,8 @@ MonoBehaviour:
   infoPanelActive: 1
   tutorialPanelActive: 0
   pausePanelActive: 1
+  rewardedFailedPanelActive: 1
+  gameCompletePanelActive: 1
   adminInterfaceActive: 0
   topPanelActive: 1
   quitButtonActive: 1
@@ -28,5 +30,7 @@ MonoBehaviour:
   volumeSliderActive: 1
   musicButtonActive: 1
   soundButtonActive: 1
+  shopPanelActive: 1
   blackScreenFadeDelay: 0.5
   transitionColor: {r: 0.1792453, g: 0.17163582, b: 0.17163582, a: 1}
+  saveSystemType: 0

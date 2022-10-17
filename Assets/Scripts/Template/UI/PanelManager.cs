@@ -18,6 +18,7 @@ namespace Utilities {
         [SerializeField] GameObject _agePanel;
         [SerializeField] GameObject _topPanel;
         [SerializeField] GameObject _rewardedFailedPanel;
+        [SerializeField] GameObject _shopPanel;
         
         [Header("TutorialPanel")]
         [SerializeField] GameObject _tutPanel;
@@ -92,6 +93,10 @@ namespace Utilities {
             _tutorialImage.sprite = image;
             _tutorialText.SetText(tutTextKey);
             ToggleTutorialPanel();
+        }
+
+        public void ToggleShopPanel() {
+            TogglePanel(_shopPanel);
         }
         
         public void ClosePolicyPanel() {

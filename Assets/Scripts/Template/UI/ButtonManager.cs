@@ -23,6 +23,8 @@ namespace Template.UI {
         [SerializeField] Button _ruButton;
         [SerializeField] Button _musicButton;
         [SerializeField] Button _soundButton;
+        [SerializeField] Button _closeShopButton;
+        [SerializeField] Button _shopButton;
         [SerializeField] Button[] _rewardedFailedPanelCloseButtons;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
@@ -44,6 +46,8 @@ namespace Template.UI {
             SetButton(_ruButton, PanelManager.Instance.ElementsActiveness.ruButtonActive, (() => TextLoader.Instance.SwitchLocalization(Localization.RU)));
             SetButton(_musicButton, PanelManager.Instance.ElementsActiveness.musicButtonActive, AudioManager.Instance.ToggleMusicButton);
             SetButton(_soundButton, PanelManager.Instance.ElementsActiveness.soundButtonActive, AudioManager.Instance.ToggleSoundButton);
+            SetButton(_closeShopButton, PanelManager.Instance.ElementsActiveness.shopPanelActive, PanelManager.Instance.ToggleShopPanel);
+            SetButton(_shopButton, PanelManager.Instance.ElementsActiveness.shopPanelActive, PanelManager.Instance.ToggleShopPanel);
 
             foreach (var button in _rewardedFailedPanelCloseButtons) {
                 SetButton(button, PanelManager.Instance.ElementsActiveness.rewardedFailedPanelActive, PanelManager.Instance.ToggleRewardedFailedPanel);

@@ -15,7 +15,12 @@ namespace Template.UI {
         public void CopyCurrentGroupData() {
             var layoutGroups = FindObjectsOfType<HorizontalOrVerticalLayoutGroup>(true);
             foreach (var group in layoutGroups) {
-               var data = group.gameObject.AddComponent<LayoutGroupData>();
+                var presentDatas = group.gameObject.GetComponents<LayoutGroupData>();
+                if (presentDatas.Length > 1) {
+                    Debug.Log("This group already has two or more datas");
+                    continue;
+                }
+                var data = group.gameObject.AddComponent<LayoutGroupData>();
                data.CopyData(_isLandscape);
             }
         }
@@ -49,7 +54,7 @@ namespace Template.UI {
 
         [Button]
         public void DeleteLayoutGroupDatas() {
-            var datas = FindObjectsOfType<LayoutGroupData>();
+            var datas = FindObjectsOfType<LayoutGroupData>(true);
             foreach (var data in datas) {
                 DestroyImmediate(data);
             }
