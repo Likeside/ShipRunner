@@ -19,12 +19,15 @@ namespace Template.UI {
         [SerializeField] bool _useChildScaleHeight;
         [SerializeField] bool _controlChildForceExpandWidth;
         [SerializeField] bool _controlChildForceExpandHeight;
+        [SerializeField] float _posX;
+        [SerializeField] float _posY;
 
         public bool IsLandscape => _isLandscape;
         HorizontalOrVerticalLayoutGroup _group;
         
        public void SetData() {
             _group = GetComponent<HorizontalOrVerticalLayoutGroup>();
+            _group.GetComponent<RectTransform>().anchoredPosition = new Vector2(_posX, _posY);
             _group.padding.left = _paddingLeft;
             _group.padding.right = _paddingRight;
             _group.padding.top = _paddingTop;
@@ -38,6 +41,7 @@ namespace Template.UI {
             _group.childScaleHeight = _useChildScaleHeight;
             _group.childForceExpandWidth = _controlChildForceExpandWidth;
             _group.childForceExpandHeight = _controlChildForceExpandHeight;
+
        }
 
        public void CopyData(bool isLandscape) {
@@ -55,6 +59,8 @@ namespace Template.UI {
            _useChildScaleHeight = _group.childScaleHeight;
            _controlChildForceExpandWidth = _group.childForceExpandWidth;
            _controlChildForceExpandHeight = _group.childForceExpandHeight;
+           _posX = _group.GetComponent<RectTransform>().anchoredPosition.x;
+           _posY = _group.GetComponent<RectTransform>().anchoredPosition.y;
            _isLandscape = isLandscape;
        }
     }

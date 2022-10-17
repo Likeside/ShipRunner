@@ -11,7 +11,7 @@ namespace Template.UI {
         
         
         [Button]
-        public void CopyGroupData() {
+        public void CopyCurrentGroupData() {
             var layoutGroups = FindObjectsOfType<HorizontalOrVerticalLayoutGroup>(true);
             foreach (var group in layoutGroups) {
                var data = group.gameObject.AddComponent<LayoutGroupData>();
@@ -30,6 +30,14 @@ namespace Template.UI {
                 else {
                     Debug.Log("Some of the datas are absent, aborting");
                 }
+            }
+        }
+
+        [Button]
+        public void DeleteLayoutGroupDatas() {
+            var datas = FindObjectsOfType<LayoutGroupData>();
+            foreach (var data in datas) {
+                DestroyImmediate(data);
             }
         }
     }

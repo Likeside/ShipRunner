@@ -12,8 +12,9 @@ namespace Utilities.OdinEditor {
     
     [ExecuteInEditMode]
     public class RectSettings: MonoBehaviour {
-
-
+        
+        public bool IsLandscape => _isLandscape;
+        [SerializeField] bool _isLandscape;
         [SerializeField] List<RectTransformSingleSettings> _singleRects;
         [PropertySpace(SpaceBefore = 10, SpaceAfter = 30)]
         [SerializeField] List<RectTransformGroupSettings> _groupRects;
