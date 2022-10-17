@@ -2,6 +2,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities.OdinEditor;
 
 namespace Template.UI {
     
@@ -29,8 +30,21 @@ namespace Template.UI {
                 }
                 else {
                     Debug.Log("Some of the datas are absent, aborting");
+                    return;
                 }
             }
+
+            var rectSettings = FindObjectsOfType<RectSettings>(true);
+
+            foreach (var rectSetting in rectSettings) {
+                if (rectSetting.IsLandscape == _isLandscape) {
+                    rectSetting.gameObject.SetActive(true);
+                }
+                else {
+                    rectSetting.gameObject.SetActive(false);
+                }
+            }
+            
         }
 
         [Button]
