@@ -56,10 +56,12 @@ namespace Template.UI {
             if (_isLandscape) {
                 panelManager.InstanceForEditorScripts().ShopPanel = _shopPanels[1];
                 _shopPanels[0].SetActive(false);
+                _shopPanels[1].SetActive(true);
             }
             else {
                 panelManager.InstanceForEditorScripts().ShopPanel = _shopPanels[0];
                 _shopPanels[1].SetActive(false);
+                _shopPanels[0].SetActive(true);
             }
         }
 
