@@ -59,6 +59,7 @@ namespace Template.UI {
                 if (active) {
                     button.onClick.RemoveAllListeners();
                     button.onClick.AddListener(listener);
+                    button.onClick.AddListener(AudioManager.Instance.PlayTapSound);
                 }
             }
         }

@@ -10,10 +10,14 @@ namespace Utilities {
         [SerializeField] List<Sprite> _musicBtnSprites;
         [SerializeField] Image _soundBtnImage;
         [SerializeField] Image _musicBtnImage;
+        [SerializeField] AudioBasicConfigSO _basicConfigSo;
+        [SerializeField] AudioSource _uiAudioSource;
 
 
         bool _musicOn;
         void Start() {
+            Debug.Log("Volume: " + PlayerPrefs.GetFloat("volume") + "; Music: " + PlayerPrefsHelper.GetBool("music") );
+            
             if (PanelManager.Instance.ElementsActiveness.volumeSliderActive) {
                 _volumeSlider.onValueChanged.RemoveAllListeners();
                 InitVolume();
@@ -70,6 +74,11 @@ namespace Utilities {
             if (PlayerPrefs.GetFloat("volume") <= 0) {
                 _musicBtnImage.sprite = _musicBtnSprites[1];
             }
+        }
+        
+        public void PlayTapSound() {
+            Debug.Log("Playing tap sound");
+            _uiAudioSource.PlayOneShot(_basicConfigSo.btnClick);
         }
 
 
