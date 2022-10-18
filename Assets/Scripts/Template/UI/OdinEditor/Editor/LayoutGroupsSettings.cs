@@ -34,8 +34,7 @@ namespace Template.UI {
                     data.SetData();
                 }
                 else {
-                    Debug.Log("Some of the datas are absent, aborting");
-                    return;
+                    Debug.Log("Some of the datas are absent");
                 }
             }
 
