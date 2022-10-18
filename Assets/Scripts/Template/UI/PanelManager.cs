@@ -29,6 +29,11 @@ namespace Utilities {
         public PanelEffectsConfigSO PanelEffectsConfigSo => _panelEffectsConfigSo;
         public UiElementsConfigSO ElementsActiveness => _elementsActiveness;
 
+        public GameObject ShopPanel {
+            get => _shopPanel;
+            set => _shopPanel = value;
+        }
+
         void Start() {
             SceneLoader.Instance.BsFadeIn();
             if (_policyPanel != null) {

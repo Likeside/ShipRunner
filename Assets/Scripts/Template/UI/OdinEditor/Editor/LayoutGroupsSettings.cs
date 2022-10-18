@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 using Utilities.OdinEditor;
 
 namespace Template.UI {
@@ -9,8 +11,9 @@ namespace Template.UI {
     [ExecuteInEditMode]
     public class LayoutGroupsSettings: MonoBehaviour {
         [SerializeField] bool _isLandscape;
-        
-        
+
+        [SerializeField] List<GameObject> _shopPanels;
+
         [Button]
         public void CopyCurrentGroupData() {
             var layoutGroups = FindObjectsOfType<HorizontalOrVerticalLayoutGroup>(true);
@@ -48,7 +51,16 @@ namespace Template.UI {
                     rectSetting.gameObject.SetActive(false);
                 }
             }
-            
+
+            var panelManager = FindObjectOfType<PanelManager>();
+            if (_isLandscape) {
+                panelManager.InstanceForEditorScripts().ShopPanel = _shopPanels[1];
+                _shopPanels[0].SetActive(false);
+            }
+            else {
+                panelManager.InstanceForEditorScripts().ShopPanel = _shopPanels[0];
+                _shopPanels[1].SetActive(false);
+            }
         }
 
         [Button]
