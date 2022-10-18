@@ -155,12 +155,22 @@ namespace Utilities {
 
         public void OpenTermsLink() {
             Debug.Log("Opening terms link");
-            Application.OpenURL(_config.termsLink);
+            StartCoroutine(OpenLinkCoroutine(_config.termsLink));
         }
 
         public void OpenPolicyLink() {
             Debug.Log("Opening policy link");
             Application.OpenURL(_config.policyLink);
+        }
+
+        public void OpenRateUsLink() {
+            Debug.Log("Opening rate us link");
+            StartCoroutine(OpenLinkCoroutine(_config.rateUsLink));
+        }
+
+        IEnumerator OpenLinkCoroutine(string url) {
+            yield return new WaitForSeconds(0.1f);
+            Application.OpenURL(url);
         }
     }
 }

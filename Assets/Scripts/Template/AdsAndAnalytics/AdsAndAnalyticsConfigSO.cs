@@ -25,6 +25,7 @@ namespace Utilities {
         [Header("Links")] 
         public string termsLink;
         public string policyLink;
+        public string rateUsLink;
 
 
     }
