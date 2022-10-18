@@ -25,6 +25,7 @@ namespace Utilities.OdinEditor {
         public bool musicButtonActive = true;
         public bool soundButtonActive = true;
         public bool shopPanelActive;
+        public bool rateUsPanelActive = true;
         [Header("Parameters")]
         public float blackScreenFadeDelay;
         public Color transitionColor;

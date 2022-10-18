@@ -14,9 +14,12 @@ namespace Utilities {
         public event Action OnInterstitialShown;
 
         public event Action OnAdCanNotBeShown;
+
+        public event Action OnRateUsLinkOpened;
         public bool RewardedReady => Advertisement.IsReady(_rewarded);
 
         public int InterstitialFrequency => _config.interstitialFrequency;
+        
         
         const string k_isFirstEnter = "isFirstEnter";
         string _rewarded;
@@ -166,6 +169,7 @@ namespace Utilities {
         public void OpenRateUsLink() {
             Debug.Log("Opening rate us link");
             StartCoroutine(OpenLinkCoroutine(_config.rateUsLink));
+            OnRateUsLinkOpened?.Invoke();
         }
 
         IEnumerator OpenLinkCoroutine(string url) {

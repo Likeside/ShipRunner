@@ -25,6 +25,8 @@ namespace Template.UI {
         [SerializeField] Button _soundButton;
         [SerializeField] Button _closeShopButton;
         [SerializeField] Button _shopButton;
+        [SerializeField] Button _rateUsYes;
+        [SerializeField] Button _rateUsNo;
         [SerializeField] Button[] _rewardedFailedPanelCloseButtons;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
@@ -48,6 +50,8 @@ namespace Template.UI {
             SetButton(_soundButton, PanelManager.Instance.ElementsActiveness.soundButtonActive, AudioManager.Instance.ToggleSoundButton);
             SetButton(_closeShopButton, PanelManager.Instance.ElementsActiveness.shopPanelActive, PanelManager.Instance.ToggleShopPanel);
             SetButton(_shopButton, PanelManager.Instance.ElementsActiveness.shopPanelActive, PanelManager.Instance.ToggleShopPanel);
+            SetButton(_rateUsNo, PanelManager.Instance.ElementsActiveness.rateUsPanelActive, PanelManager.Instance.ToggleRateUsPanel);
+            SetButton(_rateUsYes, PanelManager.Instance.ElementsActiveness.rateUsPanelActive, AdsAndAnalyticsManager.Instance.OpenRateUsLink);
 
             foreach (var button in _rewardedFailedPanelCloseButtons) {
                 SetButton(button, PanelManager.Instance.ElementsActiveness.rewardedFailedPanelActive, PanelManager.Instance.ToggleRewardedFailedPanel);

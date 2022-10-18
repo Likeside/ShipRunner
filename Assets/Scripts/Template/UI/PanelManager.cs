@@ -19,6 +19,7 @@ namespace Utilities {
         [SerializeField] GameObject _topPanel;
         [SerializeField] GameObject _rewardedFailedPanel;
         [SerializeField] GameObject _shopPanel;
+        [SerializeField] GameObject _rateUsPanel;
         
         [Header("TutorialPanel")]
         [SerializeField] GameObject _tutPanel;
@@ -102,6 +103,10 @@ namespace Utilities {
 
         public void ToggleShopPanel() {
             TogglePanel(_shopPanel);
+        }
+
+        public void ToggleRateUsPanel() {
+            TogglePanel(_rateUsPanel);
         }
         
         public void ClosePolicyPanel() {
