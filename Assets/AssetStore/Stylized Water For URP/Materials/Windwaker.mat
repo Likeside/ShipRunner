@@ -57,7 +57,7 @@ Material:
     - _IntersectionWaterBlend: 0
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _RefractionStrength: 0.017
+    - _RefractionStrength: 0.032
     - _ShoreBlend: 0
     - _ShoreDepth: 0
     - _ShoreFade: 0
@@ -68,7 +68,7 @@ Material:
     - _IntersectionFoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _IntersectionFoamMovement: {r: 0, g: 0, b: 0, a: 0}
     - _IntersectionFoamSampling: {r: 1, g: 0, b: 0, a: 0}
-    - _NormalsMovement: {r: 0.068, g: 0.31, b: 0, a: 0}
+    - _NormalsMovement: {r: 0.068, g: 1.01, b: 0, a: 0}
     - _ShoreColor: {r: 0, g: 0.98039216, b: 0.30196065, a: 0}
     - _SurfaceFoamColor1: {r: 0.0039215437, g: 0.48533726, b: 0.8862745, a: 0.5803922}
     - _SurfaceFoamColor2: {r: 0.35555357, g: 0.76435375, b: 0.8867924, a: 0.6313726}
