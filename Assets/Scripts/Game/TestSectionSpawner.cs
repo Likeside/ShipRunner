@@ -11,11 +11,13 @@ namespace Game {
         [SerializeField] List<GameObject> _spawnedSections;
 
         Transform _nextPosition;
+        TestSectionRotation _sectionRotation;
         
         readonly Vector3 _newSectionPos = new(0, 0, 240);
 
         void Start() {
             _nextPosition = _spawnedSections[^1].transform.GetChild(0);
+            _sectionRotation = new TestSectionRotation();
         }
 
         void Update() {
@@ -29,7 +31,7 @@ namespace Game {
 
             if (_spawnedSections[^1].transform.localPosition.z <= 200) {
                 //var newSection = Instantiate(_sectionPrefab, _newSectionPos, Quaternion.identity, _parent, false);
-                var newSection = Instantiate(_sectionPrefab, _parent, false);
+                var newSection = Instantiate(_sectionRotation.GetNextSection(_spawnedSections[^1]), _parent, false);
                 newSection.transform.position = _nextPosition.position;
                 _nextPosition = newSection.transform.GetChild(0);
                 _spawnedSections.Add(newSection);

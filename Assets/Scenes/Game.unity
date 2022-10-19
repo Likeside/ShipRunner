@@ -7244,7 +7244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1601693967802005805, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_RootOrder
@@ -18754,6 +18754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _world: {fileID: 400143625}
   _rotationCoefficient: 1
+  _ship: {fileID: 1906797550}
 --- !u!114 &2005752659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18768,7 +18769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parent: {fileID: 400143625}
   _sectionPrefab: {fileID: 3922759779269333926, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
-  _speed: 5
+  _speed: 25
   _spawnedSections:
   - {fileID: 12636922}
   - {fileID: 924367438}
