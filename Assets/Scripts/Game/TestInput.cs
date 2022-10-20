@@ -16,11 +16,12 @@ namespace Game {
         float _rotation;
 
         void Start() {
-            _steering.OnRotating += SetRotation;
+          //  _steering.OnRotating += SetRotation;
         }
 
         void Update() {
-            Debug.Log("Rotation: " + _rotation);
+           // Debug.Log("Rotation: " + _rotation);
+           _rotation = -SteeringWheel.steeringInput;
             _ship.rotation = Quaternion.Euler(Vector3.zero);
             _world.Rotate(Vector3.up, _rotation);
 
@@ -48,7 +49,8 @@ namespace Game {
         }
 
         void SetRotation(float rot) {
-            _rotation = rot*0.02f;
+            //_rotation = rot*0.02f;
+            
         }
         
         

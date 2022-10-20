@@ -22,7 +22,7 @@ namespace Game {
 
         void Update() {
             //var direction = -_parent.transform.eulerAngles + Vector3.back;
-            Debug.Log("Back direction: " + _parent.InverseTransformDirection(Vector3.back));
+           // Debug.Log("Back direction: " + _parent.InverseTransformDirection(Vector3.back));
             var backDirection = (_parent.InverseTransformDirection(Vector3.back)).normalized; //+Vector3.back).normalized;
             foreach (var spawnedSection in _spawnedSections) {
                 spawnedSection.transform.localPosition += backDirection * Time.deltaTime * _speed;
