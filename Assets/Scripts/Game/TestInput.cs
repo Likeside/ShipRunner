@@ -21,7 +21,7 @@ namespace Game {
 
         void Update() {
            // Debug.Log("Rotation: " + _rotation);
-           _rotation = -SteeringWheel.steeringInput*2;
+           _rotation = -SteeringWheel.steeringInput*2.5f;
             _ship.rotation = Quaternion.Euler(Vector3.zero);
             _world.Rotate(Vector3.up, _rotation);
 
