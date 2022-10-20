@@ -7238,13 +7238,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 746120809}
     m_Modifications:
+    - target: {fileID: 1010647043953872369, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea66d3ba3c5ac7d498707e8c9e54524f, type: 2}
     - target: {fileID: 1601693967802005805, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_Name
       value: Square Water
       objectReference: {fileID: 0}
     - target: {fileID: 1601693967802005805, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_RootOrder
@@ -7264,7 +7268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7272,7 +7276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 135
+      value: 93.6
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7303,6 +7307,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: waterUVs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveSpeed
       value: 1.9
       objectReference: {fileID: 0}
@@ -7312,7 +7320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveLength
-      value: 6.1
+      value: 5.02
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.b
@@ -7324,11 +7332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: normalsScale
-      value: 0.31
+      value: 0.602
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: normalsSpeed
-      value: 0.068
+      value: 0.041
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.b
@@ -7336,19 +7344,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveSteepness
-      value: 0.23
+      value: 0.237
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveVisuals.x
-      value: 0.23
+      value: 0.237
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveVisuals.y
-      value: 6.1
+      value: 5.02
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveVisuals.z
       value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: hideComponents
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: horizonColor.g
@@ -7367,8 +7379,12 @@ PrefabInstance:
       value: 0.41639137
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: waveDirection1
+      value: 0.106
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirection2
-      value: 0
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirection3
@@ -7376,6 +7392,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirection4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: normalsStrength
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: enableRefraction
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
@@ -7387,8 +7411,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: waveDirections.x
+      value: 0.106
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirections.y
-      value: 0
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirections.z
@@ -7400,15 +7428,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: normalsMovement.x
-      value: 0.068
+      value: 0.041
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: normalsMovement.y
-      value: 0.31
+      value: 0.602
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: reflectionFresnel
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamCutoff
-      value: 1
+      value: 0.997
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamScale1
@@ -7423,8 +7455,28 @@ PrefabInstance:
       value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: underwaterColor.b
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: underwaterColor.g
+      value: 0.3098039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: underwaterColor.r
+      value: 0.2039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: lightingSmoothness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: reflectionStrength
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: refractionStrength
-      value: 0.017
+      value: 0.009
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamTexture
@@ -7432,7 +7484,7 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: ab507ff7ff37d954da98b07bf0bb152e, type: 3}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.a
-      value: 0.5803922
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.b
@@ -7463,12 +7515,24 @@ PrefabInstance:
       value: 0.35555357
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamDepth
+      value: 2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamScale
+      value: 1.338
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamSpeed
+      value: 0.074
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamDirection1
       value: 0.652
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamDistortion
-      value: 0.82
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamMovement.x
@@ -7480,11 +7544,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamSampling.x
-      value: 1
+      value: 0.997
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamSampling.y
-      value: 0.82
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamCutoff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionWaterBlend
+      value: 0.064
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamColor.b
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamColor.g
+      value: 0.81960756
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamColor.r
+      value: 0.172549
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ab507ff7ff37d954da98b07bf0bb152e, type: 3}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: enableIntersectionEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamDirection
+      value: 0.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamDistortion
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamMovement.x
+      value: 0.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamMovement.y
+      value: 0.074
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
+      propertyPath: intersectionFoamSampling.y
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamTilingAndOffset.w
@@ -19959,6 +20071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SectionStraightRight
       objectReference: {fileID: 0}
+    - target: {fileID: 6815401331305419867, guid: e34e9eb8de83b1bfc839f7d1d41ee7c5, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e34e9eb8de83b1bfc839f7d1d41ee7c5, type: 3}
 --- !u!1001 &980656009320472170
@@ -20015,6 +20131,22 @@ PrefabInstance:
     - target: {fileID: 980656009792670939, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086310703324740836, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198546396429051116, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532083230485243289, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532083230485243289, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
+      propertyPath: enableSurfaceFoam
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
@@ -20073,6 +20205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SectionStraightLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 5543983159173098650, guid: 493fb99fd8b528628a291583cbc6cb27, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 493fb99fd8b528628a291583cbc6cb27, type: 3}
 --- !u!1001 &3922759779265085788
@@ -20082,6 +20218,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400143625}
     m_Modifications:
+    - target: {fileID: 970300931294738357, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3922759779269333926, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
       propertyPath: m_Name
       value: SectionStraight
@@ -20129,6 +20269,10 @@ PrefabInstance:
     - target: {fileID: 3922759779269333927, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655041287670585029, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
+      propertyPath: waterUVs
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
@@ -20187,6 +20331,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SectionRIghtLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 8476265744156997234, guid: b0f6f7312f8d01382bb00da23135086f, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491926833544302133, guid: b0f6f7312f8d01382bb00da23135086f, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0f6f7312f8d01382bb00da23135086f, type: 3}
 --- !u!1001 &5792283871884458207
@@ -20196,6 +20348,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400143625}
     m_Modifications:
+    - target: {fileID: 5686956867225223240, guid: 9ae3190229a24d4d89a5e82af2a75864, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5792283872768816399, guid: 9ae3190229a24d4d89a5e82af2a75864, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -20244,6 +20400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SectionLeftStraight
       objectReference: {fileID: 0}
+    - target: {fileID: 5961077236089112678, guid: 9ae3190229a24d4d89a5e82af2a75864, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ae3190229a24d4d89a5e82af2a75864, type: 3}
 --- !u!1001 &9051184383282541808
@@ -20253,6 +20413,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400143625}
     m_Modifications:
+    - target: {fileID: 4026570450049478578, guid: 6447c58f51d49f22e84ebccdc382f11f, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258609604331442197, guid: 6447c58f51d49f22e84ebccdc382f11f, type: 3}
+      propertyPath: waterUVs
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9051184384179533482, guid: 6447c58f51d49f22e84ebccdc382f11f, type: 3}
       propertyPath: m_Name
       value: SectionRightStraight

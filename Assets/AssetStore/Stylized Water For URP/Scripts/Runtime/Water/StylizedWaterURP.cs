@@ -444,9 +444,9 @@ namespace StylizedWater
             material.SetVector("_WaveDirections", new Vector4(waveDirection1, waveDirection2, waveDirection3, waveDirection4));
             #endregion
 
-            if (waterUVs == WaterUVs.World) material.EnableKeyword("WORLD_SPACE_UV_ON");
-            else material.DisableKeyword("WORLD_SPACE_UV_ON");
-
+           // if (waterUVs == WaterUVs.World) material.EnableKeyword("WORLD_SPACE_UV_ON");
+           // else material.DisableKeyword("WORLD_SPACE_UV_ON");
+           material.DisableKeyword("WORLD_SPACE_UV_ON");
             #region Lighting
             if (lighting == Lighting.Enabled) material.EnableKeyword("WATER_LIGHTING_ON");
             else material.DisableKeyword("WATER_LIGHTING_ON");
