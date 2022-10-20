@@ -136,7 +136,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.41639137, b: 1, a: 1}
-  deepColor: {r: 0, g: 0.4067961, b: 0.6784314, a: 1}
+  deepColor: {r: 0, g: 0.34958002, b: 0.6784314, a: 0.9019608}
   colorDepth: 2.59
   horizonColor: {r: 0.01296196, g: 0, b: 0.8, a: 1}
   horizonDistance: 20
@@ -149,23 +149,23 @@ MonoBehaviour:
   underwaterColor: {r: 0.2039216, g: 0.3098039, b: 0.5176471, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
-  surfaceFoamTexture: {fileID: 2800000, guid: ab507ff7ff37d954da98b07bf0bb152e, type: 3}
-  surfaceFoamSampling: {x: 0.71, y: 0.72}
-  surfaceFoamCutoff: 0.71
-  surfaceFoamDistortion: 0.72
-  surfaceFoamBlend: 0.26
+  surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
+  surfaceFoamSampling: {x: 0.469, y: 0.43}
+  surfaceFoamCutoff: 0.469
+  surfaceFoamDistortion: 0.43
+  surfaceFoamBlend: 0.505
   surfaceFoamColor1: {r: 0.0039215437, g: 0.36513034, b: 0.8862745, a: 0.6039216}
-  surfaceFoamColor2: {r: 0.35686272, g: 0.664747, b: 0.8862745, a: 0.6509804}
-  surfaceFoamMovement: {x: 0.652, y: 0.025, z: 0.43, w: 0.01}
+  surfaceFoamColor2: {r: 0.35686272, g: 0.7808357, b: 0.8862745, a: 0.6509804}
+  surfaceFoamMovement: {x: 0.652, y: 0.025, z: 0.132, w: 0.01}
   surfaceFoamDirection1: 0.652
-  surfaceFoamDirection2: 0.43
+  surfaceFoamDirection2: 0.132
   surfaceFoamSpeed1: 0.025
   surfaceFoamSpeed2: 0.01
-  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.94, w: 0.56}
+  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.44, w: 0.4}
   surfaceFoamOffsetX: -1
   surfaceFoamOffsetY: -1
-  surfaceFoamScale1: 0.94
-  surfaceFoamScale2: 0.56
+  surfaceFoamScale1: 0.44
+  surfaceFoamScale2: 0.4
   enableSurfaceFoam: 1
   surfaceFoamHeightMask: 0
   surfaceFoamHeightMaskSmoothness: 0
@@ -204,17 +204,17 @@ MonoBehaviour:
   normalsScale: 0.602
   normalsSpeed: 0.041
   refractionStrength: 0.009
-  waveVisuals: {x: 0.118, y: 3.7, z: 0.58}
-  waveSteepness: 0.118
-  waveLength: 3.7
-  waveSpeed: 0.58
+  waveVisuals: {x: 0.017, y: 3.8, z: 1.56}
+  waveSteepness: 0.017
+  waveLength: 3.8
+  waveSpeed: 1.56
   waveDirections: {x: 0, y: 0, z: 0, w: 0}
   waveDirection1: 0
   waveDirection2: 0
   waveDirection3: 0
   waveDirection4: 0
   waterUVs: 0
-  hideComponents: 0
+  hideComponents: 1
   enableFoamShadows: 1
   enableRefraction: 0
   meshRenderer: {fileID: 2143951074781134479}

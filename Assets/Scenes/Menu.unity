@@ -2690,7 +2690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showEffect: 0
   _hideEffect: 0
-  _ease: 4
+  _ease: 27
   _targetPosRt: {fileID: 50470285}
   _shownByDefault: 0
 --- !u!1 &768174422
