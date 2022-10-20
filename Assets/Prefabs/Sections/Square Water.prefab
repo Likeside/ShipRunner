@@ -136,8 +136,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.41639137, b: 1, a: 1}
-  deepColor: {r: 0, g: 0.34958002, b: 0.6784314, a: 0.9019608}
-  colorDepth: 2.59
+  deepColor: {r: 0, g: 0.2339419, b: 0.6784314, a: 0.9019608}
+  colorDepth: 2.74
   horizonColor: {r: 0.01296196, g: 0, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 0
@@ -149,23 +149,23 @@ MonoBehaviour:
   underwaterColor: {r: 0.2039216, g: 0.3098039, b: 0.5176471, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
-  surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
-  surfaceFoamSampling: {x: 0.469, y: 0.43}
-  surfaceFoamCutoff: 0.469
-  surfaceFoamDistortion: 0.43
-  surfaceFoamBlend: 0.505
+  surfaceFoamTexture: {fileID: 2800000, guid: ab507ff7ff37d954da98b07bf0bb152e, type: 3}
+  surfaceFoamSampling: {x: 0.976, y: 1.42}
+  surfaceFoamCutoff: 0.976
+  surfaceFoamDistortion: 1.42
+  surfaceFoamBlend: 0.92
   surfaceFoamColor1: {r: 0.0039215437, g: 0.36513034, b: 0.8862745, a: 0.6039216}
   surfaceFoamColor2: {r: 0.35686272, g: 0.7808357, b: 0.8862745, a: 0.6509804}
-  surfaceFoamMovement: {x: 0.652, y: 0.025, z: 0.132, w: 0.01}
-  surfaceFoamDirection1: 0.652
+  surfaceFoamMovement: {x: 0.829, y: 0.16, z: 0.132, w: 0.06}
+  surfaceFoamDirection1: 0.829
   surfaceFoamDirection2: 0.132
-  surfaceFoamSpeed1: 0.025
-  surfaceFoamSpeed2: 0.01
-  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.44, w: 0.4}
+  surfaceFoamSpeed1: 0.16
+  surfaceFoamSpeed2: 0.06
+  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.3, w: 0.25}
   surfaceFoamOffsetX: -1
   surfaceFoamOffsetY: -1
-  surfaceFoamScale1: 0.44
-  surfaceFoamScale2: 0.4
+  surfaceFoamScale1: 0.3
+  surfaceFoamScale2: 0.25
   enableSurfaceFoam: 1
   surfaceFoamHeightMask: 0
   surfaceFoamHeightMaskSmoothness: 0
