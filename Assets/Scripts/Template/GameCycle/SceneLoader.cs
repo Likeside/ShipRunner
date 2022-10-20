@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using Template.GameCycle;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace Utilities {
 
         public ISaveSystem SaveSystem { get; private set; }
 
+        Color _transparent;
+
         protected override void OnSingletonAwake() {
             base.OnSingletonAwake();
             switch (PanelManager.Instance.ElementsActiveness.saveSystemType) {
@@ -27,6 +30,9 @@ namespace Utilities {
                     SaveSystem = new SaveSystemJson();
                     break;
             }
+            _transparent = new Color(PanelManager.Instance.ElementsActiveness.transitionColor.r,
+                PanelManager.Instance.ElementsActiveness.transitionColor.g,
+                PanelManager.Instance.ElementsActiveness.transitionColor.b, 0f);
         }
 
         void Start() {
@@ -101,8 +107,7 @@ namespace Utilities {
 
         public void BsFadeIn() {
             Debug.Log("Fading In");
-            _blackScreen.material.DOColor(Color.clear, PanelManager.Instance.ElementsActiveness.blackScreenFadeInDelay).SetUpdate(true);
-            Time.timeScale = 1f;
+            StartCoroutine(FadeInCor());
         }
 
         public void BsFadeOut() {
@@ -125,6 +130,12 @@ namespace Utilities {
                 PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
             tween.onComplete = () => SceneManager.LoadScene(sceneName);
 
+        }
+
+        IEnumerator FadeInCor() {
+            yield return new WaitForFixedUpdate();
+            _blackScreen.material.DOColor(_transparent, PanelManager.Instance.ElementsActiveness.blackScreenFadeInDelay).SetUpdate(true);
+            Time.timeScale = 1f;
         }
     }
     

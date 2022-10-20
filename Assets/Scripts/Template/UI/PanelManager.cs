@@ -36,6 +36,7 @@ namespace Utilities {
         }
 
         void Start() {
+            Debug.Log("Panel manager fade in");
             SceneLoader.Instance.BsFadeIn();
             if (_policyPanel != null) {
                 if (AppPolicyManager.Instance.AppPolicyAccepted) {
