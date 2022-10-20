@@ -163,6 +163,7 @@ MonoBehaviour:
   _topPanel: {fileID: 0}
   _rewardedFailedPanel: {fileID: 0}
   _shopPanel: {fileID: 0}
+  _rateUsPanel: {fileID: 0}
   _tutPanel: {fileID: 0}
   _tutorialImage: {fileID: 0}
   _tutorialText: {fileID: 0}
@@ -6220,6 +6221,8 @@ MonoBehaviour:
   _soundButton: {fileID: 1939852718}
   _closeShopButton: {fileID: 0}
   _shopButton: {fileID: 0}
+  _rateUsYes: {fileID: 0}
+  _rateUsNo: {fileID: 0}
   _rewardedFailedPanelCloseButtons: []
 --- !u!4 &2007873230
 Transform:
@@ -11038,7 +11041,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 840}
+  m_SizeDelta: {x: 640, y: 840}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2948635705454338344
 CanvasRenderer:
