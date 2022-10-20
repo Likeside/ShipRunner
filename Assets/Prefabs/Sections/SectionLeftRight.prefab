@@ -794,22 +794,22 @@ MonoBehaviour:
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: ab507ff7ff37d954da98b07bf0bb152e, type: 3}
-  surfaceFoamSampling: {x: 0.997, y: 0.59}
-  surfaceFoamCutoff: 0.997
-  surfaceFoamDistortion: 0.59
-  surfaceFoamBlend: 0.722
-  surfaceFoamColor1: {r: 0.0039215437, g: 0.48533726, b: 0.8862745, a: 0.6039216}
-  surfaceFoamColor2: {r: 0.35555357, g: 0.76435375, b: 0.8867924, a: 0.6313726}
-  surfaceFoamMovement: {x: 0.652, y: 0.025, z: 0.47, w: 0.01}
+  surfaceFoamSampling: {x: 0.71, y: 0.72}
+  surfaceFoamCutoff: 0.71
+  surfaceFoamDistortion: 0.72
+  surfaceFoamBlend: 0.26
+  surfaceFoamColor1: {r: 0.0039215437, g: 0.36513034, b: 0.8862745, a: 0.6039216}
+  surfaceFoamColor2: {r: 0.35686272, g: 0.664747, b: 0.8862745, a: 0.6509804}
+  surfaceFoamMovement: {x: 0.652, y: 0.025, z: 0.43, w: 0.01}
   surfaceFoamDirection1: 0.652
-  surfaceFoamDirection2: 0.47
+  surfaceFoamDirection2: 0.43
   surfaceFoamSpeed1: 0.025
   surfaceFoamSpeed2: 0.01
-  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.94, w: 0.41}
+  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.94, w: 0.56}
   surfaceFoamOffsetX: -1
   surfaceFoamOffsetY: -1
   surfaceFoamScale1: 0.94
-  surfaceFoamScale2: 0.41
+  surfaceFoamScale2: 0.56
   enableSurfaceFoam: 1
   surfaceFoamHeightMask: 0
   surfaceFoamHeightMaskSmoothness: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
   intersectionFoamSampling: {x: 1, y: 0.05}
   intersectionFoamCutoff: 1
   intersectionFoamDistortion: 0.05
-  enableIntersectionEffects: 1
+  enableIntersectionEffects: 0
   intersectionFoamBlend: 1
   intersectionWaterBlend: 0.064
   shoreFoamSpeed: 0
@@ -848,13 +848,13 @@ MonoBehaviour:
   normalsScale: 0.602
   normalsSpeed: 0.041
   refractionStrength: 0.009
-  waveVisuals: {x: 0.237, y: 5.02, z: 1.9}
-  waveSteepness: 0.237
-  waveLength: 5.02
-  waveSpeed: 1.9
-  waveDirections: {x: 0, y: 0, z: 0, w: 0}
-  waveDirection1: 0
-  waveDirection2: 0
+  waveVisuals: {x: 0.118, y: 3.7, z: 0.58}
+  waveSteepness: 0.118
+  waveLength: 3.7
+  waveSpeed: 0.58
+  waveDirections: {x: 0.43, y: 0.22, z: 0, w: 0}
+  waveDirection1: 0.43
+  waveDirection2: 0.22
   waveDirection3: 0
   waveDirection4: 0
   waterUVs: 0
