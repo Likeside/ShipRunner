@@ -31,6 +31,8 @@ MonoBehaviour:
   musicButtonActive: 1
   soundButtonActive: 1
   shopPanelActive: 1
+  rateUsPanelActive: 1
   blackScreenFadeDelay: 0.5
+  blackScreenFadeInDelay: 1
   transitionColor: {r: 0.1792453, g: 0.17163582, b: 0.17163582, a: 1}
   saveSystemType: 0

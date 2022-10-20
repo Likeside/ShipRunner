@@ -11,8 +11,8 @@ namespace Game {
         [SerializeField] Steering _steering;
 
 
-        Vector3 _left = new Vector3(0, 10, -10);
-        Vector3 _right = new Vector3(0, -10, 10);
+        Vector3 _left = new Vector3(0, -10, 10);
+        Vector3 _right = new Vector3(0, 10, -10);
         float _rotation;
 
         void Start() {

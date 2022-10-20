@@ -100,7 +100,8 @@ namespace Utilities {
         }
 
         public void BsFadeIn() {
-            _blackScreen.material.DOColor(Color.clear, PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
+            Debug.Log("Fading In");
+            _blackScreen.material.DOColor(Color.clear, PanelManager.Instance.ElementsActiveness.blackScreenFadeInDelay).SetUpdate(true);
             Time.timeScale = 1f;
         }
 

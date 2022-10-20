@@ -28,6 +28,7 @@ namespace Utilities.OdinEditor {
         public bool rateUsPanelActive = true;
         [Header("Parameters")]
         public float blackScreenFadeDelay;
+        public float blackScreenFadeInDelay;
         public Color transitionColor;
         public SaveSystemType saveSystemType;
 
