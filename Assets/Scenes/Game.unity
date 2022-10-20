@@ -9436,7 +9436,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -21050,7 +21050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086310703324740836, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
       propertyPath: waterUVs
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6198546396429051116, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
       propertyPath: waterUVs

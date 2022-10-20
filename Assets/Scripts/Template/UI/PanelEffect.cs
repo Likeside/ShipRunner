@@ -139,7 +139,8 @@ namespace Utilities {
             gameObject.SetActive(true);
             _rt.anchoredPosition = start;
             _rt.localScale = Vector3.one;
-            _rt.DOLocalMove(end, PanelManager.Instance.PanelEffectsConfigSo.panelSlideTime).SetEase(_ease).SetUpdate(true);;
+            _rt.DOAnchorPos(end, PanelManager.Instance.PanelEffectsConfigSo.panelSlideTime).SetEase(_ease).SetUpdate(true);
+            
            
         }
 

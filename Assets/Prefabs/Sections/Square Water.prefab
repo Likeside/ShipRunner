@@ -208,9 +208,9 @@ MonoBehaviour:
   waveSteepness: 0.118
   waveLength: 3.7
   waveSpeed: 0.58
-  waveDirections: {x: 0.43, y: 0.22, z: 0, w: 0}
-  waveDirection1: 0.43
-  waveDirection2: 0.22
+  waveDirections: {x: 0, y: 0, z: 0, w: 0}
+  waveDirection1: 0
+  waveDirection2: 0
   waveDirection3: 0
   waveDirection4: 0
   waterUVs: 0
