@@ -25,13 +25,13 @@ namespace Utilities {
             }
 
             if (PanelManager.Instance.ElementsActiveness.soundButtonActive) {
-                _soundBtnImage.sprite = PlayerPrefs.GetFloat("volume") <= 0 ? _soundBtnSprites[1] : _soundBtnSprites[0];
+                _soundBtnImage.sprite = PlayerPrefs.GetFloat("volume", 1f) <= 0 ? _soundBtnSprites[1] : _soundBtnSprites[0];
             }
 
             if (PanelManager.Instance.ElementsActiveness.musicButtonActive) {
                 _musicOn = PlayerPrefsHelper.GetBool("music", true);
                 _musicBtnImage.sprite = _musicOn ? _musicBtnSprites[0] : _musicBtnSprites[1];
-                if (PlayerPrefs.GetFloat("volume") <= 0) {
+                if (PlayerPrefs.GetFloat("volume", 1f) <= 0) {
                     _musicBtnImage.sprite = _musicBtnSprites[1];
                 }
             }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Template.UI;
 using TMPro;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,6 +62,7 @@ namespace Utilities.OdinEditor {
 
         
         void Update() {
+            /*
             if(EditorApplication.isPlaying ) return;
             foreach (var setting in _plainTexts) {
                 setting.SetSettings();
@@ -69,6 +70,7 @@ namespace Utilities.OdinEditor {
             foreach (var setting in _textMeshes) {
                 setting.SetSettings();
             }
+            */
         }
         
         #region TextSettings

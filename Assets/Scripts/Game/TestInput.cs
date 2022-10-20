@@ -11,8 +11,8 @@ namespace Game {
         [SerializeField] Steering _steering;
 
 
-        Vector3 _left = new Vector3(0, -10, -10);
-        Vector3 _right = new Vector3(0, 10, 10);
+        Vector3 _left = new Vector3(0, 10, -10);
+        Vector3 _right = new Vector3(0, -10, 10);
         float _rotation;
 
         void Start() {
@@ -21,7 +21,7 @@ namespace Game {
 
         void Update() {
            // Debug.Log("Rotation: " + _rotation);
-           _rotation = -SteeringWheel.steeringInput;
+           _rotation = -SteeringWheel.steeringInput*2;
             _ship.rotation = Quaternion.Euler(Vector3.zero);
             _world.Rotate(Vector3.up, _rotation);
 

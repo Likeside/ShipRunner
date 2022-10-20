@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using Template.UI;
-using UnityEditor;
+//using UnityEditor;
 
 namespace Utilities.OdinEditor {
     
@@ -38,6 +38,7 @@ namespace Utilities.OdinEditor {
         }
         
         void Update() {
+            /*
             if(EditorApplication.isPlaying ) return;
             foreach (var setting in _singleRects) {
                 setting.SetSettings();
@@ -45,6 +46,7 @@ namespace Utilities.OdinEditor {
             foreach (var setting in _groupRects) {
                 setting.SetSettings();
             }
+            */
         }
         
         #region RectTransformsSettings
