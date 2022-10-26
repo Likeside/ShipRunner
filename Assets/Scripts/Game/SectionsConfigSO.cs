@@ -7,6 +7,10 @@ namespace Game {
     public class SectionsConfigSO: ScriptableObject {
 
         public float speed;
+
+        public GameObject goldCoin;
+        public GameObject silverCoin;
+        public GameObject bronzeCoin;
         [NonReorderable] 
         public List<SectionData> SectionDatas;
         

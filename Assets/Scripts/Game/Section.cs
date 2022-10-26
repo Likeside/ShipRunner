@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 namespace Game {
     public class Section: MonoBehaviour {
@@ -7,10 +9,25 @@ namespace Game {
         [SerializeField] Transform _nextSectionSpawnPos;
         [SerializeField] List<PossibleSections> _possibleSectionTypes;
 
+        [SerializeField] List<Vector3> _collectablePositions;
+
+
         public PossibleSections Type => _type;
         public Transform NextSectionSpawnPos => _nextSectionSpawnPos;
         public List<PossibleSections> PossibleSectionTypes => _possibleSectionTypes;
-        
-        
+
+        public List<Vector3> CollectablePositions => _collectablePositions;
+
+
+
+        [Button]
+        public void SetCollectablePositions() {
+            _collectablePositions = new List<Vector3>();
+            foreach (Transform child in transform) {
+                if (child.TryGetComponent(out ICollectable collectable)) {
+                    _collectablePositions.Add(child.localPosition);
+                }
+            }
+        }
     }
 }
