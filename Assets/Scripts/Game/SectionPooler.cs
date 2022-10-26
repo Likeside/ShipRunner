@@ -15,7 +15,9 @@ namespace GameScripts {
             foreach (var sectionData in sectionsConfigSo.SectionDatas) {
                 var queue = new Queue<GameObject>();
                 for (int i = 0; i < amount; i++) {
-                    queue.Enqueue(GameObject.Instantiate(sectionData.section));
+                    var obj = GameObject.Instantiate(sectionData.section);
+                    queue.Enqueue(obj);
+                    obj.SetActive(false);
                 }
                 _objsQueues.Add(sectionData.type, queue);
             }

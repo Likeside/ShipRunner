@@ -22,11 +22,14 @@ namespace Game {
             }
 
             if (!(_spawnedSections[^1].transform.localPosition.z <= 200)) return;
-            var newSection = Instantiate(_sectionSpawner.GetNextSection(_spawnedSections[^1]), _parent, false);
+            var newSection = _sectionSpawner.GetNextSection(_spawnedSections[^1]);
+            newSection.transform.SetParent(_parent);
+            newSection.transform.rotation = _nextPosition.rotation;
             newSection.transform.position = _nextPosition.position;
             _nextPosition = newSection.GetComponent<Section>().NextSectionSpawnPos;
             _spawnedSections.Add(newSection);
             _sectionSpawner.DisableSection(_spawnedSections[0]);
+            _spawnedSections[0].transform.SetParent(null);
             _spawnedSections.Remove(_spawnedSections[0]);
         }
     }
