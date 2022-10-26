@@ -10,9 +10,12 @@ using Utilities.OdinEditor;
 namespace Utilities {
     public class SceneLoader: GlobalSingleton<SceneLoader> {
         
-        [SerializeField] Image _blackScreen;
+       // [SerializeField] Image _blackScreen;
         [SerializeField] AdsAndAnalyticsConfigSO _adsConfig;
-
+        [SerializeField] Animator _animator;
+        string _sceneName;
+        static readonly int FadeOut = Animator.StringToHash("FadeOut");
+        static readonly int FadeIn = Animator.StringToHash("FadeIn");
         public ISaveSystem SaveSystem { get; private set; }
 
         Color _transparent;
@@ -37,7 +40,7 @@ namespace Utilities {
 
         void Start() {
             Debug.Log("Starting scene loader");
-            _blackScreen.material.color = Color.clear;
+          //  _blackScreen.material.color = Color.clear;
             LevelTracker.LevelToLoad = SaveSystem.LoadGame().LevelToLoad;
             Debug.Log("Loaded: " + LevelTracker.LevelToLoad);
         }
@@ -105,14 +108,16 @@ namespace Utilities {
             LoadScene("Menu");
         }
 
+        /*
         public void BsFadeIn() {
             Debug.Log("Fading In");
             StartCoroutine(FadeInCor());
         }
-
+        
         public void BsFadeOut() {
           _blackScreen.material.DOColor(PanelManager.Instance.ElementsActiveness.transitionColor, PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
         }
+        */
         
         public void Quit() {
             SaveSystem.SaveGame();
@@ -126,17 +131,25 @@ namespace Utilities {
 
         void LoadScene(string sceneName) {
             SaveSystem.SaveGame();
+            /*
             var tween = _blackScreen.material.DOColor(PanelManager.Instance.ElementsActiveness.transitionColor,
                 PanelManager.Instance.ElementsActiveness.blackScreenFadeDelay).SetUpdate(true);
             tween.onComplete = () => SceneManager.LoadScene(sceneName);
-
+            */
+            _animator.SetTrigger(FadeOut);
+            _sceneName = sceneName;
         }
 
         IEnumerator FadeInCor() {
             yield return new WaitForFixedUpdate();
-            _blackScreen.material.DOColor(_transparent, PanelManager.Instance.ElementsActiveness.blackScreenFadeInDelay).SetUpdate(true);
+           // _blackScreen.material.DOColor(_transparent, PanelManager.Instance.ElementsActiveness.blackScreenFadeInDelay).SetUpdate(true);
             Time.timeScale = 1f;
         }
+        public void OnFadeComplete() {
+            SceneManager.LoadScene(_sceneName);
+            _animator.SetTrigger(FadeIn);
+        }
+        
     }
     
 }
