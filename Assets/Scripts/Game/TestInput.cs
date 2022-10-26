@@ -8,7 +8,6 @@ namespace Game {
         [SerializeField] float _rotationCoefficient;
         [SerializeField] Transform _ship;
 
-        [SerializeField] Steering _steering;
 
 
         Vector3 _left = new Vector3(0, -10, 10);
