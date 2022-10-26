@@ -5,14 +5,9 @@ using UnityEngine;
 namespace Game {
     public class CoinController {
 
-        ObjectPooler _goldCoinPooler;
-        ObjectPooler _silverCoinPooler;
-        ObjectPooler _bronzeCoinPooler;
 
+        PoolerBase<CoinType> _pooler;
         public CoinController() {
-            _goldCoinPooler = new ObjectPooler();
-            _silverCoinPooler = new ObjectPooler();
-            _CoinPooler = new ObjectPooler();
         }
 
 

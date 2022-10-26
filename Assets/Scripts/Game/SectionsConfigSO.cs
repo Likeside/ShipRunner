@@ -8,16 +8,16 @@ namespace Game {
 
         public float speed;
 
-        public GameObject goldCoin;
-        public GameObject silverCoin;
-        public GameObject bronzeCoin;
+       // [NonReorderable] 
+       // public List<SectionData> SectionDatas;
+
         [NonReorderable] 
-        public List<SectionData> SectionDatas;
-        
+        public List<PoolData<PossibleSections>> SectionDatas;
+
         [Serializable]
-        public class SectionData {
-            public GameObject section;
-            public PossibleSections type;
+        public class PoolData<T> where T : Enum {
+            public GameObject prefab;
+            public T type;
         }
     }
 }
