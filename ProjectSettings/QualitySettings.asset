@@ -187,7 +187,7 @@ QualitySettings:
     customRenderPipeline: {fileID: 11400000, guid: 77da8c9f294e910829b0d5af54ec7944, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
-    name: Ultra
+    name: Low
     pixelLightCount: 4
     shadows: 2
     shadowResolution: 2
@@ -220,7 +220,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: a95ac88dc00842d94929046435719528, type: 2}
+    customRenderPipeline: {fileID: 11400000, guid: b519782422dd0533da0570c4e0889fc5, type: 2}
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 2
