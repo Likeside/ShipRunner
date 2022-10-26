@@ -16,5 +16,9 @@ namespace Game {
             var type = section.PossibleSectionTypes[index];
             return _sectionPooler.SpawnFromPool(type);
        }
+
+       public void DisableSection(GameObject section) {
+           _sectionPooler.ReturnToPool(section);
+       }
     }
 }

@@ -448,10 +448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28018b3b356745e08eac1594c99338af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _possibleSections:
-  - {fileID: 3922759779269333926, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
-  - {fileID: 2739206264702105035, guid: 493fb99fd8b528628a291583cbc6cb27, type: 3}
-  - {fileID: 266705992263009963, guid: e34e9eb8de83b1bfc839f7d1d41ee7c5, type: 3}
+  _type: 1
+  _nextSectionSpawnPos: {fileID: 3373427234489046778}
+  _possibleSectionTypes: 060000000700000008000000
 --- !u!1 &5792283873378808672
 GameObject:
   m_ObjectHideFlags: 0

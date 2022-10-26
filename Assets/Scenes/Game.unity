@@ -19645,7 +19645,7 @@ GameObject:
   - component: {fileID: 2005752658}
   - component: {fileID: 2005752659}
   m_Layer: 0
-  m_Name: TestInput
+  m_Name: Controllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19679,9 +19679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _world: {fileID: 400143625}
-  _rotationCoefficient: 1
-  _ship: {fileID: 1906797550}
-  _steering: {fileID: 696647572}
+  _rotationCoefficient: 2.5
 --- !u!114 &2005752659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19694,9 +19692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cdd9dae55544c88e45c15dffe05e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sectionsConfigSo: {fileID: 0}
   _parent: {fileID: 400143625}
-  _sectionPrefab: {fileID: 3922759779269333926, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
-  _speed: 15
   _spawnedSections:
   - {fileID: 12636922}
   - {fileID: 924367438}

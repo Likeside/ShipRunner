@@ -26,7 +26,7 @@ namespace Game {
             newSection.transform.position = _nextPosition.position;
             _nextPosition = newSection.GetComponent<Section>().NextSectionSpawnPos;
             _spawnedSections.Add(newSection);
-            Destroy(_spawnedSections[0]);
+            _sectionSpawner.DisableSection(_spawnedSections[0]);
             _spawnedSections.Remove(_spawnedSections[0]);
         }
     }

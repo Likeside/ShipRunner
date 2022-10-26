@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82db8b18c1064f51bc0854dc42089d54, type: 3}
+  m_Name: SectionsConfigSO
+  m_EditorClassIdentifier: 
+  speed: 15
+  SectionDatas:
+  - section: {fileID: 980656009792670938, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
+    type: 0
+  - section: {fileID: 5792283872768816400, guid: 9ae3190229a24d4d89a5e82af2a75864, type: 3}
+    type: 1
+  - section: {fileID: 4378703742867318803, guid: b0f6f7312f8d01382bb00da23135086f, type: 3}
+    type: 3
+  - section: {fileID: 9051184384179533482, guid: 6447c58f51d49f22e84ebccdc382f11f, type: 3}
+    type: 4
+  - section: {fileID: 3922759779269333926, guid: ff3f917bbde3aaaaca94f47706b86761, type: 3}
+    type: 6
+  - section: {fileID: 2739206264702105035, guid: 493fb99fd8b528628a291583cbc6cb27, type: 3}
+    type: 7
+  - section: {fileID: 266705992263009963, guid: e34e9eb8de83b1bfc839f7d1d41ee7c5, type: 3}
+    type: 8
