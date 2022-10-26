@@ -18,8 +18,14 @@ namespace Game {
                 var tr = coin.transform;
                 tr.SetParent(section.transform);
                 tr.localPosition = position;
+                coin.OnCoinCollected += ReturnCoinToPool;
                 coin.OnCoinCollected += coinCollectedCallback;
             }
+        }
+
+        void ReturnCoinToPool(Coin coin) {
+            coin.OnCoinCollected -= ReturnCoinToPool;
+            _pooler.ReturnToPool(coin.gameObject);
         }
 
         void CoinCollected(Coin coin) {

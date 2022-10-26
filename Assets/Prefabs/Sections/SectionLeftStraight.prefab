@@ -406,6 +406,11 @@ MonoBehaviour:
   _type: 1
   _nextSectionSpawnPos: {fileID: 3373427234489046778}
   _possibleSectionTypes: 060000000700000008000000
+  _collectablePositions:
+  - {x: 6.7, y: 1.5, z: -6.8}
+  - {x: 6.7, y: 1.5, z: -1.3}
+  - {x: -7.2, y: 1.5, z: 14.7}
+  - {x: 3.5, y: 1.5, z: 14.7}
 --- !u!1 &5792283873378808672
 GameObject:
   m_ObjectHideFlags: 0
