@@ -16,7 +16,8 @@ namespace Game {
         }
 
 
-        void OnCollisionEnter(Collision other) {
+        void OnTriggerEnter(Collider other) {
+            Debug.Log("Colliding");
             if (other.transform.TryGetComponent(out ICollectable collectable) ) {
                 collectable.Collect();
             }
