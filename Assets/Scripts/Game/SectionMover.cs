@@ -1,16 +1,20 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game {
     public class SectionMover: MonoBehaviour {
-        [SerializeField] SectionsConfigSO _sectionsConfigSo;
         [SerializeField] Transform _parent;
         [SerializeField] List<GameObject> _spawnedSections;
+
+        public event Action<Section> OnNewSectionSpawned;
         
+        SectionsConfigSO _sectionsConfigSo;
         Transform _nextPosition;
         SectionSpawner _sectionSpawner;
-        
-        void Start() {
+
+       public void Initialize(SectionsConfigSO sectionsConfigSo) {
+            _sectionsConfigSo = sectionsConfigSo;
             _nextPosition = _spawnedSections[^1].GetComponent<Section>().NextSectionSpawnPos;
             _sectionSpawner = new SectionSpawner(_sectionsConfigSo);
         }
@@ -26,7 +30,9 @@ namespace Game {
             newSection.transform.SetParent(_parent);
             newSection.transform.rotation = _nextPosition.rotation;
             newSection.transform.position = _nextPosition.position;
-            _nextPosition = newSection.GetComponent<Section>().NextSectionSpawnPos;
+            var sectionMb = newSection.GetComponent<Section>();
+            OnNewSectionSpawned?.Invoke(sectionMb);
+            _nextPosition = sectionMb.NextSectionSpawnPos;
             _spawnedSections.Add(newSection);
             _sectionSpawner.DisableSection(_spawnedSections[0]);
             _spawnedSections[0].transform.SetParent(null);

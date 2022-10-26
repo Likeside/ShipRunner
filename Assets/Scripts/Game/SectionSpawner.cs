@@ -1,5 +1,3 @@
-using System.Linq;
-using GameScripts;
 using UnityEngine;
 
 namespace Game {
