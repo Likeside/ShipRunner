@@ -4,14 +4,13 @@ using UnityEngine;
 using UnityEngine.Assertions.Must;
 
 namespace Game {
-    public class Section: MonoBehaviour {
+    public class Section: MonoBehaviour, IPoolType<PossibleSections> {
         [SerializeField] PossibleSections _type;
         [SerializeField] Transform _nextSectionSpawnPos;
         [SerializeField] List<PossibleSections> _possibleSectionTypes;
 
         [SerializeField] List<Vector3> _collectablePositions;
-
-
+        
         public PossibleSections Type => _type;
         public Transform NextSectionSpawnPos => _nextSectionSpawnPos;
         public List<PossibleSections> PossibleSectionTypes => _possibleSectionTypes;
