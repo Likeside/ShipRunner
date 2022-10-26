@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game {
-    public class SectionMover: MonoBehaviour, IExecutable {
+    public class SectionMover: MonoBehaviour {
         [SerializeField] SectionsConfigSO _sectionsConfigSo;
         [SerializeField] Transform _parent;
         [SerializeField] List<GameObject> _spawnedSections;
@@ -15,20 +15,19 @@ namespace Game {
             _sectionSpawner = new SectionSpawner(_sectionsConfigSo);
         }
         
-        public void Execute() {
+        public void Update() {
             var backDirection = (_parent.InverseTransformDirection(Vector3.back)).normalized; 
             foreach (var spawnedSection in _spawnedSections) {
                 spawnedSection.transform.localPosition += backDirection * Time.deltaTime * _sectionsConfigSo.speed;
             }
 
-            if (_spawnedSections[^1].transform.localPosition.z <= 200) {
-                var newSection = Instantiate(_sectionSpawner.GetNextSection(_spawnedSections[^1]), _parent, false);
-                newSection.transform.position = _nextPosition.position;
-                _nextPosition = newSection.GetComponent<Section>().NextSectionSpawnPos;
-                _spawnedSections.Add(newSection);
-                Destroy(_spawnedSections[0]);
-                _spawnedSections.Remove(_spawnedSections[0]);
-            }
+            if (!(_spawnedSections[^1].transform.localPosition.z <= 200)) return;
+            var newSection = Instantiate(_sectionSpawner.GetNextSection(_spawnedSections[^1]), _parent, false);
+            newSection.transform.position = _nextPosition.position;
+            _nextPosition = newSection.GetComponent<Section>().NextSectionSpawnPos;
+            _spawnedSections.Add(newSection);
+            Destroy(_spawnedSections[0]);
+            _spawnedSections.Remove(_spawnedSections[0]);
         }
     }
 }
