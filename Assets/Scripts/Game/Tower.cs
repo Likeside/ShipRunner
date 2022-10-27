@@ -58,12 +58,13 @@ namespace Game {
 
         void Fire() {
             _fired = true;
-            PlayFireAnimation();
-            OnTowerFired?.Invoke(this);
+            StartCoroutine(PlayFireAnimation());
         }
 
-        void PlayFireAnimation() {
-            throw new NotImplementedException();
+        IEnumerator PlayFireAnimation() {
+            Debug.Log("Playing fire animation");
+            yield return new WaitForSeconds(0.3f); //TODO: ЗАМЕНИТЬ НА НОРМ ХУЙНЮ
+            OnTowerFired?.Invoke(this);
         }
         
         IEnumerator PlayDestroyAnimation() {
