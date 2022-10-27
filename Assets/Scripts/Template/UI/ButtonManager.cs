@@ -27,6 +27,8 @@ namespace Template.UI {
         [SerializeField] Button _shopButton;
         [SerializeField] Button _rateUsYes;
         [SerializeField] Button _rateUsNo;
+        [SerializeField] Button _restartYes;
+        [SerializeField] Button _restartNo;
         [SerializeField] Button[] _rewardedFailedPanelCloseButtons;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
@@ -52,6 +54,8 @@ namespace Template.UI {
             SetButton(_shopButton, PanelManager.Instance.ElementsActiveness.shopPanelActive, PanelManager.Instance.ToggleShopPanel);
             SetButton(_rateUsNo, PanelManager.Instance.ElementsActiveness.rateUsPanelActive, PanelManager.Instance.ToggleRateUsPanel);
             SetButton(_rateUsYes, PanelManager.Instance.ElementsActiveness.rateUsPanelActive, AdsAndAnalyticsManager.Instance.OpenRateUsLink);
+            SetButton(_restartYes, PanelManager.Instance.ElementsActiveness.gameCompletePanelActive, SceneLoader.Instance.LoadNextLevel);
+            SetButton(_restartNo, PanelManager.Instance.ElementsActiveness.gameCompletePanelActive, SceneLoader.Instance.LoadMainMenu);
 
             foreach (var button in _rewardedFailedPanelCloseButtons) {
                 SetButton(button, PanelManager.Instance.ElementsActiveness.rewardedFailedPanelActive, PanelManager.Instance.ToggleRewardedFailedPanel);

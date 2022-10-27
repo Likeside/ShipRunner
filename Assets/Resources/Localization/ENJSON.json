@@ -24,5 +24,6 @@
   "AdjustVolume": "Set Volume:",
   "NoRewarded": "Unable to skip level currently. This can be due to internet connection.",
   "OK": "OK",
-  "DoYouLike": "Do you like the game?"
+  "DoYouLike": "Do you like the game?",
+  "Restart": "Restart?"
 }

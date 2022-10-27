@@ -23,6 +23,7 @@ namespace Game {
             }
 
             if (other.transform.TryGetComponent(out Obstacle obstacle)) {
+                Debug.Log("Collided with obstacle");
                 OnCollidedWithObstacle?.Invoke();
             }
         }

@@ -11,6 +11,7 @@ public class GameController : LocalSingleton<GameController> {
         [SerializeField] SectionsConfigSO _sectionsConfigSo;
         [SerializeField] SectionMover _sectionMover;
         [SerializeField] CannonInputController _cannonInputController;
+        [SerializeField] Ship _ship;
 
 
         CoinController _coinController;
@@ -44,6 +45,7 @@ public class GameController : LocalSingleton<GameController> {
                 _sectionMover.Initialize(_sectionsConfigSo);
                 _sectionMover.OnNewSectionSpawned += SpawnCoins;
                 _sectionMover.OnNewSectionSpawned += SpawnTowers;
+                _ship.OnCollidedWithObstacle += Lost;
         }
 
         void SpawnTowers(Section section) {
@@ -61,6 +63,18 @@ public class GameController : LocalSingleton<GameController> {
 
         void AddScoreForTower(Tower tower) {
                 Debug.Log("Tower destroyed");
+        }
+        
+        void Lost() {
+                Debug.Log("Game lost");
+                PanelManager.Instance.ToggleGameCompletePanel();
+        }
+
+
+        void Unsubscribe() {
+                _sectionMover.OnNewSectionSpawned -= SpawnCoins;
+                _sectionMover.OnNewSectionSpawned -= SpawnTowers;
+                _ship.OnCollidedWithObstacle -= Lost;  
         }
         
 }
