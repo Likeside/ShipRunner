@@ -495,6 +495,10 @@ MonoBehaviour:
   - {x: 6.7, y: 1.5, z: -1.3}
   - {x: -7.2, y: 1.5, z: 14.7}
   - {x: 3.5, y: 1.5, z: 14.7}
+  _towerPositions:
+  - {x: -27.9, y: 0, z: -8.830894}
+  _toweRotations:
+  - {x: -0, y: 90, z: -0}
 --- !u!1 &5792283873378808672
 GameObject:
   m_ObjectHideFlags: 0

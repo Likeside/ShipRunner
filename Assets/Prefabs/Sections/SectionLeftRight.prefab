@@ -440,7 +440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980656009792670938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.69}
+  m_LocalPosition: {x: 1.2, y: 0, z: 1.69}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,6 +476,10 @@ MonoBehaviour:
   - {x: -1.8312259, y: 1.5, z: -10.170877}
   - {x: -5.98, y: 1.5, z: -4.48}
   - {x: -11.4, y: 1.5, z: 2.7}
+  _towerPositions:
+  - {x: 13.2, y: 0, z: -7.1408944}
+  _toweRotations:
+  - {x: -0, y: 270, z: 0}
 --- !u!1 &980656009821253500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1248,14 @@ PrefabInstance:
     - target: {fileID: 2474488074762394920, guid: 947fd0c22b7562c169d333cd5a51f9dd, type: 3}
       propertyPath: waterUVs
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2474488074762394920, guid: 947fd0c22b7562c169d333cd5a51f9dd, type: 3}
+      propertyPath: deepColor.a
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 2474488074762394920, guid: 947fd0c22b7562c169d333cd5a51f9dd, type: 3}
+      propertyPath: deepColor.g
+      value: 0.3029585
       objectReference: {fileID: 0}
     - target: {fileID: 3722040309343959104, guid: 947fd0c22b7562c169d333cd5a51f9dd, type: 3}
       propertyPath: m_RootOrder

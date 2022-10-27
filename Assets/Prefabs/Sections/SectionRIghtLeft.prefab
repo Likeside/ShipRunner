@@ -670,6 +670,10 @@ MonoBehaviour:
   _nextSectionSpawnPos: {fileID: 7197654385563345004}
   _possibleSectionTypes: 0000000001000000
   _collectablePositions: []
+  _towerPositions:
+  - {x: -12, y: 0, z: -8.830894}
+  _toweRotations:
+  - {x: -0, y: 90, z: -0}
 --- !u!1 &4641684498129720898
 GameObject:
   m_ObjectHideFlags: 0
