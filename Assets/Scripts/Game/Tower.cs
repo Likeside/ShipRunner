@@ -9,11 +9,22 @@ namespace Game {
         public TowerType Type => TowerType.Simple;
         public event Action<Tower> OnTowerDestroyed;
         public event Action<Tower> OnTowerSectionDisabled;
-        
-        
-        
+
+        public event Action OnTowerFired;
+
+        bool _fired;
+
+
+        void Update() {
+            if(_fired) return;
+            if (_towerCenter.position.z < -5.1f) {
+                Fire();
+            }
+        }
+
         public void SectionDisabled() {
             if (gameObject.activeSelf) {
+                _fired = false;
                 OnTowerSectionDisabled?.Invoke(this);
                 Unsubscribe();
             }
@@ -24,13 +35,8 @@ namespace Game {
             OnTowerSectionDisabled = null;
         }
 
-        IEnumerator PlayDestroyAnimation() {
-            Debug.Log("playing destroy animation");
-            yield return new WaitForSeconds(0.3f); //TODO: ЗАМЕНИТЬ НА НОРМ ХУЙНЮ
-            OnTowerDestroyed?.Invoke(this);
-        }
-        
         void DestroyTower() {
+            _fired = false;
             StartCoroutine(PlayDestroyAnimation());
         }
         bool IsInFireZone() {
@@ -50,5 +56,20 @@ namespace Game {
             }   
         }
 
+        void Fire() {
+            _fired = true;
+            PlayFireAnimation();
+            OnTowerFired?.Invoke();
+        }
+
+        void PlayFireAnimation() {
+            throw new NotImplementedException();
+        }
+        
+        IEnumerator PlayDestroyAnimation() {
+            Debug.Log("playing destroy animation");
+            yield return new WaitForSeconds(0.3f); //TODO: ЗАМЕНИТЬ НА НОРМ ХУЙНЮ
+            OnTowerDestroyed?.Invoke(this);
+        }
     }
 }
