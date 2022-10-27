@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SectionsConfigSO
   m_EditorClassIdentifier: 
   speed: 15
-  SectionDatas:
+  sectionDatas:
   - prefab: {fileID: 980656009792670938, guid: 2a64b241295f17cf0b4a9906d2b0e832, type: 3}
     type: 0
   - prefab: {fileID: 5792283872768816400, guid: 9ae3190229a24d4d89a5e82af2a75864, type: 3}
@@ -28,6 +28,9 @@ MonoBehaviour:
     type: 7
   - prefab: {fileID: 266705992263009963, guid: e34e9eb8de83b1bfc839f7d1d41ee7c5, type: 3}
     type: 8
-  CoinDatas:
+  coinDatas:
   - prefab: {fileID: 7976203951490908393, guid: f73c38bf29d293ba6954396f1f0caf29, type: 3}
+    type: 0
+  towerDatas:
+  - prefab: {fileID: 1092957612761970980, guid: 2a8c538628eeed0faa3af020c41a1488, type: 3}
     type: 0
