@@ -23,17 +23,15 @@ namespace Game {
                 tr.localPosition = position;
                 coin.OnCoinCollected += ReturnCoinToPool;
                 coin.OnCoinCollected += coinCollectedCallback;
+                coin.OnCoinSectionDisabled += ReturnCoinToPool;
+                section.OnSectionDisabled += coin.SectionDisabled;
             }
         }
 
         void ReturnCoinToPool(Coin coin) {
-            coin.OnCoinCollected -= ReturnCoinToPool;
+            coin.Unsubscribe();
             _pooler.ReturnToPool(coin.gameObject);
         }
 
-        void CoinCollected(Coin coin) {
-          //  coin.OnCoinCollected -= CoinCollected;
-          //  Debug.Log("Coin collected, type: " + coin.Type);
-        }
     }
 }

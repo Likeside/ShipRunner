@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -13,13 +14,19 @@ namespace Game {
         [SerializeField] List<Vector3> _towerPositions;
         [SerializeField] List<Vector3> _toweRotations;
 
+        public event Action OnSectionDisabled;
         public PossibleSections Type => _type;
         public Transform NextSectionSpawnPos => _nextSectionSpawnPos;
         public List<PossibleSections> PossibleSectionTypes => _possibleSectionTypes;
-
+        
         public List<Vector3> CollectablePositions => _collectablePositions;
         public List<Vector3> TowerPosition => _towerPositions;
         public List<Vector3> TowerRotations => _toweRotations;
+
+
+        public void CallSectionDisabled() {
+            OnSectionDisabled?.Invoke();
+        }
         
         [Button]
         public void SetCollectablePositions() {

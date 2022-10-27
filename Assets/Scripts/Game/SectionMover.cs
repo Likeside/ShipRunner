@@ -34,7 +34,7 @@ namespace Game {
             OnNewSectionSpawned?.Invoke(sectionMb);
             _nextPosition = sectionMb.NextSectionSpawnPos;
             _spawnedSections.Add(newSection);
-            _sectionSpawner.DisableSection(_spawnedSections[0]);
+            _sectionSpawner.DisableSection(_spawnedSections[0].GetComponent<Section>());
             _spawnedSections[0].transform.SetParent(null);
             _spawnedSections.Remove(_spawnedSections[0]);
         }

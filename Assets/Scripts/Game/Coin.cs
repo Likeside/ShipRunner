@@ -8,9 +8,20 @@ namespace Game {
 
         public CoinType Type => _coinType;
         public event Action<Coin> OnCoinCollected;
+        public event Action<Coin> OnCoinSectionDisabled;
         public void Collect() {
             OnCoinCollected?.Invoke(this);
+            Unsubscribe();
+        }
+
+        public void SectionDisabled() {
+            OnCoinSectionDisabled?.Invoke(this);
+            Unsubscribe();
+        }
+        
+        public void Unsubscribe() {
             OnCoinCollected = null;
+            OnCoinSectionDisabled = null;
         }
 
     }

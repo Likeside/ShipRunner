@@ -15,8 +15,9 @@ namespace Game {
             return _pooler.SpawnFromPool(type);
        }
 
-       public void DisableSection(GameObject section) {
-           _pooler.ReturnToPool(section);
+       public void DisableSection(Section section) {
+           section.CallSectionDisabled();
+           _pooler.ReturnToPool(section.gameObject);
        }
     }
 }

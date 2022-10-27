@@ -13,6 +13,7 @@ public class GameController : LocalSingleton<GameController> {
 
 
         CoinController _coinController;
+        TowerController _towerController;
 
         void Start() { 
                 if (_buttonManager.TipButtonActive) _buttonManager.OnTipButtonPressed += TipButtonPressed;
@@ -40,15 +41,24 @@ public class GameController : LocalSingleton<GameController> {
                 _coinController = new CoinController(_sectionsConfigSo);
                 _sectionMover.Initialize(_sectionsConfigSo);
                 _sectionMover.OnNewSectionSpawned += SpawnCoins;
+                _sectionMover.OnNewSectionSpawned += SpawnTowers;
+        }
+
+        void SpawnTowers(Section section) {
+                _towerController.SpawnTowers(section, AddScoreForTower);
         }
 
 
         void SpawnCoins(Section section) {
-                _coinController.SpawnCoins(section, CoinType.Gold, AddScore); //TODO: задать вероятность спавна коинов разного типа 
+                _coinController.SpawnCoins(section, CoinType.Gold, AddScoreForCoin); //TODO: задать вероятность спавна коинов разного типа 
         }
 
-        void AddScore(Coin coin) {
+        void AddScoreForCoin(Coin coin) {
                 Debug.Log("Coin collected, type: " + coin.Type);
+        }
+
+        void AddScoreForTower(Tower tower) {
+                Debug.Log("Tower destroyed");
         }
         
 }
