@@ -11,29 +11,34 @@ namespace Game {
         public event Action OnFiringLeft;
         public event Action OnFiringRight;
 
-        float _timer;
-        bool _fireReady;
+        float _timerLeft;
+        float _timerRight;
+        bool _fireReadyLeft;
+        bool _fireReadyRight;
 
         void Start() {
-            _timer = _fireRate;
+            _timerLeft = 0;
+            _timerRight = 0;
             _fireLeft.onClick.AddListener(FireLeft);
             _fireRight.onClick.AddListener(FireRight);
         }
         void Update() {
-            _fireReady = _timer <= 0;
-            _timer -= Time.deltaTime;
+            _fireReadyLeft = _timerLeft <= 0;
+            _fireReadyRight = _timerRight <= 0;
+            _timerLeft -= Time.deltaTime;
+            _timerRight -= Time.deltaTime;
         }
         void FireRight() {
-            if (_fireReady) {
+            if (_fireReadyRight) {
                 OnFiringRight?.Invoke();
-                _timer = _fireRate;
+                _timerRight = _fireRate;
             }
         }
 
         void FireLeft() {
-            if (_fireReady) {
+            if (_fireReadyLeft) {
                 OnFiringLeft?.Invoke();
-                _timer = _fireRate;
+                _timerLeft = _fireRate;
             }
         }
 

@@ -9,9 +9,7 @@ namespace Game {
         public TowerType Type { get; } = TowerType.Simple;
         public event Action<Tower> OnTowerDestroyed;
         public event Action<Tower> OnTowerSectionDisabled;
-
-        bool _isInFireZone = false;
-
+        
         public void SectionDisabled() {
             if (gameObject.activeSelf) {
                 OnTowerSectionDisabled?.Invoke(this);
@@ -29,29 +27,23 @@ namespace Game {
             yield return new WaitForSeconds(0.3f); //TODO: ЗАМЕНИТЬ НА НОРМ ХУЙНЮ
             OnTowerDestroyed?.Invoke(this);
         }
-
-
-        void OnTriggerEnter(Collider other) {
-            _isInFireZone = true;
-        }
+        
         void DestroyTower() {
-            _isInFireZone = false;
             StartCoroutine(PlayDestroyAnimation());
         }
-
-        void OnTriggerExit(Collider other) {
-            _isInFireZone = false;
+        bool IsInFireZone() {
+            return _towerCenter.position.z is <= 5f and >= -5f;
         }
 
 
         public void ReceiveFireLeft() {
-            if (_isInFireZone && _towerCenter.position.x < 0) {
+            if (IsInFireZone() && _towerCenter.position.x < 0) {
                 DestroyTower();
             }
         }
 
         public void ReceiveFireRight() {
-            if (_isInFireZone && _towerCenter.position.x > 0) {
+            if (IsInFireZone() && _towerCenter.position.x > 0) {
                 DestroyTower();
             }   
         }
