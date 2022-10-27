@@ -13,8 +13,10 @@ namespace Game {
         bool _isInFireZone = false;
 
         public void SectionDisabled() {
-            OnTowerSectionDisabled?.Invoke(this);
-            Unsubscribe();
+            if (gameObject.activeSelf) {
+                OnTowerSectionDisabled?.Invoke(this);
+                Unsubscribe();
+            }
         }
 
         public void Unsubscribe() {
@@ -26,7 +28,6 @@ namespace Game {
             Debug.Log("playing destroy animation");
             yield return new WaitForSeconds(0.3f); //TODO: ЗАМЕНИТЬ НА НОРМ ХУЙНЮ
             OnTowerDestroyed?.Invoke(this);
-            Unsubscribe();
         }
 
 

@@ -612,6 +612,10 @@ MonoBehaviour:
   _nextSectionSpawnPos: {fileID: 1483986104663451488}
   _possibleSectionTypes: 060000000700000008000000
   _collectablePositions: []
+  _towerPositions:
+  - {x: -7.4, y: 0, z: -3.5619965}
+  _towerRotations:
+  - {x: -0, y: 63.390003, z: 0}
 --- !u!1001 &974500075605783983
 PrefabInstance:
   m_ObjectHideFlags: 0

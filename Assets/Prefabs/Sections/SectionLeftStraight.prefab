@@ -496,9 +496,9 @@ MonoBehaviour:
   - {x: -7.2, y: 1.5, z: 14.7}
   - {x: 3.5, y: 1.5, z: 14.7}
   _towerPositions:
-  - {x: 23.3, y: 0, z: -5.46631}
+  - {x: -9.8, y: 0, z: -3.5619965}
   _towerRotations:
-  - {x: -0, y: 90, z: -0}
+  - {x: -0, y: 90, z: 0}
 --- !u!1 &5792283873378808672
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,10 @@ namespace Game {
             OnCoinCollected?.Invoke(this);
         }
 
+        void Update() {
+            transform.Rotate(Vector3.forward, 4f, Space.Self);
+        }
+
         public void SectionDisabled() {
             if (gameObject.activeSelf) {
                 OnCoinSectionDisabled?.Invoke(this);
