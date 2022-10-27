@@ -10,21 +10,35 @@ namespace Game {
         [SerializeField] List<PossibleSections> _possibleSectionTypes;
 
         [SerializeField] List<Vector3> _collectablePositions;
-        
+        [SerializeField] List<Vector3> _towerPositions;
+        [SerializeField] List<Vector3> _toweRotations;
+
         public PossibleSections Type => _type;
         public Transform NextSectionSpawnPos => _nextSectionSpawnPos;
         public List<PossibleSections> PossibleSectionTypes => _possibleSectionTypes;
 
         public List<Vector3> CollectablePositions => _collectablePositions;
-
-
-
+        public List<Vector3> TowerPosition => _towerPositions;
+        public List<Vector3> TowerRotations => _toweRotations;
+        
         [Button]
         public void SetCollectablePositions() {
             _collectablePositions = new List<Vector3>();
             foreach (Transform child in transform) {
                 if (child.TryGetComponent(out ICollectable collectable)) {
                     _collectablePositions.Add(child.localPosition);
+                }
+            }
+        }
+
+        [Button]
+        public void SetTowerPositionsAndRotations() {
+            _towerPositions = new List<Vector3>();
+            _towerPositions = new List<Vector3>();
+            foreach (Transform child in transform) {
+                if (child.TryGetComponent(out Tower tower)) {
+                    _towerPositions.Add(tower.transform.position);
+                    _toweRotations.Add(tower.transform.rotation.eulerAngles);
                 }
             }
         }

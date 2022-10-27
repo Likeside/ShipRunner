@@ -12,9 +12,11 @@ namespace Game {
        // public List<SectionData> SectionDatas;
 
         [NonReorderable] 
-        public List<PoolData<PossibleSections>> SectionDatas;
+        public List<PoolData<PossibleSections>> sectionDatas;
         [NonReorderable] 
-        public List<PoolData<CoinType>> CoinDatas;
+        public List<PoolData<CoinType>> coinDatas;
+        [NonReorderable] 
+        public List<PoolData<TowerType>> towerDatas;
 
         [Serializable]
         public class PoolData<T> where T : Enum {

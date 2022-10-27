@@ -5,7 +5,7 @@ namespace Game {
 
         PoolerBase<PossibleSections> _pooler;
         public SectionSpawner(SectionsConfigSO sectionsConfigSo) {
-            _pooler = new PoolerBase<PossibleSections>(sectionsConfigSo.SectionDatas, 3);
+            _pooler = new PoolerBase<PossibleSections>(sectionsConfigSo.sectionDatas, 3);
         }
         
        public GameObject GetNextSection(GameObject currentSection) {

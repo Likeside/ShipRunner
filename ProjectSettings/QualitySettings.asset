@@ -187,7 +187,7 @@ QualitySettings:
     customRenderPipeline: {fileID: 11400000, guid: 77da8c9f294e910829b0d5af54ec7944, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
-    name: Low
+    name: Custom
     pixelLightCount: 4
     shadows: 2
     shadowResolution: 2
@@ -223,7 +223,7 @@ QualitySettings:
     customRenderPipeline: {fileID: 11400000, guid: b519782422dd0533da0570c4e0889fc5, type: 2}
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    Android: 2
+    Android: 5
     GameCoreScarlett: 5
     GameCoreXboxOne: 5
     Lumin: 5

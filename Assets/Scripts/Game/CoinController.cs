@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game {
+    public enum CoinType {
+        Gold, Silver, Bronze
+    }
     public class CoinController {
 
         
         PoolerBase<CoinType> _pooler;
         public CoinController(SectionsConfigSO sectionsConfigSo) {
-            _pooler = new PoolerBase<CoinType>(sectionsConfigSo.CoinDatas, 20);
+            _pooler = new PoolerBase<CoinType>(sectionsConfigSo.coinDatas, 20);
         }
 
 

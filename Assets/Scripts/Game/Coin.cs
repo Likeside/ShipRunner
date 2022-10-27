@@ -2,10 +2,7 @@ using System;
 using UnityEngine;
 
 namespace Game {
-
-    public enum CoinType {
-        Gold, Silver, Bronze
-    }
+    
     public class Coin: MonoBehaviour, ICollectable, IPoolType<CoinType> {
         [SerializeField] CoinType _coinType;
 
