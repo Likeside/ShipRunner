@@ -12,7 +12,8 @@ namespace Game {
         PoolerBase<TowerType> _pooler;
         CannonInputController _cannonInputController;
         
-        public TowerController(SectionsConfigSO sectionsConfigSo) {
+        public TowerController(SectionsConfigSO sectionsConfigSo, CannonInputController cannonInputController) {
+            _cannonInputController = cannonInputController;
             _pooler = new PoolerBase<TowerType>(sectionsConfigSo.towerDatas, 5);
         }
         

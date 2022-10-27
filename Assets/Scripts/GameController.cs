@@ -10,6 +10,7 @@ public class GameController : LocalSingleton<GameController> {
 
         [SerializeField] SectionsConfigSO _sectionsConfigSo;
         [SerializeField] SectionMover _sectionMover;
+        [SerializeField] CannonInputController _cannonInputController;
 
 
         CoinController _coinController;
@@ -39,6 +40,7 @@ public class GameController : LocalSingleton<GameController> {
 
         void GameStart() {
                 _coinController = new CoinController(_sectionsConfigSo);
+                _towerController = new TowerController(_sectionsConfigSo, _cannonInputController);
                 _sectionMover.Initialize(_sectionsConfigSo);
                 _sectionMover.OnNewSectionSpawned += SpawnCoins;
                 _sectionMover.OnNewSectionSpawned += SpawnTowers;

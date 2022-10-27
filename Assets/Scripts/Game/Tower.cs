@@ -3,8 +3,10 @@ using System.Collections;
 using UnityEngine;
 
 namespace Game {
-    public class Tower: MonoBehaviour {
-        
+    public class Tower: MonoBehaviour, IPoolType<TowerType> {
+
+        [SerializeField] Transform _towerCenter;
+        public TowerType Type { get; } = TowerType.Simple;
         public event Action<Tower> OnTowerDestroyed;
         public event Action<Tower> OnTowerSectionDisabled;
 
@@ -41,13 +43,13 @@ namespace Game {
 
 
         public void ReceiveFireLeft() {
-            if (_isInFireZone && transform.position.x < 0) {
+            if (_isInFireZone && _towerCenter.position.x < 0) {
                 DestroyTower();
             }
         }
 
         public void ReceiveFireRight() {
-            if (_isInFireZone && transform.position.x > 0) {
+            if (_isInFireZone && _towerCenter.position.x > 0) {
                 DestroyTower();
             }   
         }

@@ -3637,7 +3637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f046bf3bc1fd5ab599afa30e91d2e09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blackScreen: {fileID: 168161562}
   _adsConfig: {fileID: 11400000, guid: 6c25a3d0c01fa01b3b5c948e9ec5a10a, type: 2}
   _animator: {fileID: 964604155}
 --- !u!4 &964604154

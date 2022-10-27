@@ -12,7 +12,7 @@ namespace Game {
 
         [SerializeField] List<Vector3> _collectablePositions;
         [SerializeField] List<Vector3> _towerPositions;
-        [SerializeField] List<Vector3> _toweRotations;
+        [SerializeField] List<Vector3> _towerRotations;
 
         public event Action OnSectionDisabled;
         public PossibleSections Type => _type;
@@ -21,7 +21,7 @@ namespace Game {
         
         public List<Vector3> CollectablePositions => _collectablePositions;
         public List<Vector3> TowerPosition => _towerPositions;
-        public List<Vector3> TowerRotations => _toweRotations;
+        public List<Vector3> TowerRotations => _towerRotations;
 
 
         public void CallSectionDisabled() {
@@ -41,11 +41,11 @@ namespace Game {
         [Button]
         public void SetTowerPositionsAndRotations() {
             _towerPositions = new List<Vector3>();
-            _towerPositions = new List<Vector3>();
+            _towerRotations = new List<Vector3>();
             foreach (Transform child in transform) {
                 if (child.TryGetComponent(out Tower tower)) {
-                    _towerPositions.Add(tower.transform.position);
-                    _toweRotations.Add(tower.transform.rotation.eulerAngles);
+                    _towerPositions.Add(tower.transform.localPosition);
+                    _towerRotations.Add(tower.transform.localRotation.eulerAngles);
                 }
             }
         }
