@@ -9,8 +9,7 @@ namespace Game {
         public TowerType Type => TowerType.Simple;
         public event Action<Tower> OnTowerDestroyed;
         public event Action<Tower> OnTowerSectionDisabled;
-
-        public event Action OnTowerFired;
+        public event Action<Tower> OnTowerFired;
 
         bool _fired;
 
@@ -33,6 +32,7 @@ namespace Game {
         public void Unsubscribe() {
             OnTowerDestroyed = null;
             OnTowerSectionDisabled = null;
+            OnTowerFired = null;
         }
 
         void DestroyTower() {
@@ -59,7 +59,7 @@ namespace Game {
         void Fire() {
             _fired = true;
             PlayFireAnimation();
-            OnTowerFired?.Invoke();
+            OnTowerFired?.Invoke(this);
         }
 
         void PlayFireAnimation() {

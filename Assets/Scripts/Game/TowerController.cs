@@ -8,10 +8,11 @@ namespace Game {
         Simple
     }
     public class TowerController {
-        
+
+        public event Action OnTowerFired;
         PoolerBase<TowerType> _pooler;
         CannonInputController _cannonInputController;
-        
+
         public TowerController(SectionsConfigSO sectionsConfigSo, CannonInputController cannonInputController) {
             _cannonInputController = cannonInputController;
             _pooler = new PoolerBase<TowerType>(sectionsConfigSo.towerDatas, 5);
@@ -27,6 +28,7 @@ namespace Game {
                 tr.localRotation = Quaternion.Euler(section.TowerRotations[i]);
                 tower.OnTowerDestroyed += ReturnTowerToPool;
                 tower.OnTowerDestroyed += towerDestroyedCallback;
+                tower.OnTowerFired += TowerFired;
                 tower.OnTowerSectionDisabled += ReturnTowerToPool;
                 _cannonInputController.OnFiringLeft += tower.ReceiveFireLeft;
                 _cannonInputController.OnFiringRight += tower.ReceiveFireRight;
@@ -39,6 +41,12 @@ namespace Game {
             _cannonInputController.OnFiringLeft -= tower.ReceiveFireLeft;
             _cannonInputController.OnFiringRight -= tower.ReceiveFireRight;
             _pooler.ReturnToPool(tower.gameObject);
+        }
+
+        void TowerFired(Tower tower) {
+            Debug.Log("Towe fired from tower controller");
+            ReturnTowerToPool(tower);
+            OnTowerFired?.Invoke();
         }
     }
 }
