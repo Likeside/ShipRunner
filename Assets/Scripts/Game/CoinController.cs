@@ -24,13 +24,12 @@ namespace Game {
                 coin.OnCoinCollected += ReturnCoinToPool;
                 coin.OnCoinCollected += coinCollectedCallback;
                 coin.OnCoinSectionDisabled += ReturnCoinToPool;
-                section.OnSectionDisabled += coin.SectionDisabled;
+                section.OnSectionDisabled += coin.SectionDisabled; //отписаться!!
             }
         }
 
         void ReturnCoinToPool(Coin coin) {
             coin.Unsubscribe();
-            Debug.Log("Returning coin to pool");
             _pooler.ReturnToPool(coin.gameObject);
         }
 

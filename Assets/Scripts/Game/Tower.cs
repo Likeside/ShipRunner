@@ -30,6 +30,7 @@ namespace Game {
         }
 
         public void Unsubscribe() {
+            _fired = false;
             OnTowerDestroyed = null;
             OnTowerSectionDisabled = null;
             OnTowerFired = null;

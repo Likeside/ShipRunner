@@ -17,13 +17,11 @@ namespace Game {
 
 
         void OnTriggerEnter(Collider other) {
-            Debug.Log("Colliding");
             if (other.transform.TryGetComponent(out ICollectable collectable) ) {
                 collectable.Collect();
             }
 
             if (other.transform.TryGetComponent(out Obstacle obstacle)) {
-                Debug.Log("Collided with obstacle");
                 OnCollidedWithObstacle?.Invoke();
             }
         }

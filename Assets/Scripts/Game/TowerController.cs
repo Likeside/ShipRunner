@@ -32,11 +32,13 @@ namespace Game {
                 tower.OnTowerSectionDisabled += ReturnTowerToPool;
                 _cannonInputController.OnFiringLeft += tower.ReceiveFireLeft;
                 _cannonInputController.OnFiringRight += tower.ReceiveFireRight;
-                section.OnSectionDisabled += tower.SectionDisabled;
+                section.OnSectionDisabled += tower.SectionDisabled; //!!!отписаться (отписка в секции)
+                //ПЕРЕПИСАТЬ НАХУЙ ЭТО ГОВНО
             }
         }
 
         void ReturnTowerToPool(Tower tower) {
+            Debug.Log("Returning tower to pool");
             tower.Unsubscribe();
             _cannonInputController.OnFiringLeft -= tower.ReceiveFireLeft;
             _cannonInputController.OnFiringRight -= tower.ReceiveFireRight;

@@ -42,7 +42,7 @@ public class GameController : LocalSingleton<GameController> {
         void GameStart() {
                 _coinController = new CoinController(_sectionsConfigSo);
                 _towerController = new TowerController(_sectionsConfigSo, _cannonInputController);
-                _towerController.OnTowerFired += Lost;
+                //_towerController.OnTowerFired += Lost;
                 _sectionMover.Initialize(_sectionsConfigSo);
                 _sectionMover.OnNewSectionSpawned += SpawnCoins;
                 _sectionMover.OnNewSectionSpawned += SpawnTowers;
