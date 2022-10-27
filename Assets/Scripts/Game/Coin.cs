@@ -11,12 +11,13 @@ namespace Game {
         public event Action<Coin> OnCoinSectionDisabled;
         public void Collect() {
             OnCoinCollected?.Invoke(this);
-            Unsubscribe();
         }
 
         public void SectionDisabled() {
-            OnCoinSectionDisabled?.Invoke(this);
-            Unsubscribe();
+            if (gameObject.activeSelf) {
+                OnCoinSectionDisabled?.Invoke(this);
+                Unsubscribe();
+            }
         }
         
         public void Unsubscribe() {

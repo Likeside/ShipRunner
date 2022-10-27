@@ -24,7 +24,7 @@ namespace Game {
 
         IEnumerator PlayDestroyAnimation() {
             Debug.Log("playing destroy animation");
-            yield return new WaitForSeconds(1f); //TODO: ЗАМЕНИТЬ НА НОРМ ХУЙНЮ
+            yield return new WaitForSeconds(0.3f); //TODO: ЗАМЕНИТЬ НА НОРМ ХУЙНЮ
             OnTowerDestroyed?.Invoke(this);
             Unsubscribe();
         }
@@ -34,6 +34,7 @@ namespace Game {
             _isInFireZone = true;
         }
         void DestroyTower() {
+            _isInFireZone = false;
             StartCoroutine(PlayDestroyAnimation());
         }
 

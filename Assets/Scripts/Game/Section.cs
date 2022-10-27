@@ -26,6 +26,7 @@ namespace Game {
 
         public void CallSectionDisabled() {
             OnSectionDisabled?.Invoke();
+            OnSectionDisabled = null;
         }
         
         [Button]

@@ -30,6 +30,7 @@ namespace Game {
 
         void ReturnCoinToPool(Coin coin) {
             coin.Unsubscribe();
+            Debug.Log("Returning coin to pool");
             _pooler.ReturnToPool(coin.gameObject);
         }
 
