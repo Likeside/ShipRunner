@@ -52,10 +52,10 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 0
+  m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.41639137, b: 1, a: 1}
-  deepColor: {r: 0, g: 0.46496195, b: 0.6784314, a: 0.7882353}
+  deepColor: {r: 0, g: 0.3029585, b: 0.6784314, a: 0.50980395}
   colorDepth: 2
   horizonColor: {r: 0.01296196, g: 0, b: 0.8, a: 1}
   horizonDistance: 10
@@ -214,7 +214,7 @@ MonoBehaviour:
   waveDirection3: 0
   waveDirection4: 0
   waterUVs: 0
-  hideComponents: 1
+  hideComponents: 0
   enableFoamShadows: 1
   enableRefraction: 0
   meshRenderer: {fileID: 2143951074781134479}
