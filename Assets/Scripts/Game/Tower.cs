@@ -6,9 +6,11 @@ namespace Game {
     public class Tower: MonoBehaviour, IPoolType<TowerType> {
 
         [SerializeField] Transform _towerCenter;
-        public TowerType Type { get; } = TowerType.Simple;
+        public TowerType Type => TowerType.Simple;
         public event Action<Tower> OnTowerDestroyed;
         public event Action<Tower> OnTowerSectionDisabled;
+        
+        
         
         public void SectionDisabled() {
             if (gameObject.activeSelf) {
