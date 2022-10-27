@@ -18,6 +18,9 @@ namespace Game {
         [NonReorderable] 
         public List<PoolData<TowerType>> towerDatas;
 
+        
+        
+        
         [Serializable]
         public class PoolData<T> where T : Enum {
             public GameObject prefab;
