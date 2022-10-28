@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8480796293759852860}
   - component: {fileID: 3226207535607034162}
   - component: {fileID: 5501056928659509741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PirateCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

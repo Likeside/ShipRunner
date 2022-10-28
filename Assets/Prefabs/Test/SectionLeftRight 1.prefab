@@ -1504,11 +1504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 431235229310995027, guid: 947fd0c22b7562c169d333cd5a51f9dd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2143951074781134479, guid: 947fd0c22b7562c169d333cd5a51f9dd, type: 3}
       propertyPath: m_CastShadows
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2474488074762394920, guid: 947fd0c22b7562c169d333cd5a51f9dd, type: 3}
       propertyPath: waterUVs

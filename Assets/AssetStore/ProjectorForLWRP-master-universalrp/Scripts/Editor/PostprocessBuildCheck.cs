@@ -40,7 +40,7 @@ namespace ProjectorForLWRP
 			{
 				if (IsObjectUsingProjector(go))
 				{
-					Debug.LogError(scene.name + " scene contains Projector For LWRP components but the current render pipeline asset does not have ProjectorRendererFeature.", s_currentRenderPipelineAsset);
+					//Debug.LogError(scene.name + " scene contains Projector For LWRP components but the current render pipeline asset does not have ProjectorRendererFeature.", s_currentRenderPipelineAsset);
 					return;
 				}
 			}
