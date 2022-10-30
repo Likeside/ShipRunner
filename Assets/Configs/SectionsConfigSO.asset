@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82db8b18c1064f51bc0854dc42089d54, type: 3}
   m_Name: SectionsConfigSO
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 21
   sectionDatas:
   - prefab: {fileID: 980656009792670938, guid: aa2a11371e8bd6f62b341856ffb44ca3, type: 3}
     type: 0
