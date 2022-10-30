@@ -150,22 +150,22 @@ MonoBehaviour:
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: ab507ff7ff37d954da98b07bf0bb152e, type: 3}
-  surfaceFoamSampling: {x: 0.901, y: 2}
+  surfaceFoamSampling: {x: 0.901, y: 1.5}
   surfaceFoamCutoff: 0.901
-  surfaceFoamDistortion: 2
+  surfaceFoamDistortion: 1.5
   surfaceFoamBlend: 0.92
   surfaceFoamColor1: {r: 0.0039215437, g: 0.36513034, b: 0.8862745, a: 0.6039216}
   surfaceFoamColor2: {r: 0.35686272, g: 0.7808357, b: 0.8862745, a: 0.6509804}
-  surfaceFoamMovement: {x: 0.3, y: 0.75, z: 0.2, w: 0.75}
+  surfaceFoamMovement: {x: 0.3, y: 0.25, z: 0.85, w: 0.15}
   surfaceFoamDirection1: 0.3
-  surfaceFoamDirection2: 0.2
-  surfaceFoamSpeed1: 0.75
-  surfaceFoamSpeed2: 0.75
-  surfaceFoamTilingAndOffset: {x: 0.717, y: -1, z: 0.25, w: 0.3}
+  surfaceFoamDirection2: 0.85
+  surfaceFoamSpeed1: 0.25
+  surfaceFoamSpeed2: 0.15
+  surfaceFoamTilingAndOffset: {x: 0.717, y: -1, z: 0.17, w: 0.2}
   surfaceFoamOffsetX: 0.717
   surfaceFoamOffsetY: -1
-  surfaceFoamScale1: 0.25
-  surfaceFoamScale2: 0.3
+  surfaceFoamScale1: 0.17
+  surfaceFoamScale2: 0.2
   enableSurfaceFoam: 1
   surfaceFoamHeightMask: 0
   surfaceFoamHeightMaskSmoothness: 0
