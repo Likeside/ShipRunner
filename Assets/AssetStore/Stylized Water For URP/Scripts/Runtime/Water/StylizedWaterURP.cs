@@ -275,7 +275,8 @@ namespace StylizedWater
 
                // if (material.IsKeywordEnabled("WORLD_SPACE_UV_ON")) waterUVs = WaterUVs.World;
               //  else
-              waterUVs = WaterUVs.Local;
+              waterUVs = WaterUVs.Local; 
+             // waterUVs = WaterUVs.World; 
             }
 
             if (material.shader.name == shaderName)
@@ -448,6 +449,7 @@ namespace StylizedWater
            // if (waterUVs == WaterUVs.World) material.EnableKeyword("WORLD_SPACE_UV_ON");
            // else material.DisableKeyword("WORLD_SPACE_UV_ON");
            material.DisableKeyword("WORLD_SPACE_UV_ON");
+          // material.EnableKeyword("WORLD_SPACE_UV_ON");
             #region Lighting
             if (lighting == Lighting.Enabled) material.EnableKeyword("WATER_LIGHTING_ON");
             else material.DisableKeyword("WATER_LIGHTING_ON");

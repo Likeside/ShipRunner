@@ -45,7 +45,7 @@ public class GameController : LocalSingleton<GameController> {
                 //_towerController.OnTowerFired += Lost;
                 _sectionMover.Initialize(_sectionsConfigSo);
                 _sectionMover.OnNewSectionSpawned += SpawnCoins;
-                _sectionMover.OnNewSectionSpawned += SpawnTowers;
+              //  _sectionMover.OnNewSectionSpawned += SpawnTowers;
                 _ship.OnCollidedWithObstacle += Lost;
         }
 
