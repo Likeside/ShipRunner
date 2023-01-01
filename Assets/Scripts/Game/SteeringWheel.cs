@@ -47,7 +47,7 @@ namespace Game {
 
 		CalculateInput();
 
-		ApplyInput();
+		//ApplyInput();
 	}
 
 	public void OnPointerUp(PointerEventData eventData)
