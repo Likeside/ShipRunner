@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Template.UI;
 using TMPro;
-//using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,9 +60,52 @@ namespace Utilities.OdinEditor {
         [HideLabel]
         public Localization localization;
 
+        [HorizontalGroup("SetFonts")]
+        [VerticalGroup("SetFonts/SetFontsTMP")] 
+        [LabelWidth(100)]
+        public TMP_FontAsset fontTMP;
+        [VerticalGroup("SetFonts/SetFontsTMP")]
+        [LabelWidth(100)]
+        public Transform fontObjsParentTMP;
+        [VerticalGroup("SetFonts/SetFontsTMP")] 
+        public List<TextMeshProUGUI> groupTextsTMP;
+        [VerticalGroup("SetFonts/SetFontsTMP")]
+        [Button]
+        public void SetFontsTMP() {
+
+            var texts = fontObjsParentTMP.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (var text in groupTextsTMP) {
+                text.font = fontTMP;
+            }  
+            foreach (var text in texts) {
+                text.font = fontTMP;
+            }
+        }
+        [VerticalGroup("SetFonts/SetFontsSimple")] 
+        [LabelWidth(100)]
+        public Font font;
+
+        [VerticalGroup("SetFonts/SetFontsSimple")]
+        [LabelWidth(100)]
+        public Transform fontObjsParent;
+        [VerticalGroup("SetFonts/SetFontsSimple")] 
+        public List<Text> groupTexts;
+        [VerticalGroup("SetFonts/SetFontsSimple")]
+        [Button]
+        public void SetFonts() {
+            var texts = fontObjsParent.GetComponentsInChildren<Text>();
+
+            foreach (var text in groupTexts) {
+                text.font = font;
+            }
+            foreach (var text in texts) {
+                text.font = font;
+            }
+        }
+        
+        
         
         void Update() {
-            /*
             if(EditorApplication.isPlaying ) return;
             foreach (var setting in _plainTexts) {
                 setting.SetSettings();
@@ -70,7 +113,6 @@ namespace Utilities.OdinEditor {
             foreach (var setting in _textMeshes) {
                 setting.SetSettings();
             }
-            */
         }
         
         #region TextSettings

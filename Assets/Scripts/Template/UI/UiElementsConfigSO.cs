@@ -30,7 +30,6 @@ namespace Utilities.OdinEditor {
         public float blackScreenFadeDelay;
         public float blackScreenFadeInDelay;
         public Color transitionColor;
-        public SaveSystemType saveSystemType;
 
     }
 }

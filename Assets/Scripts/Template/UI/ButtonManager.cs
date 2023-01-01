@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Template.AdsAndAnalytics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -27,9 +28,12 @@ namespace Template.UI {
         [SerializeField] Button _shopButton;
         [SerializeField] Button _rateUsYes;
         [SerializeField] Button _rateUsNo;
-        [SerializeField] Button _restartYes;
-        [SerializeField] Button _restartNo;
         [SerializeField] Button[] _rewardedFailedPanelCloseButtons;
+        [SerializeField] Button[] _policyButtons;
+        [SerializeField] Button[] _termsButtons;
+
+        [Header("OnlySound")]
+        [SerializeField] Button[] _soundSubs;
         public event Action OnTipButtonPressed;
         public event Action OnPauseButtonPressed;
         public bool TipButtonActive => PanelManager.Instance.ElementsActiveness.tipButtonActive;
@@ -53,12 +57,20 @@ namespace Template.UI {
             SetButton(_closeShopButton, PanelManager.Instance.ElementsActiveness.shopPanelActive, PanelManager.Instance.ToggleShopPanel);
             SetButton(_shopButton, PanelManager.Instance.ElementsActiveness.shopPanelActive, PanelManager.Instance.ToggleShopPanel);
             SetButton(_rateUsNo, PanelManager.Instance.ElementsActiveness.rateUsPanelActive, PanelManager.Instance.ToggleRateUsPanel);
-            SetButton(_rateUsYes, PanelManager.Instance.ElementsActiveness.rateUsPanelActive, AdsAndAnalyticsManager.Instance.OpenRateUsLink);
-            SetButton(_restartYes, PanelManager.Instance.ElementsActiveness.gameCompletePanelActive, SceneLoader.Instance.LoadNextLevel);
-            SetButton(_restartNo, PanelManager.Instance.ElementsActiveness.gameCompletePanelActive, SceneLoader.Instance.LoadMainMenu);
+            SetButton(_rateUsYes, PanelManager.Instance.ElementsActiveness.rateUsPanelActive, ExternalLinksManager.Instance.OpenRateUsLink);
 
             foreach (var button in _rewardedFailedPanelCloseButtons) {
                 SetButton(button, PanelManager.Instance.ElementsActiveness.rewardedFailedPanelActive, PanelManager.Instance.ToggleRewardedFailedPanel);
+            }
+            foreach (var button in _policyButtons) {
+                SetButton(button, true, ExternalLinksManager.Instance.OpenPolicyLink);
+            }
+            foreach (var button in _termsButtons) {
+                SetButton(button, true, ExternalLinksManager.Instance.OpenTermsLink);
+            }
+
+            foreach (var button in _soundSubs) {
+                SubSound(button);
             }
         }
         void SetButton(Button button, bool active, UnityAction listener) {
@@ -69,6 +81,13 @@ namespace Template.UI {
                     button.onClick.AddListener(listener);
                     button.onClick.AddListener(AudioManager.Instance.PlayTapSound);
                 }
+            }
+        }
+
+        void SubSound(Button button) {
+            if (button != null) {
+                button.onClick.RemoveListener(AudioManager.Instance.PlayTapSound);
+                button.onClick.AddListener(AudioManager.Instance.PlayTapSound);
             }
         }
         void TipButtonPressed() {
