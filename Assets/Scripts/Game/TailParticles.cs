@@ -21,10 +21,11 @@ namespace Game {
         public void Construct(IInputController inputController, IGameplayConfig gameplayConfig) {
             _inputController = inputController;
             _rotationMultiplier = gameplayConfig.TailParticlesRotationMultiplier;
+            _backMultiplier = _rotationMultiplier / 2f;
         }
         
         void Start() {
-            _backMultiplier = _rotationMultiplier / 2f;
+         //   _backMultiplier = _rotationMultiplier / 2f;
         }
 
         void Update() {

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d973c62f4394658ad18c1ac36baf4af, type: 3}
   m_Name: GameplayConfigSO
   m_EditorClassIdentifier: 
-  sectionSpeed: 0
-  fireRate: 0
-  worldRotationSpeed: 0
-  shipRotationMultiplier: 0
-  tailParticlesRotationMultiplier: 0
+  sectionSpeed: 21
+  fireRate: 3
+  worldRotationSpeed: 2.5
+  shipRotationMultiplier: 20
+  tailParticlesRotationMultiplier: 50

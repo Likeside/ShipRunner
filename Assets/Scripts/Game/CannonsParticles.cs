@@ -16,10 +16,14 @@ namespace Game {
         [Inject]
         public void Construct(IInputController inputController) {
             _inputController = inputController;
-        }
-        void Start() {
             _inputController.OnFiringLeft += FireLeft;
             _inputController.OnFiringRight += FireRight;
+        }
+        void Start() {
+            /*
+            _inputController.OnFiringLeft += FireLeft;
+            _inputController.OnFiringRight += FireRight;
+            */
         }
 
         void FireRight() {
