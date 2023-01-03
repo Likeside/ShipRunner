@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace Game {
-    public class Obstacle: MonoBehaviour {
+    public class Obstacle: MonoBehaviour, IObstacle {
         
     }
 }

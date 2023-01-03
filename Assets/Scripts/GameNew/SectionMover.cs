@@ -5,29 +5,22 @@ using UnityEngine;
 
 namespace GameNew {
     public class SectionMover {
-
         public event Action<Section> OnSectionShouldSpawn;
         public event Action<Section> OnSectionShouldBeDisabled;
-
-
         Transform _sectionParent;
         Transform _nextPosition;
         List<Section> _sectionsToMove;
         float _speed;
-
-
+        
         public SectionMover(List<Section> initSections, Transform sectionParent, float speed) {
-
             _sectionsToMove = new List<Section>();
             foreach (var section in initSections) {
                 _sectionsToMove.Add(section);
             }
-
             _nextPosition = _sectionsToMove[^1].NextSectionSpawnPos;
             _sectionParent = sectionParent;
             _speed = speed;
         }
-
         public void AddSection(Section section) {
             section.transform.SetParent(_sectionParent);
             section.transform.rotation = _nextPosition.rotation;
@@ -35,8 +28,7 @@ namespace GameNew {
             _nextPosition = section.NextSectionSpawnPos;
             _sectionsToMove.Add(section);
         }
-
-
+        
         void DisableFirstSection() {
             _sectionsToMove[0].transform.SetParent(null);
             OnSectionShouldBeDisabled?.Invoke(_sectionsToMove[0]);
@@ -52,6 +44,5 @@ namespace GameNew {
             OnSectionShouldSpawn?.Invoke(_sectionsToMove[^1]);
             DisableFirstSection();
         }
-        
     }
 }

@@ -17,10 +17,6 @@ namespace Game {
             _rotationMultiplier = gameplayConfig.ShipRotationMultiplier;
         }
         void Update() {
-            /*
-            _rotation.y = -SteeringWheel.steeringInput*_rotationMultiplier;
-            _rotation.z = SteeringWheel.steeringInput*_rotationMultiplier;
-            */
             _rotation.y = -_inputController.SteeringInput * _rotationMultiplier;
             _rotation.z = _inputController.SteeringInput * _rotationMultiplier;
             transform.rotation = Quaternion.Euler(_rotation);
@@ -31,7 +27,7 @@ namespace Game {
                 collectable.Collect();
             }
 
-            if (other.transform.TryGetComponent(out Obstacle obstacle)) {
+            if (other.transform.TryGetComponent(out IObstacle obstacle)) {
                 OnCollidedWithObstacle?.Invoke();
             }
         }
