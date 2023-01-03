@@ -13,11 +13,9 @@ namespace Game {
 
         float _rotationSpeed;
 
-        [Inject]
-        public void Construct(IGameplayConfig gameplayConfig) {
-            _rotationSpeed = gameplayConfig.CoinRotationSpeed;
+        public void SetRotationSpeed(float speed) {
+            _rotationSpeed = speed;
         }
-        
         public void Collect() {
             OnCoinCollected?.Invoke(this);
         }

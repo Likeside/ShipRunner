@@ -8,8 +8,10 @@ namespace GameNew {
         PoolerBase<CoinType> _coinPooler;
         Dictionary<Section, List<GameObject>> _coins;
 
-
-        public SectionFiller(SectionsConfigSO sectionsConfigSo, List<Section> initSections) {
+        float _coinRotationSpeed;
+        
+        public SectionFiller(SectionsConfigSO sectionsConfigSo, List<Section> initSections, float coinRotationSpeed) {
+            _coinRotationSpeed = coinRotationSpeed;
             _coinPooler = new PoolerBase<CoinType>(sectionsConfigSo.coinDatas, 30);
             _coins = new Dictionary<Section, List<GameObject>>();
             foreach (var section in initSections) {
@@ -29,10 +31,11 @@ namespace GameNew {
 
         void FillWithCoins(Section section) {
             foreach (var pos in section.CollectablePositions) {
-                var coin = _coinPooler.SpawnFromPool(CoinType.Gold);
+                var coin = _coinPooler.SpawnFromPoolComp<Coin>(CoinType.Gold);
+                coin.SetRotationSpeed(_coinRotationSpeed);
                 coin.transform.SetParent(section.transform);
                 coin.transform.localPosition = pos;
-                section.Coins.Add(coin);
+                section.Coins.Add(coin.gameObject);
             }
         }
 
