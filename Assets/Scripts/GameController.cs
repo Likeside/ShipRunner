@@ -10,7 +10,7 @@ public class GameController : LocalSingleton<GameController> {
 
 
         [SerializeField] SectionsConfigSO _sectionsConfigSo;
-        [SerializeField] SectionMover _sectionMover;
+        [SerializeField] SectionMoverX _sectionMover;
         [SerializeField] CannonInputController _cannonInputController;
         [SerializeField] Ship _ship;
 

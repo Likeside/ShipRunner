@@ -1,10 +1,10 @@
 using UnityEngine;
 
 namespace Game {
-    public class SectionSpawner {
+    public class SectionSpawnerX {
 
         PoolerBase<PossibleSections> _pooler;
-        public SectionSpawner(SectionsConfigSO sectionsConfigSo) {
+        public SectionSpawnerX(SectionsConfigSO sectionsConfigSo) {
             _pooler = new PoolerBase<PossibleSections>(sectionsConfigSo.sectionDatas, 3);
         }
         

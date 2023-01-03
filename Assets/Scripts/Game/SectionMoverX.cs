@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game {
-    public class SectionMover: MonoBehaviour {
+    public class SectionMoverX: MonoBehaviour {
         [SerializeField] Transform _parent;
         [SerializeField] List<GameObject> _spawnedSections;
         //[SerializeField] List<Transform> _waters;
@@ -13,13 +13,13 @@ namespace Game {
         
         SectionsConfigSO _sectionsConfigSo;
         Transform _nextPosition;
-        SectionSpawner _sectionSpawner;
+        SectionSpawnerX _sectionSpawner;
         //Vector3 _waterInitLocalPos;
 
         public void Initialize(SectionsConfigSO sectionsConfigSo) {
             _sectionsConfigSo = sectionsConfigSo;
             _nextPosition = _spawnedSections[^1].GetComponent<Section>().NextSectionSpawnPos;
-            _sectionSpawner = new SectionSpawner(_sectionsConfigSo);
+            _sectionSpawner = new SectionSpawnerX(_sectionsConfigSo);
            // _waterInitLocalPos =  new Vector3(_water.transform.localPosition.x, _water.transform.localPosition.y, _water.transform.localPosition.z);
         }
         
