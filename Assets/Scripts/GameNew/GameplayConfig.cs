@@ -8,5 +8,6 @@ namespace GameNew {
         public float FireRate => _config.fireRate;
         public float WorldRotationSpeed => _config.worldRotationSpeed;
         public float ShipRotationMultiplier => _config.shipRotationMultiplier;
+        public float TailParticlesRotationMultiplier => _config.tailParticlesRotationMultiplier;
     }
 }

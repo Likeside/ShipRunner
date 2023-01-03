@@ -8,5 +8,6 @@ namespace GameNew {
         public float fireRate;
         public float worldRotationSpeed;
         public float shipRotationMultiplier;
+        public float tailParticlesRotationMultiplier;
     }
 }

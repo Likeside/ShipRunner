@@ -9,10 +9,11 @@ namespace GameNew {
         
         [SerializeField] Button _fireLeft;
         [SerializeField] Button _fireRight;
-        
+        [SerializeField] SteeringWheel _steeringWheel;
+         
         public event Action OnFiringLeft;
         public event Action OnFiringRight;
-        public float SteeringInput { get; }
+        public float SteeringInput => _steeringWheel.SteeringInput;
         
         
         float _timerLeft;

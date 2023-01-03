@@ -12,7 +12,7 @@ namespace Game {
 	[SerializeField]
 	private float releaseSpeed = 350f;
 
-	public static float steeringInput;
+	public float SteeringInput { get; private set; }
 
 	private void ApplyInput()
 	{
@@ -121,7 +121,7 @@ namespace Game {
 
 	private void CalculateInput()
 	{
-		steeringInput = wheelAngle / maxAngle;
+		SteeringInput = wheelAngle / maxAngle;
 	}
 
 	private void UpdateWheelImage()

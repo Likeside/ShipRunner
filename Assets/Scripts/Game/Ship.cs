@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace Game {
     public class Ship: MonoBehaviour {
@@ -9,9 +10,21 @@ namespace Game {
         public event Action OnCollidedWithObstacle;
         
         Vector3 _rotation = Vector3.zero;
+        IInputController _inputController;
+        
+        
+        [Inject]
+        public void Construct(IInputController inputController, IGameplayConfig gameplayConfig) {
+            _inputController = inputController;
+            _rotationMultiplier = gameplayConfig.ShipRotationMultiplier;
+        }
         void Update() {
+            /*
             _rotation.y = -SteeringWheel.steeringInput*_rotationMultiplier;
             _rotation.z = SteeringWheel.steeringInput*_rotationMultiplier;
+            */
+            _rotation.y = -_inputController.SteeringInput * _rotationMultiplier;
+            _rotation.z = _inputController.SteeringInput * _rotationMultiplier;
             transform.rotation = Quaternion.Euler(_rotation);
         }
 
