@@ -18,20 +18,20 @@ namespace GameNew {
         }
         
         public void FillSection(Section section) {
-            //отслеживать свавн монеток, возвращать в пул только те, которые не собраны
             foreach (var pos in section.CollectablePositions) {
                var coin = _coinPooler.SpawnFromPool(CoinType.Gold);
                coin.transform.SetParent(section.transform);
                coin.transform.localPosition = pos;
+               section.Coins.Add(coin);
             }
         }
 
         public void EmptySection(Section section) {
             Debug.Log("Emptying section");
-            foreach (var coin in _coins[section]) {
+            foreach (var coin in section.Coins) {
                 _coinPooler.ReturnToPool(coin);
             }
-
+            section.Coins.Clear();
             _coins.Remove(section);
         }
     }

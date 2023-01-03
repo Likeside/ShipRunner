@@ -55,8 +55,10 @@ namespace Game {
         
         public void ReturnToPool(GameObject obj) {
             var type = obj.GetComponent<IPoolType<T>>().Type;
-            _objsQueues[type].Enqueue(obj);
-            obj.SetActive(false);
+            if (!_objsQueues[type].Contains(obj)) {
+                _objsQueues[type].Enqueue(obj);
+                obj.SetActive(false);
+            }
         }
     }
 }

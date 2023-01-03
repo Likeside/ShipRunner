@@ -23,6 +23,8 @@ namespace Game {
         public List<Vector3> TowerPosition => _towerPositions;
         public List<Vector3> TowerRotations => _towerRotations;
 
+        public List<GameObject> Coins { get; } = new();
+
 
         public void CallSectionDisabled() {
             OnSectionDisabled?.Invoke();
