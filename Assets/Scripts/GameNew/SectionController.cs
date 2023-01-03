@@ -17,11 +17,11 @@ namespace GameNew {
 
 
         [Inject]
-        public void Construct (IGameplayConfig gameplayConfig, ICollectableController collectableController) {
+        public void Construct (IGameplayConfig gameplayConfig, IInteractionController interactionController) {
 
             _mover = new SectionMover(_initSections, _sectionsParent, gameplayConfig.SectionsSpeed);
             _spawner = new SectionSpawner(_sectionsConfigSo);
-            _filler = new SectionFiller(_sectionsConfigSo, collectableController, gameplayConfig.CoinRotationSpeed);
+            _filler = new SectionFiller(_sectionsConfigSo, interactionController, gameplayConfig.CoinRotationSpeed);
 
             _mover.OnSectionShouldSpawn += _spawner.SpawnSection;
             _mover.OnSectionShouldBeDisabled += _spawner.DisableSection;

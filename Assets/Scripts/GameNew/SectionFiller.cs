@@ -6,12 +6,12 @@ namespace GameNew {
 
         
         PoolerBase<CoinType> _coinPooler;
-         ICollectableController _collectableController;
+         IInteractionController _interactionController;
 
         float _coinRotationSpeed;
         
-        public SectionFiller(SectionsConfigSO sectionsConfigSo, ICollectableController collectableController, float coinRotationSpeed) {
-            _collectableController = collectableController;
+        public SectionFiller(SectionsConfigSO sectionsConfigSo, IInteractionController interactionController, float coinRotationSpeed) {
+            _interactionController = interactionController;
             _coinRotationSpeed = coinRotationSpeed;
             _coinPooler = new PoolerBase<CoinType>(sectionsConfigSo.coinDatas, 30);
         }
@@ -38,7 +38,7 @@ namespace GameNew {
         }
 
         void CoinCollected(Coin coin) {
-            _collectableController.CollectCoin(coin);
+            _interactionController.CollectCoin(coin);
             coin.OnCoinCollected -= CoinCollected;
             _coinPooler.ReturnToPool(coin.gameObject);
         }

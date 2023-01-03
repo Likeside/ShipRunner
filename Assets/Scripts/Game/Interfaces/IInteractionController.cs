@@ -1,5 +1,5 @@
 namespace Game {
-    public interface ICollectableController {
+    public interface IInteractionController {
         public void CollectCoin(Coin coin);
     }
 }

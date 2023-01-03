@@ -10,7 +10,7 @@ namespace GameNew {
         public override void InstallBindings() {
             Container.Bind<IInputController>().To<InputController>().FromInstance(_inputController);
             Container.Bind<IGameplayConfig>().To<GameplayConfig>().FromInstance(_gameplayConfig);
-            Container.Bind<ICollectableController>().To<CollectableController>().AsSingle();
+            Container.Bind<IInteractionController>().To<InteractionController>().AsSingle();
         }
     }
 }
