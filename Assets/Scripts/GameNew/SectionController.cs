@@ -28,7 +28,7 @@ namespace GameNew {
             _spawner.OnSectionSpawned += _mover.AddSection;
             _spawner.OnSectionSpawned += _filler.FillSection;
             
-            _spawner.OnSectionDisabled += _filler.EmptySection;
+            _spawner.OnSectionDisabled += _filler.ClearSection;
             
         }
 

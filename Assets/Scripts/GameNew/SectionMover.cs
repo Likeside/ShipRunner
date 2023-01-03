@@ -16,7 +16,7 @@ namespace GameNew {
         float _speed;
 
 
-        public SectionMover(List<Section> initSections, Transform sectionParent, float speed) {
+        public SectionMover(List<Section> initSections, Transform sectionParent, IGameplayConfig gameplayConfig) {
 
             _sectionsToMove = new List<Section>();
             foreach (var section in initSections) {
@@ -25,7 +25,7 @@ namespace GameNew {
 
             _nextPosition = _sectionsToMove[^1].NextSectionSpawnPos;
             _sectionParent = sectionParent;
-            _speed = speed;
+            _speed = gameplayConfig.SectionsSpeed;
         }
 
         public void AddSection(Section section) {
