@@ -7,6 +7,7 @@ namespace GameNew {
     public class SectionMover {
 
         public event Action<Section> OnSectionShouldSpawn;
+        public event Action<Section> OnSectionShouldBeDisabled;
 
 
         List<Section> _sectionsToMove;

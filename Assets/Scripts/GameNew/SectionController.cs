@@ -11,8 +11,11 @@ namespace GameNew {
         public SectionController() {
 
             _mover.OnSectionShouldSpawn += _spawner.SpawnSection;
+            _mover.OnSectionShouldBeDisabled += _spawner.DisableSection;
+            
             _spawner.OnSectionSpawned += _mover.AddSection;
             _spawner.OnSectionSpawned += _filler.FillSection;
+            
             _spawner.OnSectionDisabled += _filler.EmptySection;
 
 
