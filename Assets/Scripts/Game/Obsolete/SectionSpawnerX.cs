@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game {
     public class SectionSpawnerX {
-
+        /*
         PoolerBase<PossibleSections> _pooler;
         public SectionSpawnerX(SectionsConfigSO sectionsConfigSo) {
             _pooler = new PoolerBase<PossibleSections>(sectionsConfigSo.sectionDatas, 3);
@@ -19,5 +19,6 @@ namespace Game {
            section.CallSectionDisabled();
            _pooler.ReturnToPool(section.gameObject);
        }
+       */
     }
 }

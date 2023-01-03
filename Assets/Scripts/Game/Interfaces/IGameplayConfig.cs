@@ -6,5 +6,7 @@ namespace Game {
         public float ShipRotationMultiplier { get; }
         
         public float TailParticlesRotationMultiplier { get; }
+        
+        public float CoinRotationSpeed { get; }
     }
 }

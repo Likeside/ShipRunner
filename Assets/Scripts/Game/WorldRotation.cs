@@ -6,9 +6,9 @@ namespace Game {
     public class WorldRotation : MonoBehaviour {
 
         [SerializeField] Transform _world;
-        [SerializeField] float _rotationCoefficient;
         
         float _rotation;
+        float _rotationCoefficient;
 
 
         IInputController _inputController;
@@ -19,8 +19,6 @@ namespace Game {
             _rotationCoefficient = gameplayConfig.WorldRotationSpeed;
         }
         void Update() {
-            
-           // _rotation = -SteeringWheel.steeringInput * _rotationCoefficient;
             _rotation = - _inputController.SteeringInput * _rotationCoefficient;
             _world.Rotate(Vector3.up, _rotation);
         }

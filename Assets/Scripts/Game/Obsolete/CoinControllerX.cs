@@ -6,8 +6,9 @@ namespace Game {
     public enum CoinType {
         Gold, Silver, Bronze
     }
-    public class CoinController {
-
+    public class CoinControllerX {
+        
+        /*
         
         PoolerBase<CoinType> _pooler;
         public CoinController(SectionsConfigSO sectionsConfigSo) {
@@ -32,6 +33,6 @@ namespace Game {
             coin.Unsubscribe();
             _pooler.ReturnToPool(coin.gameObject);
         }
-
+        */
     }
 }

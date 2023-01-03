@@ -8,9 +8,7 @@ namespace Game {
     public class CannonsParticles: MonoBehaviour {
         [SerializeField] List<ParticleGroup> _leftExplosions;
         [SerializeField] List<ParticleGroup> _rightExplosions;
-     //   [SerializeField] CannonInputController _cannonInputController;
-
-
+        
         IInputController _inputController;
         
         [Inject]
@@ -19,13 +17,6 @@ namespace Game {
             _inputController.OnFiringLeft += FireLeft;
             _inputController.OnFiringRight += FireRight;
         }
-        void Start() {
-            /*
-            _inputController.OnFiringLeft += FireLeft;
-            _inputController.OnFiringRight += FireRight;
-            */
-        }
-
         void FireRight() {
             StartCoroutine(ExplosionCor(_rightExplosions));
         }
@@ -40,8 +31,7 @@ namespace Game {
                 yield return new WaitForSeconds(0.2f);
             }
         }
-
-
+        
         void OnDestroy() {
             _inputController.OnFiringLeft -= FireLeft;
             _inputController.OnFiringRight -= FireRight;

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace Game {
     
@@ -9,12 +10,20 @@ namespace Game {
         public CoinType Type => _coinType;
         public event Action<Coin> OnCoinCollected;
         public event Action<Coin> OnCoinSectionDisabled;
+
+        float _rotationSpeed;
+
+        [Inject]
+        public void Construct(IGameplayConfig gameplayConfig) {
+            _rotationSpeed = gameplayConfig.CoinRotationSpeed;
+        }
+        
         public void Collect() {
             OnCoinCollected?.Invoke(this);
         }
 
         void Update() {
-            transform.Rotate(Vector3.forward, 4f, Space.Self);
+            transform.Rotate(Vector3.forward, _rotationSpeed, Space.Self);
         }
 
         public void SectionDisabled() {

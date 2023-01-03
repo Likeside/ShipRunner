@@ -9,5 +9,6 @@ namespace GameNew {
         public float worldRotationSpeed;
         public float shipRotationMultiplier;
         public float tailParticlesRotationMultiplier;
+        public float coinRotationSpeed;
     }
 }

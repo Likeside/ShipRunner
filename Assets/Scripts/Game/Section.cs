@@ -13,8 +13,7 @@ namespace Game {
         [SerializeField] List<Vector3> _collectablePositions;
         [SerializeField] List<Vector3> _towerPositions;
         [SerializeField] List<Vector3> _towerRotations;
-
-        public event Action OnSectionDisabled;
+        
         public PossibleSections Type => _type;
         public Transform NextSectionSpawnPos => _nextSectionSpawnPos;
         public List<PossibleSections> PossibleSectionTypes => _possibleSectionTypes;
@@ -25,12 +24,6 @@ namespace Game {
 
         public List<GameObject> Coins { get; } = new();
 
-
-        public void CallSectionDisabled() {
-            OnSectionDisabled?.Invoke();
-            OnSectionDisabled = null;
-        }
-        
         [Button]
         public void SetCollectablePositions() {
             _collectablePositions = new List<Vector3>();

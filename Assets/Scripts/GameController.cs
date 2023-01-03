@@ -7,16 +7,9 @@ using Utilities;
 public class GameController : LocalSingleton<GameController> {
         
         [SerializeField] ButtonManager _buttonManager;
-
-
-        [SerializeField] SectionsConfigSO _sectionsConfigSo;
-        [SerializeField] SectionMoverX _sectionMover;
-        [SerializeField] CannonInputController _cannonInputController;
         [SerializeField] Ship _ship;
 
 
-        CoinController _coinController;
-        TowerController _towerController;
 
         void Start() { 
                 if (_buttonManager.TipButtonActive) _buttonManager.OnTipButtonPressed += TipButtonPressed;
@@ -41,27 +34,9 @@ public class GameController : LocalSingleton<GameController> {
 
 
         void GameStart() {
-                /*
-                _coinController = new CoinController(_sectionsConfigSo);
-                _towerController = new TowerController(_sectionsConfigSo, _cannonInputController);
-                //_towerController.OnTowerFired += Lost;
-                _sectionMover.Initialize(_sectionsConfigSo);
-                _sectionMover.OnNewSectionSpawned += SpawnCoins;
-              //  _sectionMover.OnNewSectionSpawned += SpawnTowers;
                 _ship.OnCollidedWithObstacle += Lost;
-                */
-                
         }
-
-        void SpawnTowers(Section section) {
-                _towerController.SpawnTowers(section, AddScoreForTower);
-        }
-
-
-        void SpawnCoins(Section section) {
-                _coinController.SpawnCoins(section, CoinType.Gold, AddScoreForCoin); //TODO: задать вероятность спавна коинов разного типа 
-        }
-
+        
         void AddScoreForCoin(Coin coin) {
                 Debug.Log("Coin collected, type: " + coin.Type);
         }
@@ -77,9 +52,6 @@ public class GameController : LocalSingleton<GameController> {
 
 
         void Unsubscribe() {
-                _towerController.OnTowerFired -= Lost;
-                _sectionMover.OnNewSectionSpawned -= SpawnCoins;
-                _sectionMover.OnNewSectionSpawned -= SpawnTowers;
                 _ship.OnCollidedWithObstacle -= Lost;  
         }
         

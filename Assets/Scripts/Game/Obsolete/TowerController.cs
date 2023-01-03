@@ -9,6 +9,7 @@ namespace Game {
     }
     public class TowerController {
 
+        /*
         public event Action OnTowerFired;
         PoolerBase<TowerType> _pooler;
         CannonInputController _cannonInputController;
@@ -50,5 +51,7 @@ namespace Game {
             ReturnTowerToPool(tower);
             OnTowerFired?.Invoke();
         }
+        */
     }
+    
 }

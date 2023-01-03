@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game {
     public class SectionMoverX: MonoBehaviour {
+        /*
         [SerializeField] Transform _parent;
         [SerializeField] List<GameObject> _spawnedSections;
         //[SerializeField] List<Transform> _waters;
@@ -44,7 +45,7 @@ namespace Game {
                 newWater.transform.position = _nextPosition.position;
                 _waters.Add(newWater.transform);
             }
-            */
+            
             
             
             if (!(_spawnedSections[^1].transform.localPosition.z <= 160)) return;
@@ -61,6 +62,7 @@ namespace Game {
             _spawnedSections.Remove(_spawnedSections[0]);
             
         }
-    
+     */
+    } 
+        
     }
-}

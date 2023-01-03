@@ -9,5 +9,6 @@ namespace GameNew {
         public float WorldRotationSpeed => _config.worldRotationSpeed;
         public float ShipRotationMultiplier => _config.shipRotationMultiplier;
         public float TailParticlesRotationMultiplier => _config.tailParticlesRotationMultiplier;
+        public float CoinRotationSpeed => _config.coinRotationSpeed;
     }
 }
