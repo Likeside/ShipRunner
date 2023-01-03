@@ -9,7 +9,11 @@ namespace GameNew {
         Dictionary<Section, List<GameObject>> _coins;
 
         public void FillSection(Section section) {
-            
+            foreach (var pos in section.CollectablePositions) {
+               var coin = _coinPooler.SpawnFromPool(CoinType.Gold);
+               coin.transform.SetParent(section.transform);
+               coin.transform.localPosition = pos;
+            }
         }
 
         public void EmptySection(Section section) {
