@@ -2,16 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Game {
     public class CannonsParticles: MonoBehaviour {
         [SerializeField] List<ParticleGroup> _leftExplosions;
         [SerializeField] List<ParticleGroup> _rightExplosions;
-        [SerializeField] CannonInputController _cannonInputController;
+     //   [SerializeField] CannonInputController _cannonInputController;
 
+
+        IInputController _inputController;
+        
+        [Inject]
+        public void Construct(IInputController inputController) {
+            _inputController = inputController;
+        }
         void Start() {
-            _cannonInputController.OnFiringLeft += FireLeft;
-            _cannonInputController.OnFiringRight += FireRight;
+            _inputController.OnFiringLeft += FireLeft;
+            _inputController.OnFiringRight += FireRight;
         }
 
         void FireRight() {
@@ -31,8 +39,8 @@ namespace Game {
 
 
         void OnDestroy() {
-            _cannonInputController.OnFiringLeft -= FireLeft;
-            _cannonInputController.OnFiringRight -= FireRight;
+            _inputController.OnFiringLeft -= FireLeft;
+            _inputController.OnFiringRight -= FireRight;
         }
     }
 }

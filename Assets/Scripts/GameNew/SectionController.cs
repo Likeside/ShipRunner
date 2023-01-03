@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Game;
 using UnityEngine;
+using Zenject;
 
 namespace GameNew {
     public class SectionController: MonoBehaviour {
@@ -15,10 +16,10 @@ namespace GameNew {
         SectionFiller _filler;
 
 
+        [Inject]
+        public void Construct (IGameplayConfig gameplayConfig) {
 
-        void Start () {
-
-            _mover = new SectionMover(_initSections, _sectionsParent, _sectionsConfigSo.speed);
+            _mover = new SectionMover(_initSections, _sectionsParent, gameplayConfig.SectionsSpeed);
             _spawner = new SectionSpawner(_sectionsConfigSo);
             _filler = new SectionFiller(_sectionsConfigSo, _initSections);
 

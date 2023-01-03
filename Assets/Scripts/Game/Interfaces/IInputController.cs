@@ -2,8 +2,8 @@ using System;
 
 namespace Game {
     public interface IInputController {
-        public event Action OnFireLeft;
-        public event Action OnFireRight;
+        public event Action OnFiringLeft;
+        public event Action OnFiringRight;
         public float SteeringInput { get; }
     }
 }
