@@ -23,6 +23,7 @@ namespace Game {
            // _waterInitLocalPos =  new Vector3(_water.transform.localPosition.x, _water.transform.localPosition.y, _water.transform.localPosition.z);
         }
         
+        
         public void Update() {
             var backDirection = (_parent.InverseTransformDirection(Vector3.back)).normalized; 
             foreach (var spawnedSection in _spawnedSections) {
@@ -60,5 +61,6 @@ namespace Game {
             _spawnedSections.Remove(_spawnedSections[0]);
             
         }
+    
     }
 }

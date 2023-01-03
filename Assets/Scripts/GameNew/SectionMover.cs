@@ -16,7 +16,14 @@ namespace GameNew {
         float _speed;
 
 
-        public SectionMover(Transform sectionParent, float speed) {
+        public SectionMover(List<Section> initSections, Transform sectionParent, float speed) {
+
+            _sectionsToMove = new List<Section>();
+            foreach (var section in initSections) {
+                _sectionsToMove.Add(section);
+            }
+
+            _nextPosition = _sectionsToMove[^1].NextSectionSpawnPos;
             _sectionParent = sectionParent;
             _speed = speed;
         }
@@ -35,8 +42,7 @@ namespace GameNew {
             OnSectionShouldBeDisabled?.Invoke(_sectionsToMove[0]);
             _sectionsToMove.RemoveAt(0);
         }
-        
-        void MoveSections() {
+        public void MoveSections() {
             var backDirection = (_sectionParent.InverseTransformDirection(Vector3.back)).normalized; 
             foreach (var section in _sectionsToMove) {
                 section.transform.localPosition += backDirection * Time.deltaTime * _speed;
@@ -44,6 +50,7 @@ namespace GameNew {
             
             if (!(_sectionsToMove[^1].transform.localPosition.z <= 160)) return;
             OnSectionShouldSpawn?.Invoke(_sectionsToMove[^1]);
+            DisableFirstSection();
         }
         
     }

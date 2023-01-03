@@ -41,6 +41,7 @@ public class GameController : LocalSingleton<GameController> {
 
 
         void GameStart() {
+                /*
                 _coinController = new CoinController(_sectionsConfigSo);
                 _towerController = new TowerController(_sectionsConfigSo, _cannonInputController);
                 //_towerController.OnTowerFired += Lost;
@@ -48,6 +49,8 @@ public class GameController : LocalSingleton<GameController> {
                 _sectionMover.OnNewSectionSpawned += SpawnCoins;
               //  _sectionMover.OnNewSectionSpawned += SpawnTowers;
                 _ship.OnCollidedWithObstacle += Lost;
+                */
+                
         }
 
         void SpawnTowers(Section section) {
