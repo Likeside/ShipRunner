@@ -8,10 +8,10 @@ namespace Game {
                
           Dictionary<T, Queue<GameObject>> _objsQueues;
 
-         List<SectionsConfigSO.PoolData<T>> _datas;
+         List<PoolData<T>> _datas;
       //  SectionsConfigSO _sectionsConfigSo;
 
-        public PoolerBase(List<SectionsConfigSO.PoolData<T>> poolDatas, int amount) {
+        public PoolerBase(List<PoolData<T>> poolDatas, int amount) {
             _datas = poolDatas;
             _objsQueues = new Dictionary<T, Queue<GameObject>>();
             foreach (var sectionData in poolDatas) {

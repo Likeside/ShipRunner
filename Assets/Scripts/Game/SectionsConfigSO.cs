@@ -17,14 +17,11 @@ namespace Game {
         public List<PoolData<CoinType>> coinDatas;
         [NonReorderable] 
         public List<PoolData<TowerType>> towerDatas;
-
-        
-        
-        
-        [Serializable]
-        public class PoolData<T> where T : Enum {
-            public GameObject prefab;
-            public T type;
-        }
+    }
+    
+    [Serializable]
+    public class PoolData<T> where T : Enum {
+        public GameObject prefab;
+        public T type;
     }
 }
