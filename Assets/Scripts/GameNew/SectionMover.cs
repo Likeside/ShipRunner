@@ -39,10 +39,14 @@ namespace GameNew {
             foreach (var section in _sectionsToMove) {
                 section.transform.localPosition += backDirection * Time.deltaTime * _speed;
             }
-            
-            if (!(_sectionsToMove[^1].transform.localPosition.z <= 160)) return;
-            OnSectionShouldSpawn?.Invoke(_sectionsToMove[^1]);
-            DisableFirstSection();
+
+            if ((_sectionsToMove[^1].transform.localPosition.z <= 120)) {
+                OnSectionShouldSpawn?.Invoke(_sectionsToMove[^1]);
+            }
+
+            if (_sectionsToMove[0].transform.localPosition.z <= -70) {
+                DisableFirstSection();
+            }
         }
     }
 }
