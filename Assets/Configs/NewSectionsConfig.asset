@@ -15,7 +15,27 @@ MonoBehaviour:
   speed: 21
   sectionDatas:
   - prefab: {fileID: 2754629614430728056, guid: 075fa199625b7f9c3a562a65c57771af, type: 3}
-    type: 0
+    type: 7
+  - prefab: {fileID: 6698309460074855199, guid: 6fb6735956fc6688684d13168ae09c01, type: 3}
+    type: 8
+  - prefab: {fileID: 8533334912351806671, guid: 36bfd24e88bacf7a7b1473ec2473453f, type: 3}
+    type: 9
+  - prefab: {fileID: 4704144160572434409, guid: 8e00a8292238e9b9e9a4a993a5212695, type: 3}
+    type: 10
+  - prefab: {fileID: 3807179999982382708, guid: e0242c29bdc8d8408ac7f26b1d5e4f4f, type: 3}
+    type: 11
+  - prefab: {fileID: 2391135811244266393, guid: ea5ad343da23fb8af8887e6cb336db97, type: 3}
+    type: 17
+  - prefab: {fileID: 201768533174627486, guid: a930ce339fd42c511bfc0d3d3e171dbf, type: 3}
+    type: 12
+  - prefab: {fileID: 1713928854002943250, guid: ec68f296999fd226980c8c1ea3dd2217, type: 3}
+    type: 13
+  - prefab: {fileID: 7313685377244665510, guid: 0d2ce2c264d255049bfbea789736b03b, type: 3}
+    type: 14
+  - prefab: {fileID: 5406457053582924485, guid: b69f1d4dcf00497a39f6a0bf73a91d39, type: 3}
+    type: 16
+  - prefab: {fileID: 2879329618219634259, guid: d75d7eaf16c9d015c943ba819aa9e347, type: 3}
+    type: 15
   coinDatas:
   - prefab: {fileID: 7976203951490908393, guid: f73c38bf29d293ba6954396f1f0caf29, type: 3}
     type: 0

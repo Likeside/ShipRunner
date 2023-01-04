@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28018b3b356745e08eac1594c99338af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 8
+  _type: 14
   _nextSectionSpawnPos: {fileID: 7637870199958822832}
   _possibleSectionTypes: 0700000008000000090000000b0000000c0000000d0000000a0000000f0000001000000011000000
   _collectablePositions: []
