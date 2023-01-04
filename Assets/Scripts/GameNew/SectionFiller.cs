@@ -1,19 +1,28 @@
+using System.Collections.Generic;
 using Game;
 using UnityEngine;
+using Zenject;
 
 namespace GameNew {
-    public class SectionFiller {
+    public class SectionFiller: ITickable {
 
         
         PoolerBase<CoinType> _coinPooler;
          IInteractionController _interactionController;
+         float _coinRotationSpeed;
+         List<IExecutable> _executables;
 
-        float _coinRotationSpeed;
-        
         public SectionFiller(SectionsConfigSO sectionsConfigSo, IInteractionController interactionController, float coinRotationSpeed) {
             _interactionController = interactionController;
             _coinRotationSpeed = coinRotationSpeed;
             _coinPooler = new PoolerBase<CoinType>(sectionsConfigSo.coinDatas, 30);
+            _executables = new List<IExecutable>();
+        }
+        
+        public void Tick() {
+            foreach (var executable in _executables) {
+                executable.Execute();
+            }   
         }
         
         public void FillSection(Section section) {
@@ -34,10 +43,12 @@ namespace GameNew {
                 coin.transform.localPosition = pos;
                 coin.OnCoinCollected += CoinCollected;
                 section.Coins.Add(coin.gameObject);
+                _executables.Add(coin);
             }
         }
 
         void CoinCollected(Coin coin) {
+            _executables.Remove(coin);
             _interactionController.CollectCoin(coin);
             coin.OnCoinCollected -= CoinCollected;
             _coinPooler.ReturnToPool(coin.gameObject);
@@ -46,6 +57,7 @@ namespace GameNew {
         void ClearCoins(Section section) {
             Debug.Log("Emptying section");
             foreach (var coin in section.Coins) {
+                _executables.Remove(coin.GetComponent<IExecutable>());
                 _coinPooler.ReturnToPool(coin);
             }
             section.Coins.Clear();
@@ -58,5 +70,7 @@ namespace GameNew {
         void ClearInteraction(Section section) {
             
         }
+
+
     }
 }

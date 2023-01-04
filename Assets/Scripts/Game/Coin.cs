@@ -4,16 +4,14 @@ using Zenject;
 
 namespace Game {
     
-    public class Coin: MonoBehaviour, ICollectable, IPoolType<CoinType> {
+    public class Coin: MonoBehaviour, ICollectable, IPoolType<CoinType>, IExecutable {
         [SerializeField] CoinType _coinType;
 
         public CoinType Type => _coinType;
         public event Action<Coin> OnCoinCollected;
-        public event Action<Coin> OnCoinSectionDisabled;
-
         float _rotationSpeed;
         
-        void Update() {
+        public void Execute() {
             transform.Rotate(Vector3.forward, _rotationSpeed, Space.Self);
         }
         public void SetRotationSpeed(float speed) {
@@ -22,5 +20,7 @@ namespace Game {
         public void Collect() {
             OnCoinCollected?.Invoke(this);
         }
+
+
     }
 }
