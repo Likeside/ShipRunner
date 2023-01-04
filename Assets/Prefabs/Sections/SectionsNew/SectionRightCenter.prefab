@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 12
   _nextSectionSpawnPos: {fileID: 1044389614720125434}
-  _possibleSectionTypes: 
+  _possibleSectionTypes: 0700000008000000090000000b0000000a0000000d0000000e0000000f0000001000000011000000
   _collectablePositions: []
   _towerPositions: []
   _towerRotations: []
