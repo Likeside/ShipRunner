@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Game;
+using GameNew.Enums;
 using UnityEngine;
 using Zenject;
 

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game {
-    public enum CoinType {
-        Gold, Silver, Bronze
-    }
+
     public class CoinControllerX {
         
         /*

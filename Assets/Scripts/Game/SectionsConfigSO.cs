@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameNew.Enums;
 using UnityEngine;
 
 namespace Game {

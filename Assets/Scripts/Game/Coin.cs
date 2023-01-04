@@ -1,4 +1,5 @@
 using System;
+using GameNew.Enums;
 using UnityEngine;
 using Zenject;
 
