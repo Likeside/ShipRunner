@@ -172,6 +172,8 @@ MonoBehaviour:
   _collectablePositions: []
   _towerPositions: []
   _towerRotations: []
+  _leftSide: {fileID: 6529060462362677243}
+  _rightSide: {fileID: 8259449945706261376}
 --- !u!1 &5464823338038462953
 GameObject:
   m_ObjectHideFlags: 0

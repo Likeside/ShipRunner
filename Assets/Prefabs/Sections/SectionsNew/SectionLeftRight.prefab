@@ -358,6 +358,8 @@ MonoBehaviour:
   _collectablePositions: []
   _towerPositions: []
   _towerRotations: []
+  _leftSide: {fileID: 2391135810666183815}
+  _rightSide: {fileID: 2391135810789427361}
 --- !u!1001 &2391135809787213314
 PrefabInstance:
   m_ObjectHideFlags: 0

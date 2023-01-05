@@ -18,3 +18,4 @@ MonoBehaviour:
   shipRotationMultiplier: 20
   tailParticlesRotationMultiplier: 50
   coinRotationSpeed: 4
+  sectionsWidth: 10

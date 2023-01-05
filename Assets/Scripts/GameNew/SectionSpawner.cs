@@ -1,6 +1,7 @@
 using System;
 using Game;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace GameNew {
@@ -11,15 +12,22 @@ namespace GameNew {
 
         PoolerBase<PossibleSections> _sectionPooler;
 
+        Vector3 _leftSidePos;
+        Vector3 _rightSidePos;
+
         
-        public SectionSpawner(SectionsConfigSO sectionsConfigSo) {
+        public SectionSpawner(SectionsConfigSO sectionsConfigSo, IGameplayConfig gameplayConfig) {
             _sectionPooler = new PoolerBase<PossibleSections>(sectionsConfigSo.sectionDatas, 3);
+            _leftSidePos = new Vector3(-gameplayConfig.SectionsWidth, 0, 0);
+            _rightSidePos = -_leftSidePos;
+            Debug.Log("Constructing spawner: " + _leftSidePos + ":" + _rightSidePos + "; sectionswidth:" + gameplayConfig.SectionsWidth);
         }
 
         public void SpawnSection(Section lastSection) {
             int index = Random.Range(0, lastSection.PossibleSectionTypes.Count);
             var type = lastSection.PossibleSectionTypes[index];
             var newSection = _sectionPooler.SpawnFromPool(type).GetComponent<Section>();
+            newSection.SetSectionWidth(_leftSidePos, _rightSidePos);
             OnSectionSpawned?.Invoke(newSection);
         }
 

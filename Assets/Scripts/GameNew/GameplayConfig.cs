@@ -10,5 +10,7 @@ namespace GameNew {
         public float ShipRotationMultiplier => _config.shipRotationMultiplier;
         public float TailParticlesRotationMultiplier => _config.tailParticlesRotationMultiplier;
         public float CoinRotationSpeed => _config.coinRotationSpeed;
+
+        public float SectionsWidth => _config.sectionsWidth;
     }
 }

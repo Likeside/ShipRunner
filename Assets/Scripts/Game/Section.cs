@@ -11,6 +11,10 @@ namespace Game {
         [SerializeField] List<Vector3> _collectablePositions;
         [SerializeField] List<Vector3> _towerPositions;
         [SerializeField] List<Vector3> _towerRotations;
+
+        [SerializeField] Transform _leftSide;
+        [SerializeField] Transform _rightSide;
+        [SerializeField] bool _inversedSides;
         
         public PossibleSections Type => _type;
         public Transform NextSectionSpawnPos => _nextSectionSpawnPos;
@@ -21,6 +25,17 @@ namespace Game {
         public List<Vector3> TowerRotations => _towerRotations;
 
         public List<GameObject> Coins { get; } = new();
+
+        public void SetSectionWidth(Vector3 leftSidePos, Vector3 rightSidePos) {
+            if (_inversedSides) {
+                _leftSide.localPosition = rightSidePos;
+                _rightSide.localPosition = leftSidePos;
+            }
+            else {
+                _leftSide.localPosition = leftSidePos;
+                _rightSide.localPosition = rightSidePos;
+            }
+        }
 
         [Button]
         public void SetCollectablePositions() {

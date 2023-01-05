@@ -55,6 +55,9 @@ MonoBehaviour:
   _collectablePositions: []
   _towerPositions: []
   _towerRotations: []
+  _leftSide: {fileID: 4937762235522132330}
+  _rightSide: {fileID: 7819058766992542993}
+  _inversedSides: 1
 --- !u!1 &2097910370936358878
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +101,7 @@ GameObject:
   - component: {fileID: 2363644327811591026}
   - component: {fileID: 2116975061533720596}
   m_Layer: 0
-  m_Name: RightCube
+  m_Name: LeftCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +285,7 @@ GameObject:
   - component: {fileID: 2450398320307848171}
   - component: {fileID: 573025614565857945}
   m_Layer: 0
-  m_Name: LeftCube
+  m_Name: RightCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,5 +10,6 @@ namespace GameNew {
         public float shipRotationMultiplier;
         public float tailParticlesRotationMultiplier;
         public float coinRotationSpeed;
+        public float sectionsWidth;
     }
 }

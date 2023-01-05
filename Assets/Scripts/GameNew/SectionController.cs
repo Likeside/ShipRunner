@@ -20,7 +20,7 @@ namespace GameNew {
         public void Construct (IGameplayConfig gameplayConfig, IInteractionController interactionController) {
 
             _mover = new SectionMover(_initSections, _sectionsParent, gameplayConfig.SectionsSpeed);
-            _spawner = new SectionSpawner(_sectionsConfigSo);
+            _spawner = new SectionSpawner(_sectionsConfigSo, gameplayConfig);
             _filler = new SectionFiller(_sectionsConfigSo, interactionController, gameplayConfig.CoinRotationSpeed);
 
             _mover.OnSectionShouldSpawn += _spawner.SpawnSection;

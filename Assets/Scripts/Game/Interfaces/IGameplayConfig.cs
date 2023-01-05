@@ -8,5 +8,6 @@ namespace Game {
         public float TailParticlesRotationMultiplier { get; }
         
         public float CoinRotationSpeed { get; }
+        public float SectionsWidth { get; }
     }
 }
