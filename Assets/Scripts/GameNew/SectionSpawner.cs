@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Game;
 using UnityEngine;
 using Zenject;
@@ -16,11 +17,14 @@ namespace GameNew {
         Vector3 _rightSidePos;
 
         
-        public SectionSpawner(SectionsConfigSO sectionsConfigSo, IGameplayConfig gameplayConfig) {
+        public SectionSpawner(SectionsConfigSO sectionsConfigSo, IGameplayConfig gameplayConfig, List<Section> initSections) {
             _sectionPooler = new PoolerBase<PossibleSections>(sectionsConfigSo.sectionDatas, 3);
             _leftSidePos = new Vector3(-gameplayConfig.SectionsWidth, 0, 0);
             _rightSidePos = -_leftSidePos;
             Debug.Log("Constructing spawner: " + _leftSidePos + ":" + _rightSidePos + "; sectionswidth:" + gameplayConfig.SectionsWidth);
+            foreach (var section in initSections) {
+                section.SetSectionWidth(_leftSidePos, _rightSidePos);
+            }
         }
 
         public void SpawnSection(Section lastSection) {

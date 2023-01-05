@@ -19,8 +19,10 @@ namespace GameNew {
         [Inject]
         public void Construct (IGameplayConfig gameplayConfig, IInteractionController interactionController) {
 
+
+            
             _mover = new SectionMover(_initSections, _sectionsParent, gameplayConfig.SectionsSpeed);
-            _spawner = new SectionSpawner(_sectionsConfigSo, gameplayConfig);
+            _spawner = new SectionSpawner(_sectionsConfigSo, gameplayConfig, _initSections);
             _filler = new SectionFiller(_sectionsConfigSo, interactionController, gameplayConfig.CoinRotationSpeed);
 
             _mover.OnSectionShouldSpawn += _spawner.SpawnSection;
