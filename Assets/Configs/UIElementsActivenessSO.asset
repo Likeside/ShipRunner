@@ -22,7 +22,7 @@ MonoBehaviour:
   topPanelActive: 1
   quitButtonActive: 1
   tipButtonActive: 1
-  pauseButtonActive: 1
+  pauseButtonActive: 0
   backButtonActive: 1
   skipLevelButtonActive: 1
   ruButtonActive: 1
@@ -35,4 +35,3 @@ MonoBehaviour:
   blackScreenFadeDelay: 0.5
   blackScreenFadeInDelay: 1
   transitionColor: {r: 0.1792453, g: 0.17163582, b: 0.17163582, a: 1}
-  saveSystemType: 0
